@@ -19,6 +19,7 @@
 #define __PNLSTRING_HPP__
 
 #include <stdio.h>
+#include <string.h>
 #ifndef __PNLCONFIG_H__
 #include "pnlConfig.h"
 #endif

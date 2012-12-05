@@ -15,7 +15,7 @@
 /////////////////////////////////////////////////////////////////////////////
 #ifndef __PNLGRAPHICALMODEL_HPP__
 #define __PNLGRAPHICALMODEL_HPP__
-
+#include <limits.h>
 #include "pnlObject.hpp"
 #include "pnlModelTypes.hpp"
 #include "pnlNodeType.hpp"

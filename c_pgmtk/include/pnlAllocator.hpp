@@ -20,7 +20,7 @@
 #include <assert.h>
 #include <new>
 #include <utility>
-
+#include <limits.h>
 #include "pnlStackMemProv.hpp"
 #include "pnlImpDefs.hpp"
 

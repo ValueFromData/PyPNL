@@ -269,7 +269,8 @@ icxUpdateIPPTab( CxIPPFuncInfo* ipp_func_tab )
 
             for( ; j < 10 && name_ptr; j++ )
             {
-                char* name_start = strchr( name_ptr, 'i');
+		//char* name_start = strchr( name_ptr, 'i');
+                char* name_start = const_cast<char*>(strchr( name_ptr, 'i'));
                 char* name_end = name_start ? strchr( name_start, ',' ) : 0;
                 idx = (ipp_func_tab[i].search_modules / (1<<j*3)) % CX_IPP_MAX;
 
