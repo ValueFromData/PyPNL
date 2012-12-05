@@ -1,3 +1,26 @@
+---------------------------------------------------------------------
+ PNL -- Probabilistic Networks Library. (UNIX Fix)   05-December-2012
+---------------------------------------------------------------------
+
+This is a fix of the Open Source PNL library (http://sourceforge.net/projects/openpnl/).
+
+I decided to publish my fixed version here because having to use it and after struggling 
+with a lot of compilation errors today (Dec 2012), I thought it might be useful for 
+someone else in the same situation later on after the Mayan apocalypse.
+
+This is a fix for the UNIX version, g++ (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3.
+Most of the errors caused by the original version are tied to the g++ compiler, which has
+been updated since the last commit of PNL, somewhere in 2005.
+Other errors were the non declaration of INT_MAX on some headers, 
+as well as extra qualifications of some methods.
+
+Remember, this fix was just enough to get PNL compiled and running. 
+No warranty that it won't crash and burn later on!!!
+
+Feel free to use.
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
 
 ------------------------------------------------------------------
  PNL -- Probabilistic Networks Library. Beta 2.0.    30-March-2004
