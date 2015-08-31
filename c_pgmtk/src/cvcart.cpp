@@ -4477,7 +4477,7 @@ CART_IMPL int cxFindAnySplitProportion(CxCART* cart,
     int feature = split->feature_idx;
     int eff_feature = cart->features_corr[feature];
     assert( eff_feature >= 0 && eff_feature < cart->eff_num_features );
-#endif*/
+#endif
     CxCARTSubj* subj = node->subj;
     CxCARTAtom* body = subj->body;
     int* idx = node->fallen_idx;
