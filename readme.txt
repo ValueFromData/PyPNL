@@ -110,7 +110,7 @@ Notes:
 
 --------------------------------------------------------
 Building the library, examples and tests for
-C/C++ version from Linux with gcc
+C/C++ version from Linux with gcc (32 bit OS)
 --------------------------------------------------------
    1. Go to the root directory (it contain this file and changes.txt)
    2. Run './configure.gcc'
@@ -132,7 +132,7 @@ Notes:
 
 --------------------------------------------------------
 Building the library, examples and tests for
-C/C++ version from Linux with icc (Intel compiler)
+C/C++ version from Linux with icc (Intel compiler) (32 bit OS)
 --------------------------------------------------------
    1. Go to the root directory (it contain this file and changes.txt)
    2. Run './configure.icc'
@@ -154,3 +154,68 @@ Notes:
      BUILD_OMP in pnlParConfig.hpp as macro of preprocessor
    - If you have some error during compiling or if you want to view compiling
      message later, run 'make 2>&1 | tee compiling.log' instead  of 'make'
+     
+     
+For 64 bit linux system:
+--------------------------------------------------------
+Building the library, examples and tests for
+C/C++ version from Linux with gcc (64 bit OS)
+--------------------------------------------------------
+
+Packages Needed:
+    gcc-4.6
+    g++-4.6
+    gcc-4.6-multilib
+    g++-4.6-multilib
+
+Steps:   
+   1. Go to the root directory (it contain this file and changes.txt)
+   2. Run bellow commands to set flags
+        export CC=gcc-4.6
+        export CXX=g++-4.6
+        export  CXXFLAGS="-m32"
+        export  CFLAGS="-m32"
+        export  LDFLAGS="-m32"
+   3. Run './configure.gcc'
+   4. Run bellow commands to recompile some of the code in your system and move them to .lib folder
+        gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include/ c_pgmtk/src/cvsvd.c
+        gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/dbginfo.cpp
+        gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/memtrack.cpp
+        mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+        mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+        mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+   5. Run 'make clean'  OR  'make distclean'
+   6. Run 'make' to compile sources. If you have multiple core use -j option and specify numberof threads example ('make -j 8')
+   7. Run 'make check' to compile and launch test suite (optionally)
+   8. Run 'make install' to install library
+   9. Trying examples:
+        a. Change directry to the installed directory (example Run 'cd ../pnl-install') 
+        b. Copy Data file to new directory by executing bellow command
+                mkdir c_pgmtk
+                mkdir c_pgmtk/examples/
+                cp -rf examples/Data c_pgmtk/examples/
+        c. Execute examples:
+                cd ./bin
+                ./example
+                ./inf_learn_bnet
+                and so on...
+    10. To compile and Run water_sprinkler problum or any other sample code that you write follow bellow steps.
+        a. Go to the root directory (it contain this file and changes.txt)
+        b. Set LD_LIBRARY_PATH with path to {installed folder}/lib
+        c. compiling Run 
+            g++-4.6 -v -m32 -I./include -I./include/opencx -I./high/include -I./high/examples  -I./examples/testLIMID/includ -I./examples/testSoftMax/include -I ./examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o water_sprinkler   ./samples/water_sprinkler.cpp -L./lib/ -lpnl -lhigh -lcxcore   &>compile.log
+        d. Run './water_sprinkler '
+        
+Notes:
+   - Step 3 (Run './configure.gcc') should be run on initial or on compiler 
+     changing
+   - If you want to install library to some directory instead of '/usr/local' 
+     (as default), you can use '--prefix' option of 'configure' script 
+     in 'configure.gcc' file (run './configure -h' to read more)
+     (to install in some other directory run './configure --enable-shared --enable-static--prefix=../pnl-install')
+   - You can use object directory to build library. In this case step 2
+     looks like 'SRCROOT/configure.gcc', where 'SRCROOT' is relative path 
+     to source root directory
+   - If you have some error during compiling or if you want to view compiling 
+     message later, run 'make 2>&1 | tee compiling.log' instead of 'make'
+
