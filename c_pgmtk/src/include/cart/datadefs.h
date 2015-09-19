@@ -205,8 +205,11 @@ typedef enum CxSubsampleMode
 } CxSubsampleMode;
 
 #define TRACE_MODE 0
-
+#ifdef BIT_64
+typedef long BOOL;
+#else
 typedef int BOOL;
+#endif
 #define TRUE 1
 #define FALSE 0
 typedef int CxClassifierVarType;

@@ -1,0 +1,1000 @@
+  516  sudo ls -l /etc/ssl/certs/dovecot.pem
+  517  sudo chown vmail:dovecot /etc/ssl/certs/dovecot.pem
+  518  sudo chown vmail:dovecot /etc/ssl/certs/private/dovecot.pem
+  519  sudo chown vmail:dovecot /etc/ssl/private/dovecot.pem
+  520  sudo service dovecot restart 
+  521  sudo service postfix restart 
+  522  sudo service dovecot restart 
+  523  sudo mail -f /var/mail/vhosts/valuefromdata.net/faizal
+  524  telnet valuefromdata.net 587
+  525  exit
+  526  sudo tail /var/log/mail.log
+  527  sudo tail /var/log/mail.err
+  528  ls -l  /var/www/html/
+  529  sudo su
+  530  exit
+  531  ipython notebook --profile=nbserver
+  532  cd Envs/
+  533  workon venv
+  534  cd venv
+  535  ls -l /bin/
+  536  lsvirtualenv
+  537  cdvirtualenv
+  538  workon venv
+  539  export WORKON_HOME=~/Envs
+  540  source /usr/local/bin/virtualenvwrapper.sh
+  541  workon venv
+  542  cd ..
+  543  ipython notebook --profile=nbserver
+  544  deactivate
+  545  exit
+  546  ls -l
+  547  cat /etc/apache2/sites-available/000-default.conf 
+  548  cat /etc/apache2/sites-enabled/000-default.conf 
+  549  exit
+  550  sudo apt-get --update
+  551  sudo apt-get --upgrade
+  552  sudo apt-get --help
+  553  sudo apt-get upgrade
+  554  sudo apt-get update
+  555  sudo apt-get --help
+  556  sudo apt-get -v
+  557  sudo vi /etc/rc.local
+  558  echo ~/Envs
+  559  ipython notebook --profile=nbserver
+  560  export WORKON_HOME=/home/faizal/Envs
+  561  source /usr/local/bin/virtualenvwrapper.sh
+  562  workon venv
+  563  which ipython
+  564  deactivate
+  565  sudo vi /etc/rc.local
+  566  reboot
+  567  sudo reboot
+  568  htop
+  569  sudo /etc/rc.local
+  570  sudo sh /etc/rc.local
+  571  /home/faizal/Envs/venv/bin/ipython  notebook --profile=nbserver
+  572  sudo vi /etc/rc.local
+  573  sudo ls -l /etc/rc.local
+  574  sudo su
+  575  sudo adduser pynb
+  576  sudo su
+  577  exit
+  578  ls
+  579  unzip Tweet.zip
+  580  ls
+  581  mkdir myApps
+  582  cp -r Tweet myApps/Tweet
+  583  ls
+  584  cd myApps/
+  585  ls
+  586  ls Tweet/
+  587  sudo su postgres
+  588  su
+  589  python manage.py makemigrations
+  590  cd Tweet/;python manage.py makemigrations
+  591  cd ../..
+  592  ls -l
+  593  pip install -r requirements.txt 
+  594  sudo pip install -r requirements.txt 
+  595  cat /home/faizal/.pip/pip.log
+  596  sudo apt-get install python-dev
+  597  cat /home/faizal/.pip/pip.log
+  598  sudo pip install -r requirements.txt 
+  599  sudo pip install addons\pnc_tests --upgrade -r requirements.txt 
+  600  sudo pip install --upgrade pip
+  601  sudo pip install -r requirements.txt 
+  602  vi requirements.txt 
+  603  sudo vi requirements.txt 
+  604  sudo pip install -r requirements.txt 
+  605  sudo vi requirements.txt 
+  606  sudo pip install -r requirements.txt 
+  607  sudo vi requirements.txt 
+  608  sudo pip install -r requirements.txt 
+  609  sudo vi requirements.txt 
+  610  sudo pip install -r requirements.txt 
+  611  sudo pip install -r requirements.txt  --allow-external
+  612  sudo pip install -r requirements.txt --allow-external
+  613  sudo pip install --allow-external -r requirements.txt
+  614  sudo pip install -r --allow-external requirements.txt
+  615  sudo pip install --allow-all-external --allow-unverified -r requirements.txt
+  616  sudo pip install --allow-all-external --allow-unverified -r 'requirements.txt'
+  617  sudo vi requirements.txt 
+  618  sudo pip install -r requirements.txt
+  619  sudo vi requirements.txt 
+  620  sudo pip install -r requirements.txt
+  621  sudo vi requirements.txt 
+  622  sudo pip install -r requirements.txt
+  623  sudo apt-get install 
+  624  sudo apt-get install postgresql-server-dev
+  625  sudo apt-get install postgresql-server-dev-all
+  626  sudo pip install -r requirements.txt
+  627  sudo pip install pycurl
+  628  sudo apt-get install libcurl4-openssl-dev
+  629  sudo pip install -r requirements.txt
+  630  sudo vi requirements.txt 
+  631  sudo pip install -r requirements.txt
+  632  sudo vi requirements.txt 
+  633  sudo pip install -r requirements.txt
+  634  sudo apt-get install python-lxml
+  635  sudo vi requirements.txt 
+  636  ls -l
+  637  sudo vi requirements.txt 
+  638  sudo pip install -r requirements.txt
+  639  sud
+  640  sudo
+  641  sudo x
+  642  exit
+  643  cd /home/faizal
+  644  ls
+  645  sudo nano requirements.txt 
+  646  exit
+  647  cd myApps/
+  648  cd Tweet/
+  649  python manage.py makemigration
+  650  python manage.py makemigrations
+  651  python manage.py migrate
+  652  sudo su postgres
+  653  python manage.py runserver
+  654  python manage.py runserver --ip 128.199.180.200
+  655  python manage.py runserver --ip 128.199.180.200:8000
+  656  python manage.py runserver --ipv4 128.199.180.200:8000
+  657  python manage.py runserver --ip4 128.199.180.200:8000
+  658  sudo service apache2 restart
+  659  cd /etc/apache2/sites-enabled/
+  660  sudo ln -s ../sites-available/tweet.infoassistants.net.conf tweet.infoassistants.net.conf
+  661  sudo service apache2 restart
+  662  apt-get install libapache2-mod-wsgi
+  663  sudo apt-get install libapache2-mod-wsgi
+  664  sudo service apache2 restart
+  665  exit
+  666  sudo service apache2 restart
+  667  sudo apache2 restart
+  668  sudo service apache2 restart
+  669  exit
+  670  sudo vi /etc/rc.local
+  671  sudo reboot
+  672  sudo vi /etc/rc.local
+  673  cd myApps/
+  674  cd Tweet/
+  675  exit
+  676  sudo apt-get install git
+  677  which git
+  678  ls -l /usr/bin/git
+  679  sudo su pynb
+  680  exit
+  681  ls -l /home/faizal/myApps/Tweet/static/shared
+  682  ls -l /home/faizal/myApps/Tweet/static/
+  683  chmod 744 -R /home/faizal/myApps/Tweet/static/
+  684  chmod 766 -R /home/faizal/myApps/Tweet/static/shared/
+  685  ls -l /home/faizal/myApps/Tweet/static/shared/cd4154670ae15b8cb487d33ca8f48c5a_182.65.235.17.png
+  686  ls -l /home/faizal/myApps/Tweet/static/shared/cd4154670ae15b8cb487d33ca8f48c5a_182.65.235.1
+  687  ls -l /home/faizal/myApps/Tweet/static/shared/cd4154670a
+  688  ls -l /home/faizal/myApps/Tweet/static/shared/cd415
+  689  ls -l /home/faizal/myApps/Tweet/static/shared/
+  690  exit
+  691  cd myApps/
+  692  cd Tweet/
+  693  ls -l
+  694  cd static/
+  695  ls -l
+  696  cd ..
+  697  chmod 775 -R static/
+  698  chmod 777 -R static/shared/
+  699  htop
+  700  reboot
+  701  sudo reboot
+  702  sudo service apache2 restart
+  703  ls -l
+  704  ls -l /home/faizal/myApps/Tweet/static/js
+  705  sudo service apache2 restart
+  706  exit
+  707  curl --request 'POST' 'https://api.twitter.com/1.1/statuses/update.json' --data 'status=Testing+twitter+%22retweets+with+comments%22+using+api+https%3A%2F%2Ftwitter.com%2FBigDataTechCon%2Fstatus%25' --header 'Authorization: OAuth oauth_consumer_key="VmF4yqrq2pSBD1ZmsZgJMA", oauth_nonce="6d2a676db984586125525b02aecceec3", oauth_signature="Bu6iwQUOAQksLki%2FmOVEiAOG0Zw%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1439389164", oauth_token="280858357-ZJp2tDjL1wOr4fixrbUxLSYR8AQeCWc7HIgH0heA", oauth_version="1.0"' --verbose > twitter.out
+  708  sudo service apache2 restart
+  709  exit
+  710  vi retweet.out 
+  711  cd myApps/
+  712  cd Tweet/
+  713  git init 
+  714  git add A
+  715  git add -A
+  716  git commit -m "21-08-2015"
+  717  exit
+  718  cd myApps/
+  719  ls -l
+  720  cp -R Tweet InfoAssistants
+  721  ;
+  722  sudo find sites-a*
+  723  sudo find / -name  sites-a*
+  724  cd Tweet/
+  725  python manage.py shell
+  726  ls ..
+  727  python
+  728  exit
+  729  sudo service apache2 restart
+  730  touch /home/faizal/myApps/InfoAssistants/test1.json
+  731  chmod 777 /home/faizal/myApps/InfoAssistants/test1.json
+  732  touch /home/faizal/myApps/InfoAssistants/test2.json
+  733  chmod 777 /home/faizal/myApps/InfoAssistants/test2.json
+  734  sudo service apache2 restart
+  735  exit
+  736  sudo service apache2 restart
+  737  exit
+  738  cd myApps/InfoAssistants/
+  739  git add -A
+  740  git commit -m "before removing tweet collector content"
+  741  git push
+  742  git commit -m "before removing tweet collector content"
+  743  cd myApps/InfoAssistants/
+  744  python manage.py makemigration
+  745  python manage.py makemigrations
+  746  python manage.py migrat
+  747  python manage.py migrate
+  748  python manage.py makemigrations
+  749  python manage.py migrate
+  750  sudo service apache2 restart
+  751  cd static
+  752  ls -l
+  753  chmod 777 shared
+  754  sudo service apache2 restart
+  755  python manage.py makemigrations
+  756  cd ..
+  757  python manage.py makemigrations
+  758  python manage.py migrate
+  759  python manage.py makemigrations
+  760  python manage.py migrate
+  761  sudo service apache2 restart
+  762  python manage.py makemigrations
+  763  sudo service apache2 restart
+  764  python manage.py migrate
+  765  python manage.py makemigrations
+  766  python manage.py migrate
+  767  sudo service apache2 restart
+  768  rm -rf static/shared/*.*
+  769  ls -l static/shared/
+  770  python manage.py shell
+  771  sudo service apache2 restart
+  772  python manage.py makemigrations
+  773  python manage.py shell
+  774  python manage.py makemigrations
+  775  python manage.py migrate
+  776  python manage.py makemigrations
+  777  python manage.py migrate
+  778  rm -rf static/shared/*.*
+  779  sudo service apache2 restart
+  780  python manage.py shell
+  781  cd myApps/InfoAssistants/
+  782  ls -l static/shared/
+  783  chmod 777 static/shared/
+  784  chmod 777 static/shared/*
+  785  sudo chmod 777 static/shared/*
+  786  sudo service apache2 restart
+  787  touch "x.x"
+  788  ls -l x.x 
+  789  python
+  790  ls -l x.x 
+  791  rm x.x
+  792  ls -l
+  793  ls -l static/shared/
+  794  cp ../Tweet/static/shared/8b22d5b9f5d8c80f4394422137e90bb8_122.174.9.151.png static/shared/8b22d5b9f5d8c80f4394422137e90bb8_122.174.9.151.png
+  795  ls - l static/shared/8b22d5b9f5d8c80f4394422137e90bb8_122.174.9.151.png
+  796  ls -l static/shared/8b22d5b9f5d8c80f4394422137e90bb8_122.174.9.151.png
+  797  sudo service apache2 restart
+  798  ls -l static/shared/
+  799  sudo service apache2 restart
+  800  ls -l static/shared/
+  801  exit
+  802  ls -l /home/faizal/myApps/InfoAssistants/static/*.html
+  803  chmod 777 /home/faizal/myApps/InfoAssistants/static/*.html
+  804  ls -l /home/faizal/myApps/InfoAssistants/static/*.html
+  805  exit
+  806  cd myApps/
+  807  git clone https://ahmadfaizalbh@bitbucket.org/ahmadfaizalbh/pnl-probabilistic-networks-library-fixed.git
+  808  ls -l
+  809  cd pnl-probabilistic-networks-library-fixed/
+  810  ls -l
+  811  ./configure.gcc
+  812  sudo ./configure.gcc
+  813  chmod 774 -R .
+  814  ./configure.gcc
+  815  make
+  816  sudo make
+  817  make check
+  818  ./configure.icc
+  819  make
+  820  make install
+  821  /pnl-probabilistic-networks-library-fixed/c_pgmtk'
+  822  <
+  823  ;;;
+  824  eee
+  825  '
+  826  cd ..
+  827  exit
+  828  sudo service apache2 restart
+  829  exit
+  830  sudo service apache2 restart
+  831  cd myApps/InfoAssistants/
+  832  python manage.py shell
+  833  exit
+  834  history
+  835  find -name cvsvd.o
+  836  cd myApps/pnl-probabilistic-networks-library-fixed/
+  837  find -name libs
+  838  find -name *libs
+  839  find -name memtrack.o
+  840  cp ./c_pgmtk/src/cvsvd.o ./c_pgmtk/src/.libs/cvsvd.o
+  841  cp ./c_pgmtk/src/dbginfo.o ./c_pgmtk/src/.libs/dbginfo.o
+  842  cp ./c_pgmtk/src/memtrack.o ./c_pgmtk/src/.libs/memtrack.o
+  843  sudo make -j 2
+  844  rm  ./c_pgmtk/src/.libs/cvsvd.o
+  845  rm ./c_pgmtk/src/.libs/dbginfo.o
+  846  rm ./c_pgmtk/src/.libs/memtrack.o
+  847  exit
+  848  gcc-4.6
+  849  sudo apt-get gcc-4.6
+  850  cd myApps/
+  851  cd pnl-probabilistic-networks-library-fixed/
+  852  export CC=gcc-4.6
+  853  export CXX=gcc++-4.6
+  854  export CFLAGS="-m32"
+  855  export CXXFLAGS="-m32"
+  856  export LDFLAGS="-m32"
+  857  unset CFLAGS
+  858  unset CXXFLAGS
+  859  unset LDFLAGS
+  860  export  CXXFLAGS="-m 32"
+  861  export  CFLAGS="-m 32"
+  862  export  LDFLAGS="-m 32"
+  863  sh configure.gcc
+  864  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  865  sudo apt-get install build-essential
+  866  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  867  unset CC
+  868  unset CXX
+  869  CC
+  870  $CC
+  871  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  872  sudo ln -s /usr/bin/gcc-4.6 /usr/bin/gcc
+  873  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  874  make -j 8
+  875  export CC=gcc-4.6
+  876  export CXX=g++-4.6
+  877  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  878  sudo ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  879  sudo make -j 8
+  880  sudo su
+  881  sudo apt-get gcc-4.6-multilib
+  882  sudo apt-get install gcc-4.6-multilib
+  883  sudo apt-get install g++-4.6-multilib
+  884  export CC=gcc-4.6
+  885  export CXX=g++-4.6
+  886  export  CXXFLAGS="-m32"
+  887  export  CFLAGS="-m32"
+  888  export  LDFLAGS="-m32"
+  889  sh configure.gcc
+  890  ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  891  cd myApps/pnl-probabilistic-networks-library-fixed/
+  892  export CC=gcc-4.6
+  893  export CXX=g++-4.6
+  894  export  CXXFLAGS="-m32"
+  895  export  CFLAGS="-m32"
+  896  export  LDFLAGS="-m32"
+  897  sh configure.gcc
+  898  sudo sh configure.gcc
+  899  sudo ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  900  sudo make -j 8
+  901  sudo make 
+  902  sudo make |less
+  903  sudo make > t
+  904  sudo make &> t
+  905  less t
+  906  find -name cvcart.cpp
+  907  sudo nano ./c_pgmtk/src/cvcart.cpp
+  908  sudo vi ./c_pgmtk/src/cvcart.cpp
+  909  sudo make -j 8
+  910  sudo make 
+  911  sudo make &> t
+  912  less t
+  913  ls -lrt
+  914  echo $CFLAGS 
+  915  grep m32 * 
+  916  make distclean
+  917  sudo make distclean
+  918  sudo CXXFLAGS="-m32" CFLAGS="-m32" LDFLAGS="-m32" CC="gcc-4.6" CXX="g++-4.6" ./configure --enable-shared --enable-static --prefix=/home/faizal/myApps/pnl-install
+  919  grep m32 *
+  920  lscpu 
+  921  sudo make -j 2
+  922  cd myApps/pnl-probabilistic-networks-library-fixed/
+  923  sudo su
+  924  cd myApps/
+  925  ls -l
+  926  cd InfoAssistants/
+  927  ls -l
+  928  cd TweetCollector/
+  929  cd ..
+  930  cd Beta/
+  931  ls -l
+  932  vi middleware.py 
+  933  cd myApps/old/pnl-probabilistic-networks-library-fixed/
+  934  ls
+  935  less log
+  936  exit
+  937  cd myApps/pnl-probabilistic-networks-library-fixed/
+  938  sudo su
+  939  cd myApps/
+  940  cd pnl-install/
+  941  ls -l
+  942  cd bin
+  943  ls -l
+  944  ./inf_learn_bnet 
+  945  cd ..
+  946  cd examples/
+  947  ls -l
+  948  inf_learn_bnet
+  949  find -name inf_learn_bnet*
+  950  ls -l inf_learn_bnet*
+  951  cd inf_learn_bnet*
+  952  ls -l
+  953  cd Src/
+  954  ls -l
+  955  vi inf_learn_bnet.cpp 
+  956  cd ../../
+  957  cd ../
+  958  mkdir c_pgmtk
+  959  sudo mkdir c_pgmtk
+  960  sudo mkdir c_pgmtk/examples/Data
+  961  sudo mkdir c_pgmtk/examples
+  962  sudo mkdir c_pgmtk/examples/Data
+  963  sudo cp -rf c_pgmtk/examples/Data examples/Data
+  964  sudo ls -l c_pgmtk/examples/Data
+  965  sudo cp -rf c_pgmtk/examples/Data/* examples/Data/
+  966  ls -l sudo cp -rf c_pgmtk/examples/Data examples/Data
+  967  ls -l examples/Data
+  968  rm -rf examples/Data/Data
+  969  sudo rm -rf examples/Data/Data
+  970  sudo cp -rf examples/Data c_pgmtk/examples/Data
+  971  cd bin
+  972  ./inf_learn_bnet 
+  973  cd ..
+  974  sudo ls -l c_pgmtk/examples/Data
+  975  sudo cp -rf examples/Data c_pgmtk/examples/
+  976  sudo ls -l c_pgmtk/examples/Data
+  977  sudo rm -rf  c_pgmtk/examples/Data/Data
+  978  ./inf_learn_bnet 
+  979  bin/inf_learn_bnet 
+  980  sudo chmod -R 777 c_pgmtk/examples/Data
+  981  bin/inf_learn_bnet 
+  982  cd bin
+  983  ./inf_learn_bnet 
+  984  ./example 
+  985  cd ..
+  986  less history
+  987  history &>h
+  988  less h
+  989  cd pnl-probabilistic-networks-library-fixed/
+  990  ll
+  991  git add -A
+  992  git commit -m "fixed typo"
+  993  git push
+  994  cd ..
+  995  mkdir old
+  996  cd old
+  997  git clone https://ahmadfaizalbh@bitbucket.org/joaopccosta/pnl-probabilistic-networks-library-fixed.git
+  998  sudo su
+  999  cd myApps/pnl-install/
+ 1000  cd bin
+ 1001  ls -l
+ 1002  inf_learn_dbn
+ 1003  ./inf_learn_dbn
+ 1004  ls
+ 1005  ./TestLIMID 
+ 1006  ls
+ 1007  ./gibbs
+ 1008  exit
+ 1009  cd myApps/pnl-probabilistic-networks-library-fixed/
+ 1010  ls
+ 1011  less t
+ 1012  cd /home/faizal/myApps/pnl-install
+ 1013  mkdir sample
+ 1014  sudo mkdir sample
+ 1015  ls -l
+ 1016  sudo chmod 777 sample/
+ 1017  ls -l
+ 1018  sudo su
+ 1019  exit
+ 1020  ls -l
+ 1021  exit
+ 1022  sudo su
+ 1023  ACCEPT_EULA=accept
+ 1024  exit
+ 1025  sudo find / -name Netica*
+ 1026  cd myApps/pnl-probabilistic-networks-library-fixed/
+ 1027  wget https://outlook.office365.com/owa/service.svc/s/GetFileAttachment?id=AAMkAGY0ZDQ0ZThjLWFlN2QtNDI3NC05N2YzLTAxZDE4YmY5YTBjOABGAAAAAABXEfI%2BSOOGQoKRl9HzwRXRBwCZLayFAAjPRJ9qlySq2S6XAAAAAAEMAACZLayFAAjPRJ9qlySq2S6XAAD8fQhTAAABEgAQAKk8JZKORJVBt4NFwk5T4xc%3D&X-OWA-CANARY=ALrh7UR4_0Oidyxx_aojGxDv5hj2tNIYPHWG2-z-lE5wSS_R6bdEgHPrSrTSGT5J-u61_DN7HFE.
+ 1028  ls -l
+ 1029  ls -l c_*
+ 1030  ls -l 
+ 1031  rm -r GetF* 
+ 1032  ls -l
+ 1033  cd ..
+ 1034  cp -rf pnl-probabilistic-networks-library-fixed pnl-fixed-src
+ 1035  ls -l
+ 1036  cd pnl-fixed-src/
+ 1037  ls -l
+ 1038  cd c_pgmtk/
+ 1039  ls
+ 1040  mv src src_32bit
+ 1041  ls
+ 1042  cd ..
+ 1043  tar -xvjf c_pgmtk_src.tbz c_pgmtk/src
+ 1044  tar -xvjf c_pgmtk_src.tbz 
+ 1045  ls
+ 1046  mv src c_pgmtk/
+ 1047  ls c_pgmtk
+ 1048  sh configure.gcc
+ 1049  ./configure --enable-shared --enable-static--prefix=../pnl-install64
+ 1050  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include/ c_pgmtk/src/cvsvd.c
+ 1051  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/dbginfo.cpp
+ 1052  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/memtrack.cpp
+ 1053  mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+ 1054  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1055  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1056  ls
+ 1057  ls c_pgmtk/src/.libs/
+ 1058  mkdir  c_pgmtk/src/.libs
+ 1059  mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+ 1060  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1061  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1062  make clean
+ 1063  make distclean
+ 1064  make -j 2
+ 1065  ls
+ 1066  sh configure.gcc
+ 1067  ./configure --enable-shared --enable-static--prefix=../pnl-install64
+ 1068  ls
+ 1069  make -j 2 &>t
+ 1070  less t
+ 1071  make check
+ 1072  cd myApps/
+ 1073  cd pnl-fixed-src/
+ 1074  ls -l
+ 1075  vi libtool 
+ 1076  cd c_pgmtk/src
+ 1077  ls
+ 1078  ls -l Makefile
+ 1079  vi Makefile
+ 1080  cd ..
+ 1081  ls 
+ 1082  find -name pnl_*
+ 1083  find -name c_*
+ 1084  find -name c_pgmtlk
+ 1085  ls
+ 1086  find . -name c_pgmtlk
+ 1087  find . -name c_pgmtk
+ 1088  ls c_pgmtk/src/
+ 1089  ls c_pgmtk/src/.libs
+ 1090  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1091  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1092  ls
+ 1093  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/dbginfo.cpp
+ 1094  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/memtrack.cpp
+ 1095  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1096  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1097  sh configure.gcc
+ 1098  mkdir ../pnl-install64
+ 1099  ./configure --enable-shared --enable-static--prefix=../pnl-install64
+ 1100  make
+ 1101  make &>tt
+ 1102  less tt
+ 1103  make NO_READLINE=1
+ 1104  make DEBUG=1
+ 1105  cd myApps/pnl-fixed-src/
+ 1106  ls
+ 1107  export CC=gcc-4.6
+ 1108  export CXX=g++-4.6
+ 1109  sh configure.gcc
+ 1110  ./configure --enable-shared --enable-static--prefix=../pnl-install
+ 1111  ./configure --enable-shared --enable-static--prefix=../pnl-install64
+ 1112  make clean
+ 1113  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include/ c_pgmtk/src/cvsvd.c
+ 1114  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/dbginfo.cpp
+ 1115  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/memtrack.cpp
+ 1116  mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+ 1117  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1118  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1119  mkdir c_pgmtk/src/.libs/
+ 1120  mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+ 1121  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1122  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1123  make -j 2 &>tt
+ 1124  less tt
+ 1125  export CXX=gcc-4.6
+ 1126  make -j 2 &>tt
+ 1127  less tt
+ 1128  tail tt
+ 1129  make clean  
+ 1130  export CC=gcc-4.6
+ 1131  export CXX=gcc-4.6
+ 1132  sh configure.gcc
+ 1133  ./configure --enable-shared --enable-static--prefix=../pnl-install64
+ 1134  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include/ c_pgmtk/src/cvsvd.c
+ 1135  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/dbginfo.cpp
+ 1136  gcc -c -I./c_pgmtk/include -I./c_pgmtk/src/include c_pgmtk/src/memtrack.cpp
+ 1137  mkdir c_pgmtk/src/.libs/
+ 1138  mv cvsvd.o c_pgmtk/src/.libs/cvsvd.o
+ 1139  mv dbginfo.o c_pgmtk/src/.libs/dbginfo.o
+ 1140  mv memtrack.o c_pgmtk/src/.libs/memtrack.o
+ 1141  make -j 2 &>tt
+ 1142  tail tt
+ 1143  make install &>ti
+ 1144  ls -l ../pnl-install64/
+ 1145  ls -l ../pnl-install/
+ 1146  cd myApps/
+ 1147  git clone https://gitlab.com/ahmadfaizalbh/wiki.git
+ 1148  ls
+ 1149  find / -name sites-*
+ 1150  sudo find / -name sites-*
+ 1151  cd /etc/apache2/sites-available
+ 1152  ls
+ 1153  cp valuefromdata.net.conf worklog.infoassistants.net.conf
+ 1154  sudo cp valuefromdata.net.conf worklog.infoassistants.net.conf
+ 1155  ls -l
+ 1156  cd ../sites-enabled/
+ 1157  ln -s ../sites-available/worklog.infoassistants.net.conf worklog.infoassistants.net.conf
+ 1158  sudo ln -s ../sites-available/worklog.infoassistants.net.conf worklog.infoassistants.net.conf
+ 1159  sudo nano
+ 1160  sudo nano worklog.infoassistants.net.conf 
+ 1161  sudo service apache2 restart
+ 1162  ls /home/faizal/myApps/wiki
+ 1163  vi /home/faizal/myApps/wiki/wikka.config.php
+ 1164  sudo vi .htaccess
+ 1165  sudo ls -ltar /var/www/html/
+ 1166  sudo ls -ltar /var/www/html/.htaccess
+ 1167  sudo ls -ltar /var/www/html/valuefromdata-wordpress/.htaccess
+ 1168  sudo cp /var/www/html/valuefromdata-wordpress/.htaccess /home/faizal/myApps/wiki/
+ 1169  cd /home/faizal/myApps/wiki
+ 1170  ls -l
+ 1171  vi .htaccess 
+ 1172  sudo vi .htaccess 
+ 1173  chmod 777  .
+ 1174  chmod 777 config
+ 1175  ls -l
+ 1176  sudo vi wikka.config.php
+ 1177  exit
+ 1178  cd myApps/pnl-install/convertion_predictor/
+ 1179  ls -l
+ 1180  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1181  ls -l
+ 1182  LD_LIBRARY_PATH=../lib
+ 1183  export LD_LIBRARY_PATH
+ 1184  ./convertion_learn_structure 
+ 1185  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1186  ./convertion_learn_structure 
+ 1187  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1188  ./convertion_learn_structure 
+ 1189  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1190  ./convertion_learn_structure 
+ 1191  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1192  ./convertion_learn_structure 
+ 1193  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1194  ./convertion_learn_structure 
+ 1195  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1196  ./convertion_learn_structure 
+ 1197  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1198  ./convertion_learn_structure 
+ 1199  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1200  ./convertion_learn_structure 
+ 1201  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1202  ./convertion_learn_structure 
+ 1203  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1204  ./convertion_learn_structure 
+ 1205  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1206  ./convertion_learn_structure 
+ 1207  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1208  ./convertion_learn_structure 
+ 1209  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1210  ./convertion_learn_structure 
+ 1211  cd ..
+ 1212  cd ../pnl-probabilistic-networks-library-fixed/
+ 1213  cp -rf ../pnl-install/convertion_predictor convertion_predictor
+ 1214  ls
+ 1215  ls convertion_predictor/
+ 1216  git all -A
+ 1217  git add -A
+ 1218  git commit -m "convertion"
+ 1219  git push https://gitlab.com/Data-Science/Open-PNL.git master:master
+ 1220  ls -l
+ 1221  git push origin https://gitlab.com/Data-Science/Open-PNL.git master:master
+ 1222  git push origin https://gitlab.com/Data-Science/Open-PNL.git 
+ 1223  git push https://gitlab.com/Data-Science/Open-PNL.git 
+ 1224  cd ..
+ 1225  git clone https://gitlab.com/Data-Science/Open-PNL.git 
+ 1226  cd Open-PNL/
+ 1227  cp -rf ../pnl-probabilistic-networks-library-fixed/convertion_predictor convertion_predictor
+ 1228  git add -A
+ 1229  mv samples/convertion.cpp convertion_predictor/
+ 1230  ls convertion_predictor/
+ 1231  git add -A
+ 1232  git commit -m "convertion"
+ 1233  git push
+ 1234  cd convertion_predictor/
+ 1235  cd myApps/pnl-install/convertion_predictor/
+ 1236  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1237  ls
+ 1238  ./convertion_learn_structure 
+ 1239  LD_LIBRARY_PATH=../lib
+ 1240  export LD_LIBRARY_PATH
+ 1241  ./convertion_learn_structure 
+ 1242  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1243  ls
+ 1244  ./convertion_learn_structure 
+ 1245  rm ./convertion_learn_structure 
+ 1246  g++-4.6 -v -m32 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++ -o convertion_learn_structure   convertion_learn_structure.cpp -L../lib/ -lpnl -lhigh -lcxcore   &>compile.log
+ 1247  ./convertion_learn_structure 
+ 1248  sudo adduser
+ 1249  sudo adduser sudha
+ 1250  exit
+ 1251  sudo ls ../sudha
+ 1252  sudo ls ..
+ 1253  sudo ls ../sudha
+ 1254  cd ../sudha
+ 1255  ls
+ 1256  sudo su
+ 1257  exit
+ 1258  ls -l ../sudha
+ 1259  ls -l ../sudha/Django-Perception/
+ 1260  ls -l ../sudha/Django-Perception/perception/
+ 1261  cd ../sudha/Django-Perception/
+ 1262  sudo python manage.py 
+ 1263  sudo python manage.py runserver
+ 1264  sudo vi home/sudha/Django-Perception/perception/wsgi.py
+ 1265  sudo su sudha
+ 1266  sudo find  / -name sites-*
+ 1267  cd /etc/apache2/sites-available
+ 1268  ls
+ 1269  cp tweet.infoassistants.net.conf  perception.infoassistants.net.conf 
+ 1270  sudo cp tweet.infoassistants.net.conf  perception.infoassistants.net.conf 
+ 1271  sudo vi perception.infoassistants.net.conf 
+ 1272  sudo cp perception.infoassistants.net.conf ~/
+ 1273  sudo chown faizal  ~/perception.infoassistants.net.conf 
+ 1274  sudo rm  perception.infoassistants.net.conf 
+ 1275  sudo cp ~/perception.infoassistants.net.conf 
+ 1276  sudo cp ~/perception.infoassistants.net.conf ./
+ 1277  ls -l
+ 1278  cd ../
+ 1279  cd sites-enabled/
+ 1280  sudo ln -s ../sites-available/perception.infoassistants.net.conf perception.infoassistants.net.conf
+ 1281  ls -l
+ 1282  sudo service apache2 restart
+ 1283  sudo vi perception.infoassistants.net.conf 
+ 1284  sudo service apache2 restart
+ 1285  sudo vi perception.infoassistants.net.conf 
+ 1286  ls -l ~/sudha/
+ 1287  ls -l ~/../sudha/
+ 1288  ls -l ~/../sudha/Django-Perception/
+ 1289  ls -l ~/../sudha/Django-Perception/perception/
+ 1290  chmod 775 -R  ~/../sudha/Django-Perception
+ 1291  sudo chmod 775 -R  ~/../sudha/Django-Perception
+ 1292  sudo find / -name error.log
+ 1293  less /var/log/apache2/error.log
+ 1294  sudo less /var/log/apache2/error.log
+ 1295  sudo vi /home/sudha/Django-Perception/perception/wsgi.py
+ 1296  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1297  sudo tail -n 100 /var/log/apache2/error.log & > /var/log/apache2/error.log
+ 1298  sudo tail -n 100 /var/log/apache2/error.log > /var/log/apache2/error.log
+ 1299  sudo echo "" > /var/log/apache2/error.log
+ 1300  sudo su
+ 1301  sudo service apache2 restart
+ 1302  sudo less /var/log/apache2/error.log
+ 1303  ls /home/sudha/Django-Perception/imgpage/
+ 1304  sudo vi /home/sudha/Django-Perception/imgpage/views.py
+ 1305  sudo vi /home/sudha/Django-Perception/imgpage/urls.py
+ 1306  sudo vi /home/sudha/Django-Perception/imgpage/forms.py
+ 1307  sudo vi /home/sudha/Django-Perception/imgpage/models.py
+ 1308  sudo vi /home/sudha/Django-Perception/imgpage/tests.py
+ 1309  ls /home/sudha/Django-Perception/
+ 1310  ls /home/sudha/Django-Perception/perception/
+ 1311  sudo vi /home/sudha/Django-Perception/perception/urls.py
+ 1312  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1313  sudo vi /home/sudha/Django-Perception/perception/wsgi.py
+ 1314  sudo rm -rf /home/sudha/Django-Perception/perception/*pyc
+ 1315  sudo service apache2 restart
+ 1316  sudo less /var/log/apache2/error.log
+ 1317  sudo chmod -R 777 /home/sudha/Django-Perception/static
+ 1318  sudo service apache2 restart
+ 1319  sudo less /var/log/apache2/error.log
+ 1320  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1321  sudo pip  install django-security
+ 1322  sudo service apache2 restart
+ 1323  sudo less /var/log/apache2/error.log
+ 1324  python
+ 1325  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1326  sudo service apache2 restart
+ 1327  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1328  sudo service apache2 restart
+ 1329  exit
+ 1330  sudo service apache2 restart
+ 1331  ls -l ../sudha/Django-Perception/static/images/
+ 1332  ls -l ../sudha/Django-Perception/static/images/temp2
+ 1333  ls -l ../sudha/Django-Perception/static/images/temp
+ 1334  sudo python ../sudha/Django-Perception/manage.py 
+ 1335  sudo python ../sudha/Django-Perception/manage.py createsuperuser
+ 1336  ls -l ../sudha/Django-Perception/static/images/
+ 1337  cp  ../sudha/Django-Perception/static/images/temp/image0.jpg ../sudha/Django-Perception/static/images/
+ 1338  sudo python ../sudha/Django-Perception/manage.py createsuperuser
+ 1339  sudo vi  ../sudha/Django-Perception/perception/wsgi.py 
+ 1340  sudo cp -rf myApps/InfoAssistants/static/admin ../sudha/Django-Perception/static/admin
+ 1341  ls -l ../sudha/Django-Perception/static/admin
+ 1342  exit
+ 1343  sudo service apache2 restart
+ 1344  sudo less /var/log/apache2/error.log
+ 1345  sudo vi /home/sudha/Django-Perception/perception/wsgi.py
+ 1346  sudo service apache2 restart
+ 1347  sudo tail /var/log/apache2/error.log
+ 1348  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1349  sudo service apache2 restart
+ 1350  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1351  sudo service apache2 restart
+ 1352  sudo ls /home/sudha/Django-Perception/static/images/
+ 1353  sudo cp -rf /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/
+ 1354  sudo ls /home/sudha/Django-Perception/static/images/
+ 1355  sudo service apache2 restart
+ 1356  sudo ls /home/sudha/Django-Perception/static/images/
+ 1357  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1358  sudo cp -rf /home/sudha/Django-Perception/static/images/temp/images0.jpg /home/sudha/Django-Perception/static/images/
+ 1359  sudo cp -rf /home/sudha/Django-Perception/static/images/temp2/images0.jpg /home/sudha/Django-Perception/static/images/
+ 1360  sudo cp -rf /home/sudha/Django-Perception/static/images/temp/image0.jpg /home/sudha/Django-Perception/static/images/
+ 1361  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1362  sudo tail /var/log/apache2/error.log
+ 1363  sudo less /var/log/apache2/error.log
+ 1364  sudo service apache2 restart
+ 1365  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1366  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1367  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1368  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1369  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1370  sudo cp -rf  /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/ 
+ 1371  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1372  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1373  sudo service apache2 restart
+ 1374  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1375  sudo cp -rf  /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/ 
+ 1376  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1377  python
+ 1378  sudo rm -rf  /home/sudha/Django-Perception/static/images/i
+ 1379  sudo cp -rf  /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/ 
+ 1380  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1381  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1382  sudo cp -rf  /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/ 
+ 1383  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1384  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1385  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1386  sudo mv  /home/sudha/Django-Perception/static/images/Tirumailai_MRTS_station_Chennai_\(Madras\).jpg 
+ 1387  sudo mv  /home/sudha/Django-Perception/static/images/Tirumailai_MRTS_station_Chennai_\(Madras\).jpg /home/sudha/Django-Perception/static/images/Tirumailai_MRTS_station_Chennai_Madras.jpg
+ 1388  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1389  sudo service apache2 restart
+ 1390  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1391  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1392  sudo cp -rf  /home/sudha/Django-Perception/static/images/temp/* /home/sudha/Django-Perception/static/images/ 
+ 1393  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1394  sudo tail /var/log/apache2/error.log
+ 1395  sudo less /var/log/apache2/error.log
+ 1396  sudo ls /var/log/apache2/*.log
+ 1397  sudo ls /var/log/apache2/acce
+ 1398  sudo less /var/log/apache2/access.log
+ 1399  sudo service apache2 restart
+ 1400  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1401  sudo rm -rf  /home/sudha/Django-Perception/static/images/im*
+ 1402  python
+ 1403  sudo ls -l /home/sudha/Django-Perception/static/images/
+ 1404  sudo vi /home/sudha/Django-Perception/perception/settings.py
+ 1405  exit
+ 1406  sudo find / -name waka* 
+ 1407  sudo find / -name wika* 
+ 1408  sudo find / -name Wika* 
+ 1409  sudo find / -name *ika* 
+ 1410  sudo find / -name *aka* 
+ 1411  ls -l /var/www/html/
+ 1412  ls -l
+ 1413  ls -l myApps/
+ 1414  ls -l myApps/wiki
+ 1415  vi  myApps/wiki/wikka.config.php
+ 1416  vi  myApps/wiki/wikka.config.php_old 
+ 1417  sudo vi  myApps/wiki/wikka.config.php
+ 1418  sudo service apache2 restart
+ 1419  sudo vi  myApps/wiki/wikka.config.php
+ 1420  sudo service apache2 restart
+ 1421  vi  myApps/wiki/wikka.config.php_old 
+ 1422  sudo vi  myApps/wiki/wikka.config.php
+ 1423  exit
+ 1424  python -c "from Cython.Compiler.Version import version; print version"
+ 1425  pythom
+ 1426  python
+ 1427  sudo pip install cython
+ 1428  exit
+ 1429  cd /home/faizal/myApps/pnl-install/pythonWrapper
+ 1430  cython -a PNL.pyx 
+ 1431  cd /home/faizal/myApps/pnl-install/pythonWrapper
+ 1432  cython -a PNL.pyx 
+ 1433  exit
+ 1434  cd myApps/pnl-install/pythonWrapper/
+ 1435  LD_LIBRARY_PATH=../lib
+ 1436  export LD_LIBRARY_PATH
+ 1437  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1438  ls -l
+ 1439  less compile.log
+ 1440  sudo find / -name pyconfig.h
+ 1441  sudo find / -name python.h
+ 1442  less compile.log
+ 1443  sudo find / -name Python.h
+ 1444  less compile.log
+ 1445  gcc-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1446  less compile.log
+ 1447  ls -l
+ 1448  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/   ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1449  ls -l
+ 1450  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   ./PNL.c -o PNL.so -L/usr/lib32 -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1451  ls -l
+ 1452  less compile.log
+ 1453  ls -l usr/include/x86_64-linux-gnu/python2.7/pyconfig.h
+ 1454  ls -l /usr/include/x86_64-linux-gnu/python2.7/pyconfig.h
+ 1455  ls -l /usr/include/x86_64-linux-gnu/python2.7/
+ 1456  ls -l /usr/include/x86_64-linux-gnu/
+ 1457  ls -l /usr/include/
+ 1458  ls -l /usr/include/x86_64-linux-gnu/python2.7/
+ 1459  less compile.log
+ 1460  less /usr/include/python2.7/pyconfig.h
+ 1461  less compile.log
+ 1462  sudo find / -name Python.h
+ 1463  dpkg -l ia32-libs
+ 1464  sudo apt-get install ia32-libs
+ 1465  dpkg -l ia32-libs
+ 1466  sudo apt-get install python-devel:i386
+ 1467  ls
+ 1468  sudo apt-get install python-devel:i386-linux-gnu
+ 1469  sudo apt-get install python-devel:amd32
+ 1470  sudo apt-get install python-devel:*32
+ 1471  sudo apt-get install python-devel
+ 1472  sudo apt-get install python-dev:i386
+ 1473  sudo find / -name pyconfig.h
+ 1474  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   ./PNL.c -o PNL.so -L/usr/lib32 -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1475  ls -l
+ 1476  less compile.log 
+ 1477  ls -l
+ 1478  less compile.log 
+ 1479  htop
+ 1480  echo "" > compile.log 
+ 1481  less compile.log 
+ 1482  gcc -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   ./PNL.c -o PNL.so -L/usr/lib32 -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1483  ls -l
+ 1484  less compile.log 
+ 1485  gcc-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   ./PNL.c -o PNL.so -L/usr/lib32 -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1486  less compile.log 
+ 1487  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   ./PNL.c -o PNL.so -L/usr/lib32 -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1488  less compile.log 
+ 1489  ls -l
+ 1490  less compile.log 
+ 1491  gcc-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1492  ls -l
+ 1493  less compile.log 
+ 1494  g++-4.6 -v -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1495  ls -l
+ 1496  less compile.log 
+ 1497  sudo find / -name pyconfig.h
+ 1498  less compile.log 
+ 1499  gcc-4.6 -v -w -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1500  less compile.log 
+ 1501  g++-4.6 -v -w -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1502  less compile.log 
+ 1503  exit
+ 1504  cd /home/faizal/myApps/pnl-install/pythonWrapper
+ 1505  g++-4.6 -v -w -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1506  less compile.log 
+ 1507  rm PNL.pyx
+ 1508  mv PNL.py PNL.pyx
+ 1509  g++-4.6 -v -w -m32 -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python2.7 -I../include -I../include/opencx -I../high/include -I../high/examples  -I../examples/testLIMID/includ -I../examples/testSoftMax/include -I ../examples/parPNLTest/include   -L/usr/lib32/ -lstdc++    ./PNL.c -o PNL.so -L../lib/ -lpnl -lhigh -lcxcore  -lpthread -lstdc++ -lm  &>compile.log
+ 1510  ls -l
+ 1511  cython -a PNL.pyx
+ 1512  python
+ 1513  less history
+ 1514  history
+ 1515  history>h

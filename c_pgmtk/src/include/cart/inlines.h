@@ -180,7 +180,13 @@ CART_INLINE float icxSetSign(float f, float sign)
 CART_INLINE void icxAssertAligned( void* ptr , const int align = CART_MEM_ALIGN)
 { 
 	assert(ptr);
-	assert ( ( ((int)ptr) & (align-1) ) == 0 );
+	//assert ( ( reinterpret_cast<int>ptr) & (align-1)  == 0 );
+	//assert ( (reinterpret_cast<long>(reinterpret_cast<int*>(ptr)) & (align-1)  == 0 ));
+#ifdef BIT_64
+	assert ( (long)ptr & (align-1)  == 0 );
+#else
+	assert ( ( (int)ptr) & (align-1)  == 0 );
+#endif
 }
 
 CART_INLINE void* icxAlignedMalloc(int size , const int align = CART_MEM_ALIGN)
@@ -287,7 +293,13 @@ CART_INLINE int icxGetVarNumStates(int type )
 { return (type & CX_CLASSIFIER_VAR_TYPE_NUM_STATES_MASK); }
 
 CART_INLINE BOOL icxIsChunkLoaded(CxClassifierSampleChunk* chunk )
-{ return (int)(chunk) && (chunk)->is_loaded; }
+{
+#ifdef BIT_64
+	return (long)(chunk) && (chunk)->is_loaded;
+#else
+	return (int)(chunk) && (chunk)->is_loaded;
+#endif
+}
 
 CART_INLINE float icxGetSampleWeight(CxClassifierSampleChunk* chunk, int sample_idx )
 { return *(float *)((char *)(chunk)->weights_data + (sample_idx) * (chunk)->weights_step); }

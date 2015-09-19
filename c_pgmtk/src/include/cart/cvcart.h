@@ -441,11 +441,11 @@ CART_INLINE void icxBuildCARTNodeFallenStats( CxCART* cart, CxCARTNode* node )
 //###
 CART_API void cxCreatePriorsCostMult(CxCARTBase* cart, int* root_stats, int root_fallens);
 //###
-CART_API void cxInitSubjBody(CxCARTSubj* subj, 
+/*CART_API void cxInitSubjBody(CxCARTSubj* subj, 
 							 CxClassifierSample* sample, 
 							 int copy_features = 0,
                              int max_num_samples = 16000,
-                             int gulp_chunk = 1);
+                             int gulp_chunk = 1);*/
 
 
 #ifdef _DEBUG

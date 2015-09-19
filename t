@@ -1,462 +1,422 @@
 Making all in cxcore
-make[1]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore'
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
 Making all in cxcore
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
 Making all in src
-make[3]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore/src'
-make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore/src'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxalloc.o cxalloc.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxarithm.o cxarithm.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxarray.o cxarray.cpp
+cxarray.cpp: In function ‘void icxGetColorModel(int, char**, char**)’:
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3223:33: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxcmp.o cxcmp.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxconvert.o cxconvert.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxcopy.o cxcopy.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxdatastructs.o cxdatastructs.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxdrawing.o cxdrawing.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxdxt.o cxdxt.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxerror.o cxerror.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxjacobieigens.o cxjacobieigens.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxlogic.o cxlogic.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxmathfuncs.o cxmathfuncs.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxmatmul.o cxmatmul.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxmatrix.o cxmatrix.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxmean.o cxmean.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxmeansdv.o cxmeansdv.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxminmaxloc.o cxminmaxloc.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxnorm.o cxnorm.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxouttext.o cxouttext.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxpersistence.o cxpersistence.cpp
+cxpersistence.cpp: In function ‘void icxWriteArray(CxFileStorage*, const char*, const void*, CxAttrList, int)’:
+cxpersistence.cpp:1854:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1860:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1877:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1881:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1886:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp: In function ‘void cxStartWriteStruct(CxFileStorage*, const char*, const char*, const void*, CxAttrList)’:
+cxpersistence.cpp:3467:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:3478:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp: In function ‘void cxWriteElem(CxFileStorage*, const char*, const char*, const void*)’:
+cxpersistence.cpp:3523:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:3532:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxprecomp.o cxprecomp.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxrand.o cxrand.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxsumpixels.o cxsumpixels.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxsvd.o cxsvd.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxswitcher.o cxswitcher.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxtables.o cxtables.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I. -I./../include    -g -O2 -c -o cxutils.o cxutils.cpp
+rm -f libcxcore.a
+ar cru libcxcore.a cxalloc.o cxarithm.o cxarray.o cxcmp.o cxconvert.o cxcopy.o cxdatastructs.o cxdrawing.o cxdxt.o cxerror.o cxjacobieigens.o cxlogic.o cxmathfuncs.o cxmatmul.o cxmatrix.o cxmean.o cxmeansdv.o cxminmaxloc.o cxnorm.o cxouttext.o cxpersistence.o cxprecomp.o cxrand.o cxsumpixels.o cxsvd.o cxswitcher.o cxtables.o cxutils.o 
+ranlib libcxcore.a
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
 Making all in include
-make[3]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore/include'
-make[3]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
 make[3]: Nothing to be done for `all-am'.
-make[3]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore'
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore/cxcore'
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
 make[2]: Nothing to be done for `all-am'.
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore'
-make[1]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/cxcore'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
 Making all in trs
-make[1]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs'
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
 Making all in src
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs/src'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs/src'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC -I. -I. -I./../include    -g -O2  -c trsapi.c
+trsapi.c: In function ‘_trsGuardcAlloc’:
+trsapi.c:236:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsapi.c:236:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+trsapi.c: In function ‘_trsGuardCheck’:
+trsapi.c:272:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsapi.c:272:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+trsapi.c: In function ‘trsInt’:
+trsapi.c:2242:3: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘int’ [-Wformat]
+trsapi.c: In function ‘More’:
+trsapi.c:2294:5: warning: ‘gets’ is deprecated (declared at /usr/include/x86_64-linux-gnu/bits/stdio2.h:233) [-Wdeprecated-declarations]
+trsapi.c: In function ‘_gets’:
+trsapi.c:2407:6: warning: ‘gets’ is deprecated (declared at /usr/include/x86_64-linux-gnu/bits/stdio2.h:233) [-Wdeprecated-declarations]
+trsapi.c: In function ‘More’:
+trsapi.c:2294:9: warning: ignoring return value of ‘gets’, declared with attribute warn_unused_result [-Wunused-result]
+In file included from /usr/include/stdio.h:937:0,
+                 from ./../include/trsapi.h:46,
+                 from trsapi.c:58:
+In function ‘gets’,
+    inlined from ‘_gets’ at trsapi.c:2407:9:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:237:3: warning: call to ‘__gets_warn’ declared with attribute warning: please use fgets or getline instead, gets can't specify buffer size [enabled by default]
+In file included from /usr/include/string.h:640:0,
+                 from trsapi.c:48:
+In function ‘strncat’,
+    inlined from ‘ParseFileAppKey’ at trsapi.c:2742:13:
+/usr/include/x86_64-linux-gnu/bits/string3.h:150:3: warning: call to __builtin___strncat_chk might overflow destination buffer [enabled by default]
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC -I. -I. -I./../include    -g -O2  -c trserror.c
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC -I. -I. -I./../include    -g -O2  -c trsread.c
+trsread.c: In function ‘FillDst’:
+trsread.c:369:48: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsread.c: In function ‘_trstRead’:
+trsread.c:872:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+rm -f libtrs.a
+ar cru libtrs.a trsapi.o trserror.o trsread.o 
+ranlib libtrs.a
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
 Making all in include
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs/include'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
 make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs/include'
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
 make[2]: Nothing to be done for `all-am'.
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs'
-make[1]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/trs'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
 Making all in c_pgmtk
-make[1]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk'
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
 Making all in src
-make[2]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
 Making all in include
-make[3]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src/include'
-make[3]: Entering directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src'
-/bin/bash ../../libtool --mode=compile g++ -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++    -g -O2 -c -o cvcart.lo cvcart.cpp
- g++ -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" "-DPACKAGE_STRING=\"pnl 0.2.23\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++ -g -O2 -c cvcart.cpp  -fPIC -DPIC -o .libs/cvcart.o
-In file included from ../../cxcore/cxcore/include/cxtypes.h:45:0,
-                 from ../../cxcore/cxcore/include/cxcore.h:77,
-                 from ../../c_pgmtk/src/include/cart/datadefs.h:12,
-                 from ../../c_pgmtk/src/include/cart/inlines.h:6,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-../../c_pgmtk/src/include/cart/inlines.h: In function 'void icxAssertAligned(void*, int)':
-../../c_pgmtk/src/include/cart/inlines.h:183:19: error: cast from 'void*' to 'int' loses precision [-fpermissive]
-  assert ( ( ((int)ptr) & (align-1) ) == 0 );
-                   ^
-In file included from ../../c_pgmtk/src/include/cart/cvcart.h:4:0,
-                 from cvcart.cpp:178:
-../../c_pgmtk/src/include/cart/inlines.h: In function 'BOOL icxIsChunkLoaded(CxClassifierSampleChunk*)':
-../../c_pgmtk/src/include/cart/inlines.h:290:21: error: cast from 'CxClassifierSampleChunk*' to 'int' loses precision [-fpermissive]
- { return (int)(chunk) && (chunk)->is_loaded; }
-                     ^
-In file included from ../../c_pgmtk/src/include/cart/cvcart.h:4:0,
-                 from cvcart.cpp:178:
-../../c_pgmtk/src/include/cart/inlines.h: In function 'float Rand(float, float)':
-../../c_pgmtk/src/include/cart/inlines.h:1698:41: warning: integer overflow in expression [-Woverflow]
-  float f = 1.0f * rand() / (RAND_MAX  + 1) ;
-                                         ^
-cvcart.cpp: In function 'float cxScanNodeCategoricBestSplitClassification(CxRootedCARTBase*, int*, char*, int)':
-cvcart.cpp:6695:47: error: cast from 'float*' to 'BOOL {aka int}' loses precision [-fpermissive]
-  BOOL use_priors = (BOOL)(cart->params->priors);
-                                               ^
-cvcart.cpp: In function 'float cxFindNodeCategoricClusteringBestSplit(CxRootedCARTBase*, CxVarCategoryCluster*, int, int, int, CxCARTSplit*)':
-cvcart.cpp:7026:50: error: cast from 'float*' to 'BOOL {aka int}' loses precision [-fpermissive]
-     BOOL use_priors = (BOOL)(cart->params->priors);
-                                                  ^
-cvcart.cpp: In function 'void DumpClusters(FILE*, CxVarCategoryCluster*, int)':
-cvcart.cpp:7735:51: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
-      cluster1->num_cats, cluster1->sum_frequencies);
-                                                   ^
-cvcart.cpp: In function 'void cxDumpCART(FILE*, CxCART*, int)':
-cvcart.cpp:8306:56: warning: format '%g' expects argument of type 'double', but argument 7 has type 'int' [-Wformat=]
-      data->error_dev / last_error, data->terminal_nodes);
-                                                        ^
-cvcart.cpp:8306:56: warning: format '%d' expects a matching 'int' argument [-Wformat=]
-In file included from ../../c_pgmtk/src/include/cart/inlines.h:6:0,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-cvcart.cpp: In function 'BOOL cxReadSplit(FILE*, CxCARTBase*, CxCARTSplit*&, ESplitType&, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:52: warning: format '%d' expects argument of type 'int*', but argument 3 has type 'ESplitType*' [-Wformat=]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                    ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8561:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I    ( PARAM_SPLIT_TYPE,    type)
-  ^
-cvcart.cpp: In function 'BOOL icxReadCARTTrainParam(FILE*, CxCARTTrainParams*, int, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:52: warning: format '%d' expects argument of type 'int*', but argument 3 has type 'CxCARTSplitCriterion*' [-Wformat=]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                    ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8721:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_SPLIT_RULE,           params->splitting_rule)
-         ^
-cvcart.cpp: In function 'BOOL cxCreatePruningStorage(CxCART*)':
-cvcart.cpp:9530:38: error: cast from 'CxPruningData*' to 'BOOL {aka int}' loses precision [-fpermissive]
-     return (BOOL)(pruning_storage.buf);
-                                      ^
-In file included from ../../cxcore/cxcore/include/cxtypes.h:45:0,
-                 from ../../cxcore/cxcore/include/cxcore.h:77,
-                 from ../../c_pgmtk/src/include/cart/datadefs.h:12,
-                 from ../../c_pgmtk/src/include/cart/inlines.h:6,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-cvcart.cpp: In function 'void cxAssertNodeValid(CxCART*, CxCARTNode*)':
-cvcart.cpp:9603:23: error: cast from 'CxCARTNode*' to 'unsigned int' loses precision [-fpermissive]
-     assert( (unsigned)node - (unsigned)level.buf_nodes < unsigned( (1 << depth) * node_storage.node_size));
-                       ^
-cvcart.cpp:9603:46: error: cast from 'void*' to 'unsigned int' loses precision [-fpermissive]
-     assert( (unsigned)node - (unsigned)level.buf_nodes < unsigned( (1 << depth) * node_storage.node_size));
-                                              ^
-In file included from ../../c_pgmtk/src/include/cart/inlines.h:6:0,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-cvcart.cpp: In function 'BOOL cxReadNode(FILE*, CxCART*, CxCARTNode*&, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8419:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I( PARAM_NUM_FALLENS, num_fallens)
-  ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8420:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_DEPTH,   depth)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8421:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_ID,      id)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8452:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I    ( PARAM_NUM_FALLENS,          node->num_fallens)
-  ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8453:6: note: in expansion of macro 'ELIF_READ_PARAM_F'
-      ELIF_READ_PARAM_F( PARAM_NODE_ERROR,           node->error)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8454:6: note: in expansion of macro 'ELIF_READ_PARAM_F'
-      ELIF_READ_PARAM_F( PARAM_SUM_WEIGHTED_FALLENS, node->sum_weighted_fallens)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8455:6: note: in expansion of macro 'ELIF_READ_PARAM_F'
-      ELIF_READ_PARAM_F( PARAM_RESPONSE,             node->response.fl)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8456:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_NODE_PRUNING_STEP,    node->pruning_step)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8457:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_NODE_DIRECTION,       node->direction)
-      ^
-cvcart.cpp: In function 'BOOL cxReadSplit(FILE*, CxCARTBase*, CxCARTSplit*&, ESplitType&, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8561:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I    ( PARAM_SPLIT_TYPE,    type)
-  ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8562:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_SPLIT_FEATURE, split->feature_idx)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8563:6: note: in expansion of macro 'ELIF_READ_PARAM_F'
-      ELIF_READ_PARAM_F( PARAM_SPLIT_WEIGHT,  split->weight)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8564:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I( PARAM_SPLIT_REVERT,  split->revert)
-      ^
-cvcart.cpp:8572:39: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   fscanf(file, "%g", &split->value.fl);
-                                       ^
-cvcart.cpp: In function 'BOOL cxReadCARTTrainParams(FILE*, CxCARTTrainParams*&, int, char*)':
-cvcart.cpp:8752:52: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-      fscanf(file , "%d", &num_features_of_interest);
-                                                    ^
-In file included from ../../c_pgmtk/src/include/cart/inlines.h:6:0,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-cvcart.cpp: In function 'BOOL icxReadCARTTrainParam(FILE*, CxCARTTrainParams*, int, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:858:23: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   READ_AI(file, ar, n);     \
-                       ^
-../../c_pgmtk/src/include/cart/datadefs.h:876:38: note: in expansion of macro 'READ_PARAM_AI'
- #define FREAD_PARAM_AI(param, ar, n) READ_PARAM_AI(file, param, buf, ar, n)
-                                      ^
-cvcart.cpp:8717:5: note: in expansion of macro 'FREAD_PARAM_AI'
-     FREAD_PARAM_AI( PARAM_FEATURES_OF_INTEREST,
-     ^
-../../c_pgmtk/src/include/cart/datadefs.h:865:23: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   READ_AI(file, ar, n);     \
-                       ^
-../../c_pgmtk/src/include/cart/datadefs.h:898:47: note: in expansion of macro 'READ_PARAM_AF'
- #define ELIF_READ_PARAM_AF(param, ar, n) else READ_PARAM_AF(file, param, buf, ar, n)
-                                               ^
-cvcart.cpp:8720:9: note: in expansion of macro 'ELIF_READ_PARAM_AF'
-         ELIF_READ_PARAM_AF( PARAM_PRIORS,              params->priors_mat->data.fl, num_resp)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8721:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_SPLIT_RULE,           params->splitting_rule)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8722:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_NUM_COMPETITORS,      params->num_competitors)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8723:9: note: in expansion of macro 'ELIF_READ_PARAM_F'
-         ELIF_READ_PARAM_F (PARAM_COMPETITOR_THRESHOLD, params->competitor_threshold)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8724:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_NUM_SURROGATES,       params->num_surrogates)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8725:9: note: in expansion of macro 'ELIF_READ_PARAM_F'
-         ELIF_READ_PARAM_F (PARAM_SURROGATE_THRESHOLD,  params->surrogate_threshold)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8726:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_MAX_DEPTH,            params->tree_max_depth)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8727:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_SPLIT_MIN_POINTS,     params->split_min_points)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8728:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_SPLIT_MAX_POINTS,     params->split_max_points)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8729:9: note: in expansion of macro 'ELIF_READ_PARAM_I'
-         ELIF_READ_PARAM_I (PARAM_NUM_CLUSTERS,         params->max_clusters)
-         ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8730:9: note: in expansion of macro 'ELIF_READ_PARAM_F'
-         ELIF_READ_PARAM_F (PARAM_ALPHA_STOP,           params->alpha)
-         ^
-cvcart.cpp: In function 'BOOL cxReadFeatureTypes(FILE*, int*&, int&, int&, char*)':
-cvcart.cpp:8807:41: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-      fscanf(file , "%d",  &num_features);
-                                         ^
-In file included from ../../c_pgmtk/src/include/cart/inlines.h:6:0,
-                 from ../../c_pgmtk/src/include/cart/cvcart.h:4,
-                 from cvcart.cpp:178:
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8816:2: note: in expansion of macro 'ELIF_READ_PARAM_I'
-  ELIF_READ_PARAM_I ( PARAM_RESPONSE_TYPE, response_type)
-  ^
-../../c_pgmtk/src/include/cart/datadefs.h:858:23: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   READ_AI(file, ar, n);     \
-                       ^
-../../c_pgmtk/src/include/cart/datadefs.h:897:47: note: in expansion of macro 'READ_PARAM_AI'
- #define ELIF_READ_PARAM_AI(param, ar, n) else READ_PARAM_AI(file, param, buf, ar, n)
-                                               ^
-cvcart.cpp:8817:6: note: in expansion of macro 'ELIF_READ_PARAM_AI'
-      ELIF_READ_PARAM_AI( PARAM_FEATURE_TYPES, types, num_features)
-      ^
-cvcart.cpp: In function 'BOOL cxReadAllNodes(FILE*, CxCART*, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8834:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I(PARAM_NUM_NODES , cart->num_nodes)
-  ^
-cvcart.cpp: In function 'BOOL cxReadPruningData(FILE*, CxPruningData*&, char*)':
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:868:33: note: in expansion of macro 'READ_PARAM_I'
- #define FREAD_PARAM_I(param, i) READ_PARAM_I(file, param, buf, i)
-                                 ^
-cvcart.cpp:8957:2: note: in expansion of macro 'FREAD_PARAM_I'
-  FREAD_PARAM_I     ( PARAM_PRUNING_STEP,       data->step)
-  ^
-../../c_pgmtk/src/include/cart/datadefs.h:823:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%d", &i);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:892:42: note: in expansion of macro 'READ_PARAM_I'
- #define ELIF_READ_PARAM_I(param, i) else READ_PARAM_I(file, param, buf, i)
-                                          ^
-cvcart.cpp:8958:6: note: in expansion of macro 'ELIF_READ_PARAM_I'
-      ELIF_READ_PARAM_I ( PARAM_TERMINAL_NODES,     data->terminal_nodes)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:826:53: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-  if (strcmp(buf, param) == 0) fscanf(file, "%g", &f);
-                                                     ^
-../../c_pgmtk/src/include/cart/datadefs.h:893:42: note: in expansion of macro 'READ_PARAM_F'
- #define ELIF_READ_PARAM_F(param, f) else READ_PARAM_F(file, param, buf, f)
-                                          ^
-cvcart.cpp:8959:6: note: in expansion of macro 'ELIF_READ_PARAM_F'
-      ELIF_READ_PARAM_F ( PARAM_ALPHA,              data->alpha)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:832:25: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   fscanf(file, "%g", &f);     \
-                         ^
-../../c_pgmtk/src/include/cart/datadefs.h:894:42: note: in expansion of macro 'READ_PARAM_D'
- #define ELIF_READ_PARAM_D(param, f) else READ_PARAM_D(file, param, buf, f)
-                                          ^
-cvcart.cpp:8960:6: note: in expansion of macro 'ELIF_READ_PARAM_D'
-      ELIF_READ_PARAM_D ( PARAM_REESTIMATION_ERROR, data->reestimation_error)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:832:25: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   fscanf(file, "%g", &f);     \
-                         ^
-../../c_pgmtk/src/include/cart/datadefs.h:894:42: note: in expansion of macro 'READ_PARAM_D'
- #define ELIF_READ_PARAM_D(param, f) else READ_PARAM_D(file, param, buf, f)
-                                          ^
-cvcart.cpp:8961:6: note: in expansion of macro 'ELIF_READ_PARAM_D'
-      ELIF_READ_PARAM_D ( PARAM_TEST_SAMPLE_ERROR,  data->test_sample_error)
-      ^
-../../c_pgmtk/src/include/cart/datadefs.h:832:25: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
-   fscanf(file, "%g", &f);     \
-                         ^
-../../c_pgmtk/src/include/cart/datadefs.h:894:42: note: in expansion of macro 'READ_PARAM_D'
- #define ELIF_READ_PARAM_D(param, f) else READ_PARAM_D(file, param, buf, f)
-                                          ^
-cvcart.cpp:8962:6: note: in expansion of macro 'ELIF_READ_PARAM_D'
-      ELIF_READ_PARAM_D ( PARAM_ERROR_DEVIATION,    data->error_dev)
-      ^
-make[3]: *** [cvcart.lo] Error 1
-make[3]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src'
-make[2]: *** [all-recursive] Error 1
-make[2]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk/src'
-make[1]: *** [all-recursive] Error 1
-make[1]: Leaving directory `/home/faizal/myApps/pnl-probabilistic-networks-library-fixed/c_pgmtk'
-make: *** [all-recursive] Error 1
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+Making all in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+Making all in examples
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+Making all in Data
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+Making all in ex_inf_learn_dbn
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o inf_learn_dbn.o inf_learn_dbn.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o inf_learn_dbn  inf_learn_dbn.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/inf_learn_dbn inf_learn_dbn.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating inf_learn_dbn
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+Making all in ex_param
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+Making all in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o pEvidence.o pEvidence.cpp
+pEvidence.cpp: In function ‘int main()’:
+pEvidence.cpp:164:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+pEvidence.cpp:166:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+pEvidence.cpp:168:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+pEvidence.cpp:207:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+pEvidence.cpp:209:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+pEvidence.cpp:211:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o ex_param  pEvidence.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/ex_param pEvidence.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating ex_param
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+Making all in gibbs
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+Making all in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o gibbs.o gibbs.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o gibbs  gibbs.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/gibbs gibbs.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating gibbs
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+Making all in inf_learn_bnet
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+Making all in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o inf_learn_bnet.o inf_learn_bnet.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o inf_learn_bnet  inf_learn_bnet.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/inf_learn_bnet inf_learn_bnet.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating inf_learn_bnet
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+Making all in learn_param
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o learn_param.o learn_param.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o learn_param  learn_param.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/learn_param learn_param.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating learn_param
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+Making all in linux_test
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../cxcore/cxcore/include -I../../../c_pgmtk/include -I../../../c_pgmtk/src/include/cart -I../../../c_pgmtk/src/include -x c++    -g -O2 -c -o test_run.o test_run.cpp
+/bin/bash ../../../libtool --mode=link g++-4.6  -g -O2   -o test_run  test_run.o ../../../c_pgmtk/src/libpnl.la ../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/test_run test_run.o  ../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating test_run
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+Making all in mixture_gaussian_bnet
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+Making all in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o mixture_gaussian_bnet.o mixture_gaussian_bnet.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o mixture_gaussian_bnet  mixture_gaussian_bnet.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/mixture_gaussian_bnet mixture_gaussian_bnet.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating mixture_gaussian_bnet
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+Making all in parPNLTest
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o parPNLTest.o parPNLTest.cpp
+parPNLTest.cpp: In function ‘int RunTest(int, char**)’:
+parPNLTest.cpp:355:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+parPNLTest.cpp:369:34: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+parPNLTest.cpp:375:25: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o LoadBNet.o LoadBNet.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o CreateBNets.o CreateBNets.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o parPNLTest  parPNLTest.o LoadBNet.o CreateBNets.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/parPNLTest parPNLTest.o LoadBNet.o CreateBNets.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating parPNLTest
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+Making all in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+Making all in testLIMID
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o TestLIMID.o TestLIMID.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o LoadIDNet.o LoadIDNet.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o SamplesOfIDNet.o SamplesOfIDNet.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o TestLIMID  TestLIMID.o LoadIDNet.o SamplesOfIDNet.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/TestLIMID TestLIMID.o LoadIDNet.o SamplesOfIDNet.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating TestLIMID
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+Making all in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+Making all in testSL
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../../cxcore/cxcore/include -I../../../c_pgmtk/include -I../../../c_pgmtk/src/include/cart -I../../../c_pgmtk/src/include -x c++    -g -O2 -c -o testSL.o testSL.cpp
+testSL.cpp: In function ‘int main()’:
+testSL.cpp:342:36: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+/bin/bash ../../../libtool --mode=link g++-4.6  -g -O2   -o testSL  testSL.o ../../../c_pgmtk/src/libpnl.la ../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/testSL testSL.o  ../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating testSL
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../../cxcore/cxcore/include -I../../../c_pgmtk/include -I../../../c_pgmtk/src/include/cart -I../../../c_pgmtk/src/include -x c++    -g -O2 -c -o testSL_DBN.o testSL_DBN.cpp
+testSL_DBN.cpp: In function ‘int main()’:
+testSL_DBN.cpp:64:40: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+/bin/bash ../../../libtool --mode=link g++-4.6  -g -O2   -o testSL_DBN  testSL_DBN.o ../../../c_pgmtk/src/libpnl.la ../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/testSL_DBN testSL_DBN.o  ../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating testSL_DBN
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../../cxcore/cxcore/include -I../../../c_pgmtk/include -I../../../c_pgmtk/src/include/cart -I../../../c_pgmtk/src/include -x c++    -g -O2 -c -o testSEM.o testSEM.cpp
+/bin/bash ../../../libtool --mode=link g++-4.6  -g -O2   -o testSEM  testSEM.o ../../../c_pgmtk/src/libpnl.la ../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/testSEM testSEM.o  ../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating testSEM
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+Making all in testSoftMax
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o TestSoftMax.o TestSoftMax.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -I./../include -x c++    -g -O2 -c -o SamplesOfSMNet.o SamplesOfSMNet.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o TestSoftMax  TestSoftMax.o SamplesOfSMNet.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/TestSoftMax TestSoftMax.o SamplesOfSMNet.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating TestSoftMax
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+Making all in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+Making all in trial
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+Making all in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o classes_view.o classes_view.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o trial  classes_view.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/trial classes_view.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating trial
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+Making all in use_matrix
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+Making all in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../../../cxcore/cxcore/include -I../../../../c_pgmtk/include -I../../../../c_pgmtk/src/include/cart -I../../../../c_pgmtk/src/include -x c++    -g -O2 -c -o umatrix2.o umatrix2.cpp
+/bin/bash ../../../../libtool --mode=link g++-4.6  -g -O2   -o use_matrix  umatrix2.o ../../../../c_pgmtk/src/libpnl.la ../../../../cxcore/cxcore/src/libcxcore.a 
+g++-4.6 -g -O2 -o .libs/use_matrix umatrix2.o  ../../../../c_pgmtk/src/.libs/libpnl.so -ldl ../../../../cxcore/cxcore/src/libcxcore.a -Wl,--rpath -Wl,/usr/local/lib
+creating use_matrix
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+Making all in tests
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+Making all in src
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+Making all in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+Making all in testdata
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+Making all in doc
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/doc'
+Making all in high
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high'
+Making all in doc
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+Making all in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+Making all in source
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+Making all in examples
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -I./../include -I. -x c++    -g -O2 -c -o rps.o rps.cpp
+In file included from ./../include/BNet.hpp:11:0,
+                 from ./../include/pnlHigh.hpp:3,
+                 from rps.cpp:2:
+./../include/ModelEngine.hpp:24:5: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -I./../include -I. -x c++    -g -O2 -c -o console.o console.cpp
+In file included from ./../include/BNet.hpp:11:0,
+                 from ./../include/pnlHigh.hpp:3,
+                 from console.cpp:1:
+./../include/ModelEngine.hpp:24:5: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from console.cpp:2:0:
+./../include/WInner.hpp:45:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+./../include/WInner.hpp:54:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -I./../include -I. -x c++    -g -O2 -c -o example_common_funs.o example_common_funs.cpp
+g++-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -fPIC  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -I./../include -I. -x c++    -g -O2 -c -o script_lex.o script_lex.cpp
+In file included from ./../include/BNet.hpp:11:0,
+                 from ./../include/pnlHigh.hpp:3,
+                 from script_lex.cpp:3:
+./../include/ModelEngine.hpp:24:5: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from script_lex.cpp:4:0:
+./../include/WInner.hpp:45:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+./../include/WInner.hpp:54:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+/bin/bash ../../libtool --mode=link g++-4.6  -g -O2   -o example  rps.o console.o example_common_funs.o script_lex.o ../../c_pgmtk/src/libpnl.la ../../cxcore/cxcore/src/libcxcore.a ../../high/source/libhigh.la 
+g++-4.6 -g -O2 -o .libs/example rps.o console.o example_common_funs.o script_lex.o  ../../c_pgmtk/src/.libs/libpnl.so ../../cxcore/cxcore/src/libcxcore.a ../../high/source/.libs/libhigh.so -ldl -Wl,--rpath -Wl,/usr/local/lib
+creating example
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+Making all in tests
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src'

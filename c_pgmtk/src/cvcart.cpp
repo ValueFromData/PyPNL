@@ -1760,7 +1760,7 @@ CART_IMPL void cxCreatePriorsCostMult(CxCARTBase* cart, int* root_stats, int roo
     }
 }
 
-CART_API void cxInitSubjBody(CxCARTSubj* subj,
+CART_IMPL void cxInitSubjBody(CxCARTSubj* subj,
 			     CxClassifierSample* sample, BOOL copy_features,
 			     int max_num_samples, int gulp_chunk)
 {
@@ -6692,7 +6692,11 @@ CART_IMPL float cxScanNodeCategoricBestSplitClassification( CxRootedCARTBase* ca
     {
 	int path_len = 0;
 	int* path = NULL;
+#ifdef BIT_64
 	BOOL use_priors = (BOOL)(cart->params->priors);
+#else
+	BOOL use_priors = (BOOL)(cart->params->priors);
+#endif
 
 	/* Get the path to traverse all binary sequences with last 0, this is
 	a sequence of numbers, each number means which cluster to move to
@@ -8302,7 +8306,7 @@ CART_IMPL void cxDumpCART( FILE* file, CxCART* cart,int pruning_step )
     {
 	fprintf(file , "Step : %d\nalpha : %g\nreestimation error : %g\n"\
 	    "test error : %g\nerror deviation : %g\nnumber of terminal nodes : %d\n",
-	    data->step , data->alpha / last_error, data->reestimation_error / last_error,
+	    data->step , data->alpha / last_error, data->reestimation_error / last_error,data->test_sample_error /last_error ,
 	    data->error_dev / last_error, data->terminal_nodes);
 
 	if (data->test_sample_error < best_error)
@@ -9599,8 +9603,12 @@ CART_IMPL void cxAssertNodeValid(CxCART* cart , CxCARTNode* node )
 	assert( node->offset == offset);
     }
     CxCARTLevel& level = node_storage.levels[depth];
-
+#ifdef BIT_64
+    assert( (long)node - (long)level.buf_nodes < long( (1 << depth) * node_storage.node_size));
+#else
     assert( (unsigned)node - (unsigned)level.buf_nodes < unsigned( (1 << depth) * node_storage.node_size));
+#endif
+
     assert( node->shrunk_fallen_idx == 0 || node->shrunk_fallen_idx == level.buf_shrunk_idx + node->offset );
     int num_resp = icxGetVarNumStates(cart->response_type);
     int total = 0;
