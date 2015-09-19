@@ -120,7 +120,7 @@ cdef extern from "<iostream>" namespace "std":
     pass
 
 cdef extern from "<string>":
-    pass
+    string String(TokArr)
 
 cdef extern from "<time.h>":
     pass
@@ -145,6 +145,9 @@ cdef extern from "<time.h>":
 ##    def naiveInferance(self,tolerance=None,MaxNumberOfIterations=None):
 ##        raise NotImplemented
 
+class Node:
+    pass
+
 cdef class PyBayesNet:
     cdef BayesNet net 
     nodes = {}
@@ -158,8 +161,7 @@ cdef class PyBayesNet:
         self.__netAttribute["evidence"]= {}
         self.__netAttribute["target"]= None
         self.__netAttribute["features"] = None
-#        self.net = BayesNet()
-#        self.setProperty = setProperty(self)
+#        self.setProperty = setProperty(self.net)
 
     def create_network(self,dict network_struct,str casefile=""):
         nodes=[]
@@ -252,11 +254,28 @@ cdef class PyBayesNet:
             resp = {node:self.getProblity(node) for node in self.nodes}
         return resp
 
-    def getJPD(self,*nodes):
-        raise NotImplemented
+    def getJPD(self,node,*parents):
+        cdef TokArr resp
+        cdef int i=0
+        states = [[(node,state)] for state in self.nodes[node]["states"]]
+        for pnode in parents:
+            states = [[(pnode,pstate)]+state for pstate in self.nodes[pnode]["states"] for state in states]
+        resp = self.net.GetJPD(PyString_AsString(" ".join([node]+parents)))
+        res={}
+        for state in states:
+            res[tuple(state)]=resp[i].FltValue()
+            i+=1
+        return res
 
-    def getMPE(self,*nodes):
-        raise NotImplemented
+    def getMPE(self,node,*pnodes):
+        cdef TokArr resp
+        resp = self.net.GetMPE(PyString_AsString(" ".join([node]+pnodes)))
+        res = String(resp)
+        result = {}
+        for node_state in res.split(" "):
+            nodeState=node_state.split("^")
+            result[nodeState[0]]=nodeState[1]
+        return result
 
     def learnStructure(self,casefile,str target,tuple features=None):
         self.__netAttribute["target"]=target
@@ -264,7 +283,7 @@ cdef class PyBayesNet:
         raise NotImplemented
         
     def setTargetNode(self,target):
-        raise NotImplemented
+        self.__netAttribute["target"]=target
 
     def evaluate(self,casefile):
         raise NotImplemented
@@ -313,6 +332,16 @@ cdef class PyBayesNet:
             
 
     def getNode(self,nodeName):
+        nodeObj=Node()
+        nodeObj.getProblity=lambda observation=None:self.getProblity(nodeName,observation)
+        nodeObj.getNodeName=lambda:nodeName
+        nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
+        nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
+        nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
+        nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
+        nodeObj.getJPD=lambda:{key[0][1]:prob for key,prob in self.getJPD(nodeName).items()}
+        
+        
         raise NotImplemented
 
     def getCurEvidence(self):
@@ -349,7 +378,7 @@ cdef class PyBayesNet:
 
         res = {state:{} for state in self.nodes[node]["states"]}
         for state in states:
-            res[state[-2][1]][state[:-2]]=state[-1]
+            res[state[-2][1]][tuple(state[:-2])]=state[-1]
         return res
     
     def __dealloc__(self):
