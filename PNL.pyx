@@ -3,6 +3,7 @@ from libcpp cimport bool
 from operator import mul
 from libcpp.string cimport string
 from cpython.string cimport PyString_AsString
+import copy
 ##import cython
 ##cdef char ** to_cstring_array(list_str):
 ##    cdef char **ret = <char **>malloc(len(list_str) * sizeof(char *))
@@ -93,9 +94,12 @@ cdef extern from "pnlHigh.hpp":
         TokArr GetGaussianWeights(char* node, char* parent, char* tabParentValue)
         TokArr GetGaussianWeights(char* node, char* parent)
         void SaveNet(const char *filename)
-#        int SaveEvidBuf(const char *filename, NetConst::ESavingType mode = NetConst::eCSV)
+#        int SaveEvidBuf(const char *filename, NetConst::ESavingType mode )
+        int SaveEvidBuf(const char *filename)
         void LoadNet(const char *filename)
-#        int LoadEvidBuf(const char *filename, NetConst::ESavingType mode = NetConst::eCSV, TokArr columns = TokArr())
+#        int LoadEvidBuf(const char *filename, NetConst::ESavingType mode , char* columns)
+#        int LoadEvidBuf(const char *filename, NetConst::ESavingType mode )
+        int LoadEvidBuf(const char *filename)
         void GenerateEvidences( int nSample, bool ignoreCurrEvid, char* whatNodes )
         void GenerateEvidences( int nSample, bool ignoreCurrEvid)
         void GenerateEvidences( int nSample)
@@ -146,14 +150,18 @@ cdef class PyBayesNet:
     nodes = {}
     cdef char* nodeType
     evidence = {}
+    target = None
+    features = None
+    __netAttribute={}
     def __init__(self,nodeType="discrete"):
         self.nodeType = PyString_AsString(nodeType)
+        self.__netAttribute["evidence"]= {}
+        self.__netAttribute["target"]= None
+        self.__netAttribute["features"] = None
 #        self.net = BayesNet()
 #        self.setProperty = setProperty(self)
 
-    def create_network(self,network_struct,casefile=None):
-        if casefile:
-            raise NotImplemented
+    def create_network(self,dict network_struct,str casefile=""):
         nodes=[]
         nodesWithParent=[]
         for node in network_struct:
@@ -161,7 +169,7 @@ cdef class PyBayesNet:
             if dType==dict or  dType==set:
                 nodes.append(node)
                 network_struct[node]=(None,network_struct[node])
-            elif len(network_struct[node])==2 and type(network_struct[node])==set  and hasattr(network_struct[node][1], '__call__'):
+            elif len(network_struct[node])==2 and type(network_struct[node][0])==set  and hasattr(network_struct[node][1], '__call__'):
                 nodes.append(node)
                 network_struct[node]=(None,{state:network_struct[node][1](state) for state in network_struct[node][0]})
             else:
@@ -194,26 +202,32 @@ cdef class PyBayesNet:
                 for state in network_struct[node][1]:
                     self.setProbability(node,state,network_struct[node][1][state])
                         
-                
+        if casefile.strip():
+            self.net.LoadEvidBuf(PyString_AsString(casefile.strip()))
+            self.net.LearnParameters()
             
          
 
     def setEvidence(self,observation):
-        raise NotImplemented
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        self.__netAttribute["evidence"]=copy.deepcopy(observation)
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
 
     def getProblity(self,nodeName,observation=None):
         cdef TokArr resp
         cdef int i=0
         if type(observation)==dict:
-            if self.evidence:
+            if self.__netAttribute["evidence"]:
                 self.net.ClearEvid()
             if observation:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
             resp = self.net.GetJPD(PyString_AsString(nodeName))
             if observation:
                 self.net.ClearEvid()
-            if self.evidence:
-                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.evidence])))
+            if self.__netAttribute["evidence"]:
+                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
         else:
             resp = self.net.GetJPD(PyString_AsString(nodeName))
         res = {}
@@ -225,15 +239,15 @@ cdef class PyBayesNet:
     def getAllProblity(self,observation=None):
         resp=None
         if type(observation)==dict:
-            if self.evidence:
+            if self.__netAttribute["evidence"]:
                 self.net.ClearEvid()
             if observation:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
             resp = {node:self.getProblity(node) for node in self.nodes}
             if observation:
                 self.net.ClearEvid()
-            if self.evidence:
-                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.evidence])))
+            if self.__netAttribute["evidence"]:
+                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
         else:
             resp = {node:self.getProblity(node) for node in self.nodes}
         return resp
@@ -244,7 +258,9 @@ cdef class PyBayesNet:
     def getMPE(self,*nodes):
         raise NotImplemented
 
-    def learnStructure(self,casefile,target, features=None):
+    def learnStructure(self,casefile,str target,tuple features=None):
+        self.__netAttribute["target"]=target
+        self.__netAttribute["features"]=features
         raise NotImplemented
         
     def setTargetNode(self,target):
@@ -300,13 +316,16 @@ cdef class PyBayesNet:
         raise NotImplemented
 
     def getCurEvidence(self):
-        raise NotImplemented
+        return self.__netAttribute["evidence"]
 
     def clearEvidence(self):
-        raise NotImplemented
+        self.__netAttribute["evidence"] = {}
+        self.net.ClearEvid()
 
     def editEvidence(self,observation):
-        raise NotImplemented
+        self.__netAttribute["evidence"].update(copy.deepcopy(observation))
+        self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
+        
 
     def getTabularProb(self,node):
         cdef TokArr resp
