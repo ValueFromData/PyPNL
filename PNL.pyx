@@ -340,9 +340,7 @@ cdef class PyBayesNet:
         nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
         nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
         nodeObj.getJPD=lambda:{key[0][1]:prob for key,prob in self.getJPD(nodeName).items()}
-        
-        
-        raise NotImplemented
+        return nodeObj
 
     def getCurEvidence(self):
         return self.__netAttribute["evidence"]
