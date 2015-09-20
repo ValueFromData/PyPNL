@@ -140,26 +140,109 @@ cdef class PyBayesNet:
         self.__netAttribute["evidence"]= {}
         self.__netAttribute["target"]= None
         self.__netAttribute["features"] = None
-        self.setProperty.learn = lambda algorithm=None,tolerance=None,maxNumberOfIterations=None:self.learn(algorithm,tolerance,maxNumberOfIterations)
+        self.__netAttribute["allowedstructureLearnmMthods"]=["MaxLh","PreAs", "MarLh"]
+        self.__netAttribute["allowedstructureLearnmScoreFuns"]=["BIC","AIC","WithoutPenalty"]
+        self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
+        self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+        self.setProperty.bayesLearn = lambda:self.bayesLearn()
         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
-        self.setProperty.pearlInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.pearlInferance(tolerance,MaxNumberOfIterations)
-        self.setProperty.jtreeInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.jtreeInferance(tolerance,MaxNumberOfIterations)
-        self.setProperty.naiveInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.naiveInferance(tolerance,MaxNumberOfIterations)
+        self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+        self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+        self.setProperty.naiveInferance = lambda :self.naiveInferance()
+        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+        self.setProperty.structureLearnMethod = lambda algo:self.structureLearnMethod(algo)
+        self.setProperty.structureLearnScoreFun = lambda algo:self.structureLearnScoreFun(algo)
+        self.setProperty.structureLearnPrior = lambda algo,prior:self.structureLearnPrior(algo,prior)
 
-    cdef learn(self,algorithm,tolerance,maxNumberOfIterations):
-        raise NotImplemented
+        
+    
+    cdef emLearn(self,tolerance,maxNumberOfIterations):
+        if not tolerance==None:
+            if not type(tolerance)==float:
+                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+            self.net.SetProperty(PyString_AsString("EMTolerance"),PyString_AsString(str(tolerance)))
+        if not maxNumberOfIterations==None:
+            if not type(maxNumberOfIterations)==int:
+                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+            if maxNumberOfIterations<=0:
+                raise ValueError("Needs positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
+    
+    cdef bayesLearn(self):
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
 
     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
-        raise NotImplemented
+        if not numStreams==None:
+            if not type(numStreams)==int:
+                raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+            if numStreams<=0:
+                raise ValueError("Number of streams needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+        if not thresholdIteration==None:
+            if not type(thresholdIteration)==int:
+                raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+            if thresholdIteration<=0:
+                raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+        if not numberOfIterations==None:
+            if not type(numberOfIterations)==int:
+                raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+            if numberOfIterations<=0:
+                raise ValueError("Number of iterations needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))
 
-    cdef pearlInferance(self,tolerance,MaxNumberOfIterations):
-        raise NotImplemented
 
-    cdef jtreeInferance(self,tolerance,MaxNumberOfIterations):
-        raise NotImplemented
+    cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+        if not tolerance==None:
+            if not type(tolerance)==float:
+                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+            self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+        if not maxNumberOfIterations==None:
+            if not type(maxNumberOfIterations)==int:
+                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+            if maxNumberOfIterations<=0:
+                raise ValueError("Needs positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
 
-    cdef naiveInferance(self,tolerance,MaxNumberOfIterations):
-        raise NotImplemented
+    cdef jtreeInferance(self):
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+
+    cdef naiveInferance(self):
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("naive"))
+
+    cdef structureLearn(self,method,scoreFun,prior,initialPrior):
+        if method:
+            self.structureLearnMethod(method)
+        if scoreFun:
+            self.structureLearnScoreFun(scoreFun)
+        if prior:
+            if initialPrior:
+                self.structureLearnPrior(prior,initialPrior)
+            else:
+                self.structureLearnPrior(prior)
+           
+    cdef structureLearnMethod(self,str algo):
+        if not algo in self.__netAttribute["allowedstructureLearnmMthods"]:
+            raise ValueError("Allowed algorithms for method are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmMthods"]))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+    
+    cdef structureLearnScoreFun(self,str algo):
+        if not algo in self.__netAttribute["allowedstructureLearnmScoreFuns"]:
+            raise ValueError("Allowed score function algorithms are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmScoreFuns"]))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+    
+    cdef structureLearnPrior(self,str algo,int val=0):
+        if not algo in self.__netAttribute["allowedstructureLearnmPrior"]:
+            raise ValueError("Allowed algorithms for Prior calculation are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmPrior"]))
+        if algo=="K2" and val<0:
+            raise ValueError("initial prior value should be a positive intiger and zero allowed")
+        self.net.SetProperty(PyString_AsString("LearningStructureK2PriorVal"),PyString_AsString(str(val)))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+
+        
 
     def create_network(self,dict network_struct,str casefile=""):
         nodes=[]
