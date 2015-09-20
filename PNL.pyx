@@ -125,25 +125,6 @@ cdef extern from "<string>":
 cdef extern from "<time.h>":
     pass
 
-##class setProperty:
-##
-##    def __init__(self,net):
-##        self.net=net.net
-##    
-##    def learn(self,algorithm=None,tolerance=None,maxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def gibsInferance(self,numStreams=None,thresholdIteration=None,numberOfIterations=None):
-##        raise NotImplemented
-##
-##    def pearlInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def jtreeInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def naiveInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
 
 class Node:
     pass
@@ -152,16 +133,33 @@ cdef class PyBayesNet:
     cdef BayesNet net 
     nodes = {}
     cdef char* nodeType
-    evidence = {}
-    target = None
-    features = None
+    setProperty = Node()
     __netAttribute={}
     def __init__(self,nodeType="discrete"):
         self.nodeType = PyString_AsString(nodeType)
         self.__netAttribute["evidence"]= {}
         self.__netAttribute["target"]= None
         self.__netAttribute["features"] = None
-#        self.setProperty = setProperty(self.net)
+        self.setProperty.learn = lambda algorithm=None,tolerance=None,maxNumberOfIterations=None:self.learn(algorithm,tolerance,maxNumberOfIterations)
+        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+        self.setProperty.pearlInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.pearlInferance(tolerance,MaxNumberOfIterations)
+        self.setProperty.jtreeInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.jtreeInferance(tolerance,MaxNumberOfIterations)
+        self.setProperty.naiveInferance = lambda tolerance=None,MaxNumberOfIterations=None:self.naiveInferance(tolerance,MaxNumberOfIterations)
+
+    cdef learn(self,algorithm,tolerance,maxNumberOfIterations):
+        raise NotImplemented
+
+    cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+        raise NotImplemented
+
+    cdef pearlInferance(self,tolerance,MaxNumberOfIterations):
+        raise NotImplemented
+
+    cdef jtreeInferance(self,tolerance,MaxNumberOfIterations):
+        raise NotImplemented
+
+    cdef naiveInferance(self,tolerance,MaxNumberOfIterations):
+        raise NotImplemented
 
     def create_network(self,dict network_struct,str casefile=""):
         nodes=[]
@@ -217,7 +215,7 @@ cdef class PyBayesNet:
         if self.__netAttribute["evidence"]:
             self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
 
-    def getProblity(self,nodeName,observation=None):
+    def getProbability(self,nodeName,observation=None):
         cdef TokArr resp
         cdef int i=0
         if type(observation)==dict:
@@ -238,20 +236,20 @@ cdef class PyBayesNet:
             i+=1
         return res
         
-    def getAllProblity(self,observation=None):
+    def getAllProbability(self,observation=None):
         resp=None
         if type(observation)==dict:
             if self.__netAttribute["evidence"]:
                 self.net.ClearEvid()
             if observation:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
-            resp = {node:self.getProblity(node) for node in self.nodes}
+            resp = {node:self.getProbability(node) for node in self.nodes}
             if observation:
                 self.net.ClearEvid()
             if self.__netAttribute["evidence"]:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
         else:
-            resp = {node:self.getProblity(node) for node in self.nodes}
+            resp = {node:self.getProbability(node) for node in self.nodes}
         return resp
 
     def getJPD(self,node,*parents):
@@ -260,7 +258,7 @@ cdef class PyBayesNet:
         states = [[(node,state)] for state in self.nodes[node]["states"]]
         for pnode in parents:
             states = [[(pnode,pstate)]+state for pstate in self.nodes[pnode]["states"] for state in states]
-        resp = self.net.GetJPD(PyString_AsString(" ".join([node]+parents)))
+        resp = self.net.GetJPD(PyString_AsString(" ".join((node,)+parents)))
         res={}
         for state in states:
             res[tuple(state)]=resp[i].FltValue()
@@ -269,7 +267,7 @@ cdef class PyBayesNet:
 
     def getMPE(self,node,*pnodes):
         cdef TokArr resp
-        resp = self.net.GetMPE(PyString_AsString(" ".join([node]+pnodes)))
+        resp = self.net.GetMPE(PyString_AsString(" ".join((node,)+pnodes)))
         res = String(resp)
         result = {}
         for node_state in res.split(" "):
@@ -283,43 +281,78 @@ cdef class PyBayesNet:
         raise NotImplemented
         
     def setTargetNode(self,target):
+        if hasattr(target, 'getNodeName'):
+            target=target.getNodeName()
         self.__netAttribute["target"]=target
 
-    def evaluate(self,casefile):
+    def evaluate(self,str casefile):
         raise NotImplemented
 
-    def classify(self,casefile):
+    def classify(self,str casefile):
         raise NotImplemented
 
     def createNode(self,nodeName,stateNames):
         self.nodes[nodeName]={"states":stateNames,"parents":[]}
         self.net.AddNode(PyString_AsString(nodeName), PyString_AsString(" ".join(stateNames)))
+        return self.getNode(nodeName)
 
     def createEdge(self,parentNodes,childNodes):
-        pNodes=cNodes=""
-        parentNodeList=None        
-        if type(parentNodes)==list or  type(parentNodes)==tuple:
-            pNodes=" ".join(parentNodes)
-            parentNodeList=list(parentNodes)
-        elif type(parentNodes)== str:
-            pNodes=parentNodes
-            parentNodeList=[parentNodes]
+        pNdtype=type(parentNodes)
+        if pNdtype==list or pNdtype==tuple or pNdtype==set:
+            parentNodes=list(parentNodes)
+        elif pNdtype==str or  hasattr(parentNodes, 'getNodeName'):
+            parentNodes=[parentNodes]
         else:
-            raise
-        if type(childNodes)==list or  type(childNodes)==tuple:
-            cNodes=" ".join(childNodes)
-            for nodeName in childNodes:
-                for pn in parentNodeList:
-                    self.nodes[nodeName]["parents"].append(pn)
-        elif type(childNodes)== str:
-            cNodes=childNodes
+            raise TypeError("Invalid type for parent nodes")
+        
+        for i in range(len(parentNodes)):
+            if not type(parentNodes[i])== str:
+                if hasattr(parentNodes[i], 'getNodeName'):
+                    parentNodes[i] = str(parentNodes[i].getNodeName())
+                else:
+                    raise TypeError("Invalid type for '%s'" % str(parentNodes[i]))
+            if not parentNodes[i] in  self.nodes:
+                raise NameError("node '%s' not found" % parentNodes[i])
+            
+        cNdtype=type(childNodes)
+        if cNdtype==list or cNdtype==tuple or cNdtype==set:
+            childNodes=list(childNodes)
+        elif cNdtype==str or  hasattr(childNodes, 'getNodeName'):
+            childNodes=[childNodes]
+        else:
+            raise TypeError("Invalid type for child nodes")
+            
+        for i in range(len(childNodes)):
+            if not type(childNodes[i])== str:
+                if hasattr(childNodes[i], 'getNodeName'):
+                    childNodes[i] = str(childNodes[i].getNodeName())
+                else:
+                    raise TypeError("Invalid type for '%s'" % str(childNodes[i]))
+            if not childNodes[i] in  self.nodes:
+                raise NameError("node '%s' not found" % childNodes[i])
+        if not len(parentNodes):
+            raise ValueError("No parent node mentioned")
+        if not len(childNodes):
+            raise ValueError("No child node mentioned")
+            
+        pNodes=" ".join(parentNodes)
+        cNodes=" ".join(childNodes)
+        parentNodeList=parentNodes       
+        for nodeName in childNodes:
             for pn in parentNodeList:
-                self.nodes[childNodes]["parents"].append(pn)
-        else:
-            raise
+                self.nodes[nodeName]["parents"].append(pn) 
         self.net.AddArc(PyString_AsString(pNodes), PyString_AsString(cNodes))
 
-    def setProbability(self,node,states,probability):
+        
+
+    def setProbability(self,node,states,float probability):
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
+        stype=type(states)
+        if stype==list or stype==tuple or stype==set:
+            states=list(states)
+        elif stype==str:
+            states=[states]
         nodeAndState=""
         pNodeAndStates=""
         if self.nodes[node]["parents"]:
@@ -327,13 +360,17 @@ cdef class PyBayesNet:
             pNodeAndStates=" ".join([self.nodes[node]["parents"][i]+"^"+states[i+1] for i in range(len(self.nodes[node]["parents"]))])
             self.net.SetPTabular(PyString_AsString(nodeAndState),PyString_AsString(str(probability)),PyString_AsString(pNodeAndStates))
         else:
-            nodeAndState=node+"^"+states
+            nodeAndState=node+"^"+states[0]
             self.net.SetPTabular(PyString_AsString(nodeAndState),PyString_AsString(str(probability)))
             
 
-    def getNode(self,nodeName):
+    def getNode(self,str nodeName):
+        if not nodeName in self.nodes:
+            raise NameError("node not found")
         nodeObj=Node()
-        nodeObj.getProblity=lambda observation=None:self.getProblity(nodeName,observation)
+        nodeObj.getProbability=lambda observation=None:self.getProbability(nodeName,observation)
+        nodeObj.setProbability=lambda states,probability:self.setProbability(nodeName,states,probability)
+        nodeObj.getTabularProb=lambda:self.getTabularProb(nodeName)
         nodeObj.getNodeName=lambda:nodeName
         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
@@ -342,6 +379,25 @@ cdef class PyBayesNet:
         nodeObj.getJPD=lambda:{key[0][1]:prob for key,prob in self.getJPD(nodeName).items()}
         return nodeObj
 
+    def getEdge(self,node,childNode):
+        if hasattr(node, 'getNodeName'):
+            node = str(node.getNodeName())
+        if hasattr(node, 'getNodeName'):
+            childNode = str(childNode.getNodeName())
+        if not (type(node)==str and type(childNode)==str):
+            raise TypeError("Invalid Type for node or child")
+        if not childNode in  self.nodes:
+            raise NameError("child node not found")
+        if not node in self.node[childNode]["parents"]:
+            if not node in self.nodes:
+                raise NameError("node not found")
+            raise NameError("link not found")
+        edge=Node()
+        edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
+        return edge
+        
+            
+            
     def getCurEvidence(self):
         return self.__netAttribute["evidence"]
 
@@ -355,6 +411,8 @@ cdef class PyBayesNet:
         
 
     def getTabularProb(self,node):
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
         cdef TokArr resp
         cdef int i=0
         resp = self.net.GetPTabular(PyString_AsString(str(node)))
