@@ -4,6 +4,9 @@ from operator import mul
 from libcpp.string cimport string
 from cpython.string cimport PyString_AsString
 import copy
+import csv
+from collections import Counter
+import re
 ##import cython
 ##cdef char ** to_cstring_array(list_str):
 ##    cdef char **ret = <char **>malloc(len(list_str) * sizeof(char *))
@@ -120,7 +123,9 @@ cdef extern from "<iostream>" namespace "std":
     pass
 
 cdef extern from "<string>":
-    string String(TokArr)
+    cppString String(TokArr)
+    cdef cppclass cppString:
+        string c_str()
 
 cdef extern from "<time.h>":
     pass
@@ -351,29 +356,127 @@ cdef class PyBayesNet:
     def getMPE(self,node,*pnodes):
         cdef TokArr resp
         resp = self.net.GetMPE(PyString_AsString(" ".join((node,)+pnodes)))
-        res = String(resp)
+        res = String(resp).c_str()
         result = {}
         for node_state in res.split(" "):
             nodeState=node_state.split("^")
             result[nodeState[0]]=nodeState[1]
         return result
 
-    def learnStructure(self,casefile,str target,tuple features=None):
+    def learnStructure(self,str casefile,str target,tuple features=None):
+        cdef TokArr cppNode
+        if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",target):
+            raise ValueError("Node name shold only consist of alphabets and numbers, it shouldn't stat with numbers")
+        for node in features:
+            if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",node):
+                raise ValueError("Node name shold only consist of alphabets and numbers, it shouldn't stat with numbers")
+        nodes={}
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            observations=[]
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            if not self.__netAttribute["target"] in header:
+                raise ValueError("Target node name should present in case file to learn structue")
+            for node in features:
+                if not node in header:
+                    raise ValueError("All feature node names should present in case file to learn structue")
+            nodes={i:[] for i in (features+(target))}
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] and not row[i] in nodes[header[i]]:
+                            nodes[header[i]]=row[i]
+                            if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",row[i]):
+                                raise ValueError("state name shold only consist of alphabets and numbers, it shouldn't stat with numbers: found '%s'",row[i])
         self.__netAttribute["target"]=target
         self.__netAttribute["features"]=features
-        raise NotImplemented
+        if not all(state for state in nodes):
+            raise ValueError("All nodes should have one or more states")
+        for nodeName in nodes:
+            self.createNode(nodeName,tuple(nodes[nodeName]))
+        self.net.LearnStructure()
+        for nodeName in nodes:
+            cppNode = self.net.GetParents(PyString_AsString(nodeName))
+            res=String(cppNode).c_str().strip()
+            if res:
+                for pn in res.split(" "):
+                    self.nodes[nodeName]["parents"].append(pn)
+        
+                
         
     def setTargetNode(self,target):
         if hasattr(target, 'getNodeName'):
             target=target.getNodeName()
+        if not target in self.nodes:
+            raise ValueError("Target node name specifide is not created yet")
         self.__netAttribute["target"]=target
 
     def evaluate(self,str casefile):
-        raise NotImplemented
+        if not self.__netAttribute["target"] in self.nodes:
+            raise ValueError("Target node name should be set before evaluating")
+        observations=[]
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            if not self.__netAttribute["target"] in header:
+                raise ValueError("Target node name should present in case file to evaluate")
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    row_observation={}
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] in self.nodes[header[i]]["states"]:
+                            row_observation[header[i]]=row[i]
+                    observations.append(row_observation)
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        prediction=Counter()
+        for evidence in observations:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+evidence[node] for node in evidence if not node==self.__netAttribute["target"]])))
+            actualState=evidence[self.__netAttribute["target"]] if self.__netAttribute["target"] in evidence else ''
+            prediction[(actualState,self.getMPE(self.__netAttribute["target"]).values()[0])]+=1
+            self.net.ClearEvid()
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+self.__netAttribute["evidence"][node] for node in self.__netAttribute["evidence"]])))
+        correctpred=0
+        for act,pred in prediction:
+            if act==pred:
+                correctpred+=prediction[(act,pred)]
+        accuracy=float(correctpred)/len(observations)
+        return accuracy,dict(prediction)
 
     def classify(self,str casefile):
-        raise NotImplemented
-
+        if not self.__netAttribute["target"] in self.nodes:
+            raise ValueError("Target node name should be set before evaluating")
+        observations=[]
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    row_observation={}
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] in self.nodes[header[i]]["states"]:
+                            row_observation[header[i]]=row[i]
+                    observations.append(row_observation)
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        for evidence in observations:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+evidence[node] for node in evidence if not node==self.__netAttribute["target"]])))
+            evidence[self.__netAttribute["target"]]=self.getMPE(self.__netAttribute["target"]).values()[0]
+            self.net.ClearEvid()
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+self.__netAttribute["evidence"][node] for node in self.__netAttribute["evidence"]])))
+        return observations
+        
     def createNode(self,nodeName,stateNames):
         self.nodes[nodeName]={"states":stateNames,"parents":[]}
         self.net.AddNode(PyString_AsString(nodeName), PyString_AsString(" ".join(stateNames)))
