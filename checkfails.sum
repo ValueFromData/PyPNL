@@ -1,8 +1,0 @@
-ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
-บ<f>unction  : testExLearnEngine                                              บ
-บ<t>est      : Provide learning on disconnected networks                      บ
-บ<c>lass     : Algorithm                                    00:00:01/00:00:29 บ
-บ<T>est body : testExLearnEngine                            line: 127         บ
-บ<S>ource    : AExLearnEngine.cpp                                             บ
-บ<R>esult    : Bad test of learning disconnected network                 FAIL บ
-ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ

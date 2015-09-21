@@ -1,1 +1,0 @@
-./tests_pnl_c -R FAIL -s ../../../checkfails.sum -m -B
