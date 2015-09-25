@@ -356,8 +356,8 @@ cdef class PyBayesNet:
         if not node in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % node)
         resp = self.net.GetGaussianMean(PyString_AsString(node))
-        res = [float(i) for i in String(resp).c_str().split("^")]
-        return 
+        res = [float(i) for i in String(resp).c_str().split("^")]            
+        return {self.nodes[node]["states"][i]:res[i] for i in range(len(self.nodes[node]["states"]))}
 
     def getCover(self,node):
         cdef TokArr resp
@@ -366,7 +366,9 @@ cdef class PyBayesNet:
         if not node in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % node)
         resp=self.net.GetGaussianCovar(PyString_AsString(node))
-        return [ float(i) for i in String(resp).c_str().split("^")]
+        res=[float(i) for i in String(resp).c_str().split("^")]
+        numStates=len(self.nodes[node]["states"])
+        return tuple([tuple(res[i*numStates:(i+1)*numStates]) for i in range(numStates)])
 
     
     def getWeights(self,node,parent):
@@ -380,7 +382,10 @@ cdef class PyBayesNet:
         if not parent in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % parent)
         resp=self.net.GetGaussianWeights(PyString_AsString(node),PyString_AsString(parent))
-        return [ float(i) for i in String(resp).c_str().split("^")]
+        res=[float(i) for i in String(resp).c_str().split("^")]
+        numStates=len(self.nodes[node]["states"])
+        numPStates=len(self.nodes[parent]["states"])
+        return tuple([tuple(res[i*numStates:(i+1)*numStates]) for i in range(numPStates)])
     
 
     def getJPD(self,node,*parents):
@@ -638,15 +643,16 @@ cdef class PyBayesNet:
         if not nodeName in self.nodes:
             raise NameError("node not found")
         nodeObj=Node()
-##        nodeObj.getProbability=lambda observation=None:self.getProbability(nodeName,observation)
         nodeObj.setGaussianParams=lambda node,mean,variance,weight=None,tabParentValues=None:self.setGaussianParams(nodeName,mean,variance,weight,tabParentValues)
-##        nodeObj.getTabularProb=lambda:self.getTabularProb(nodeName)
         nodeObj.getNodeName=lambda:nodeName
         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
         nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
         nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
         nodeObj.getJPD=lambda:self.getJPD(nodeName)
+        nodeObj.getMean=lambda:self.getMean(nodeName)
+        nodeObj.getCover=lambda:self.getCover(nodeName)
+        nodeObj.getWeights=lambda parent:self.getWeights(nodeName,parent)
         return nodeObj
 
     def getEdge(self,node,childNode):
@@ -665,8 +671,6 @@ cdef class PyBayesNet:
         edge=Node()
         edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
         return edge
-        
-            
             
     def getCurEvidence(self):
         evidence={}
@@ -681,37 +685,31 @@ cdef class PyBayesNet:
         self.__netAttribute["evidence"] = {}
         self.net.ClearEvid()
 
-##    def editEvidence(self,observation):
-##        self.__netAttribute["evidence"].update(copy.deepcopy(observation))
-##        self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
-##        
-##
-##    def getTabularProb(self,node):
-##        if hasattr(node, 'getNodeName'):
-##            node=node.getNodeName()
-##        cdef TokArr resp
-##        cdef int i=0
-##        resp = self.net.GetPTabular(PyString_AsString(str(node)))
-##        result ={}
-##        numStates=len(self.nodes[node]["states"])
-##        if not self.nodes[node]["parents"]:
-##            for j in range(numStates):
-##                result[self.nodes[node]["states"][j]]=resp[i].FltValue()
-##                i+=1
-##            return result        
-##
-##        states = [[(node,state)] for state in self.nodes[node]["states"]]
-##        for pnode in self.nodes[node]["parents"][::-1]:
-##            states = [[(pnode,pstate)]+state for pstate in self.nodes[pnode]["states"] for state in states]
-##
-##        for state in states:
-##            state.append(resp[i].FltValue())
-##            i+=1
-##
-##        res = {state:{} for state in self.nodes[node]["states"]}
-##        for state in states:
-##            res[state[-2][1]][tuple(state[:-2])]=state[-1]
-##        return res
+    def editEvidence(self,observation):    
+        new_observation={}
+        for node in observation:
+            if not node in self.nodes:
+                raise ValueError("node name '%s' doesn't exist" % node)
+            dType=type(observation[node])
+            if (dType==int or dType==float) and len(self.nodes[node]["states"])==1:
+                observation[node]=((self.nodes[node]["states"],observation[node]),)
+            
+            if (dType==tuple or dType==list) and len(observation[node])==2 and type(observation[node][0])==str:
+                observation[node]=(observation[node],)
+                
+            for stateAndObsv in observation[node]:
+                if not stateAndObsv[0] in self.nodes[node]["states"]:
+                    raise ValueError("There is no state called '%s' for node '%s' " % (stateAndObsv[0],node))
+                try:         
+                    new_observation[(node,stateAndObsv[0])]=float(stateAndObsv[1])
+                except:
+                    raise TypeError("Invalid structure")                
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        self.__netAttribute["evidence"].update(copy.deepcopy(new_observation))
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([j[0]+"^"+j[1]+"^"+str(new_observation[j]) for j in new_observation])))
+
     
     def __dealloc__(self):
         pass 
