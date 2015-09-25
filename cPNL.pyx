@@ -355,8 +355,9 @@ cdef class PyBayesNet:
             node=node.getNodeName()
         if not node in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % node)
-        resp=self.net.GetGaussianMean(PyString_AsString(node))
-        return String(resp).c_str()
+        resp = self.net.GetGaussianMean(PyString_AsString(node))
+        res = [float(i) for i in String(resp).c_str().split("^")]
+        return 
 
     def getCover(self,node):
         cdef TokArr resp
@@ -365,7 +366,7 @@ cdef class PyBayesNet:
         if not node in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % node)
         resp=self.net.GetGaussianCovar(PyString_AsString(node))
-        return [ float(i) for i in String(resp).c_str().split(" ")]
+        return [ float(i) for i in String(resp).c_str().split("^")]
 
     
     def getWeights(self,node,parent):
@@ -379,7 +380,7 @@ cdef class PyBayesNet:
         if not parent in self.nodes:
             raise ValueError("Node name specifide ('%s') is not created yet" % parent)
         resp=self.net.GetGaussianWeights(PyString_AsString(node),PyString_AsString(parent))
-        return [ float(i) for i in String(resp).c_str().split(" ")]
+        return [ float(i) for i in String(resp).c_str().split("^")]
     
 
     def getJPD(self,node,*parents):
@@ -664,16 +665,22 @@ cdef class PyBayesNet:
         edge=Node()
         edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
         return edge
-##        
-##            
-##            
-##    def getCurEvidence(self):
-##        return self.__netAttribute["evidence"]
-##
-##    def clearEvidence(self):
-##        self.__netAttribute["evidence"] = {}
-##        self.net.ClearEvid()
-##
+        
+            
+            
+    def getCurEvidence(self):
+        evidence={}
+        for i in self.__netAttribute["evidence"]:
+            if i[0] in evidence:
+                evidence[i[0]].append((i[1],self.__netAttribute["evidence"][i]))
+            else:
+                evidence[i[0]]=[(i[1],self.__netAttribute["evidence"][i])]                
+        return evidence
+
+    def clearEvidence(self):
+        self.__netAttribute["evidence"] = {}
+        self.net.ClearEvid()
+
 ##    def editEvidence(self,observation):
 ##        self.__netAttribute["evidence"].update(copy.deepcopy(observation))
 ##        self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
