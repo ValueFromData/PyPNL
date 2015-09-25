@@ -157,11 +157,11 @@ cdef class PyBayesNet:
         self.__netAttribute["evidence"]= {}
         self.__netAttribute["target"]= None
         self.__netAttribute["features"] = None
-##        self.__netAttribute["allowedstructureLearnmMthods"]=["MaxLh","PreAs", "MarLh"]
-##        self.__netAttribute["allowedstructureLearnmScoreFuns"]=["BIC","AIC","WithoutPenalty"]
-##        self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
-##        self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
-##        self.setProperty.bayesLearn = lambda:self.bayesLearn()
+        self.__netAttribute["allowedstructureLearnmMthods"]=["MaxLh","PreAs", "MarLh"]
+        self.__netAttribute["allowedstructureLearnmScoreFuns"]=["BIC","AIC","WithoutPenalty"]
+        self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
+        self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+        self.setProperty.bayesLearn = lambda:self.bayesLearn()
 ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
 ##        self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
 ##        self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
@@ -173,22 +173,22 @@ cdef class PyBayesNet:
 ##
 ##        
 ##    
-##    cdef emLearn(self,tolerance,maxNumberOfIterations):
-##        if not tolerance==None:
-##            if not type(tolerance)==float:
-##                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
-##            self.net.SetProperty(PyString_AsString("EMTolerance"),PyString_AsString(str(tolerance)))
-##        if not maxNumberOfIterations==None:
-##            if not type(maxNumberOfIterations)==int:
-##                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
-##            if maxNumberOfIterations<=0:
-##                raise ValueError("Needs positive integer grater than zero")
-##            self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
-##        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
-##    
-##    cdef bayesLearn(self):
-##        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
-##
+    cdef emLearn(self,tolerance,maxNumberOfIterations):
+        if not tolerance==None:
+            if not type(tolerance)==float:
+                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+            self.net.SetProperty(PyString_AsString("EMTolerance"),PyString_AsString(str(tolerance)))
+        if not maxNumberOfIterations==None:
+            if not type(maxNumberOfIterations)==int:
+                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+            if maxNumberOfIterations<=0:
+                raise ValueError("Needs positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
+    
+    cdef bayesLearn(self):
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
+
 ##    cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
 ##        if not numStreams==None:
 ##            if not type(numStreams)==int:
@@ -670,6 +670,7 @@ cdef class PyBayesNet:
             raise NameError("link not found")
         edge=Node()
         edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
+        edge.getWeights=lambda:self.getWeights(childNode,node)        
         return edge
             
     def getCurEvidence(self):
