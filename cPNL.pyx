@@ -111,7 +111,7 @@ cdef extern from "pnlHigh.hpp":
         void SetProperty(const char *name, const char *value)
         string GetProperty(const char *name) const
         
-        
+
         
 cdef extern from "console.hpp":
     pass
@@ -349,47 +349,50 @@ cdef class PyBayesNet:
         if self.__netAttribute["evidence"]:
             self.net.EditEvidence(PyString_AsString(" ".join([j[0]+"^"+j[1]+"^"+str(self.__netAttribute["evidence"][j]) for j in self.__netAttribute["evidence"]])))
 
+    def getMean(self,node):
+        cdef TokArr resp
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
+        if not node in self.nodes:
+            raise ValueError("Node name specifide ('%s') is not created yet" % node)
+        resp=self.net.GetGaussianMean(PyString_AsString(node))
+        return String(resp).c_str()
 
-##    def getProbability(self,nodeName,observation=None):
-##        cdef TokArr resp
-##        cdef int i=0
-##        if type(observation)==dict:
-##            if self.__netAttribute["evidence"]:
-##                self.net.ClearEvid()
-##            if observation:
-##                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
-##            resp = self.net.GetJPD(PyString_AsString(nodeName))
-##            if observation:
-##                self.net.ClearEvid()
-##            if self.__netAttribute["evidence"]:
-##                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
-##        else:
-##            resp = self.net.GetJPD(PyString_AsString(nodeName))
-##        res = {}
-##        for state in self.nodes[nodeName]["states"]:
-##            res[state]=resp[i].FltValue()
-##            i+=1
-##        return res
-##        
-##    def getAllProbability(self,observation=None):
-##        resp=None
-##        if type(observation)==dict:
-##            if self.__netAttribute["evidence"]:
-##                self.net.ClearEvid()
-##            if observation:
-##                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
-##            resp = {node:self.getProbability(node) for node in self.nodes}
-##            if observation:
-##                self.net.ClearEvid()
-##            if self.__netAttribute["evidence"]:
-##                self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
-##        else:
-##            resp = {node:self.getProbability(node) for node in self.nodes}
-##        return resp
-##
+    def getCover(self,node):
+        cdef TokArr resp
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
+        if not node in self.nodes:
+            raise ValueError("Node name specifide ('%s') is not created yet" % node)
+        resp=self.net.GetGaussianCovar(PyString_AsString(node))
+        return [ float(i) for i in String(resp).c_str().split(" ")]
+
+    
+    def getWeights(self,node,parent):
+        cdef TokArr resp
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
+        if not node in self.nodes:
+            raise ValueError("Node name specifide ('%s') is not created yet" % node)
+        if hasattr(parent, 'getNodeName'):
+            parent=parent.getNodeName()
+        if not parent in self.nodes:
+            raise ValueError("Node name specifide ('%s') is not created yet" % parent)
+        resp=self.net.GetGaussianWeights(PyString_AsString(node),PyString_AsString(parent))
+        return [ float(i) for i in String(resp).c_str().split(" ")]
+    
+
     def getJPD(self,node,*parents):
         cdef TokArr resp
-        resp = self.net.GetJPD(PyString_AsString(" ".join((node,)+parents)))
+        nodes=((node,)+parents)
+        nodeNames=[]
+        for node in nodes:
+            if hasattr(node, 'getNodeName'):
+                node=node.getNodeName()
+            if not node in self.nodes:
+                raise ValueError("Node name specifide ('%s') is not created yet" % node)
+            nodeNames.append(node)
+        resp = self.net.GetJPD(PyString_AsString(" ".join(nodeNames)))
         res=[[j for j in i.split("^")] for i in String(resp).c_str().split(" ")]
         variance=[]
         numMeans=len(res[0])
@@ -398,17 +401,24 @@ cdef class PyBayesNet:
                 "variance":[[float(res[1][j]) for j in range(i*numMeans,(i+1)*numMeans)] for i in range(numMeans)]
                 }
 
-    def getMPE(self,node,*pnodes):
+    def getMPE(self,node,*parents):
         cdef TokArr resp
-        nodes=(node,)+pnodes
-        resp = self.net.GetMPE(PyString_AsString(" ".join(nodes)))
+        nodes=((node,)+parents)
+        nodeNames=[]
+        for node in nodes:
+            if hasattr(node, 'getNodeName'):
+                node=node.getNodeName()
+            if not node in self.nodes:
+                raise ValueError("Node name specifide ('%s') is not created yet" % node)
+            nodeNames.append(node)
+        resp = self.net.GetMPE(PyString_AsString(" ".join(nodeNames)))
         res = String(resp).c_str()
         res=[i.split("^") for i in res.split(" ")]
         result = {}
-        for i in range(len(nodes)):
-            result[nodes[i]]={}
-            for j in range(len(self.nodes[nodes[i]]["states"])):
-                result[nodes[i]][self.nodes[nodes[i]]["states"][j]]=float(res[i][j])
+        for i in range(len(nodeNames)):
+            result[nodeNames[i]]={}
+            for j in range(len(self.nodes[nodeNames[i]]["states"])):
+                result[nodeNames[i]][self.nodes[nodeNames[i]]["states"][j]]=float(res[i][j])
         return result
 
 ##    def learnStructure(self,str casefile,str target,tuple features=None):
