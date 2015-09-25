@@ -261,60 +261,95 @@ cdef class PyBayesNet:
 ##
 ##        
 ##
-##    def create_network(self,dict network_struct,str casefile=""):
-##        nodes=[]
-##        nodesWithParent=[]
-##        for node in network_struct:
-##            dType=type(network_struct[node])
-##            if dType==dict or  dType==set:
-##                nodes.append(node)
-##                network_struct[node]=(None,network_struct[node])
-##            elif len(network_struct[node])==2 and type(network_struct[node][0])==set  and hasattr(network_struct[node][1], '__call__'):
-##                nodes.append(node)
-##                network_struct[node]=(None,{state:network_struct[node][1](state) for state in network_struct[node][0]})
-##            else:
-##                nodesWithParent.append(node)
-##        
-##        while nodesWithParent:
-##            leftoutNodes=[]
-##            for node in nodesWithParent:
-##                if not set(network_struct[node][0])-set(nodes):
-##                    nodes.append(node)
-##                    if len(network_struct[node])==3 and hasattr(network_struct[node][2], '__call__'):
-##                        pNStates=[(state,) for state in network_struct[network_struct[node][0][-1]][1]]
-##                        for pnode in network_struct[node][0][:-1]:
-##                            pNStates = [(pstate,)+state for pstate in network_struct[pnode][1] for state in pNStates]
-##                        network_struct[node]=(network_struct[node][0],{state:[states+(network_struct[node][2](state,*states),) for states in pNStates] for state in network_struct[node][1]})
-##                else:
-##                    leftoutNodes.append(node)
-##            if len(leftoutNodes)==len(nodesWithParent):
-##                raise TypeError("Network has cycles hence can't be topologically sorted")
-##            nodesWithParent=leftoutNodes
-##        for node in nodes:
-##            self.createNode(node,tuple(network_struct[node][1]))
-##            if network_struct[node][0]:
-##                self.createEdge(network_struct[node][0],node)
-##                if type(network_struct[node][1])==dict:
-##                    for state in network_struct[node][1]:
-##                        for pstates in network_struct[node][1][state]:
-##                            self.setProbability(node,(state,)+pstates[:-1],pstates[-1])
-##            elif type(network_struct[node][1])==dict:
-##                for state in network_struct[node][1]:
-##                    self.setProbability(node,state,network_struct[node][1][state])
-##                        
-##        if casefile.strip():
-##            self.net.LoadEvidBuf(PyString_AsString(casefile.strip()))
-##            self.net.LearnParameters()
-##            
-##         
-##
-##    def setEvidence(self,observation):
-##        if self.__netAttribute["evidence"]:
-##            self.net.ClearEvid()
-##        self.__netAttribute["evidence"]=copy.deepcopy(observation)
-##        if self.__netAttribute["evidence"]:
-##            self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
-##
+    def create_network(self,dict network_struct,str casefile=""):
+        nodes=[]
+        nodesWithParent=[]
+        for node in network_struct:
+            if "parents" in network_struct[node]:
+                nodesWithParent.append(node)
+                dType=type(network_struct[node]["parents"])
+                if dType==str or dType==unicode:
+                    network_struct[node]["parents"]=[str(network_struct[node]["parents"])]
+                elif dType==list or dType==tuple or dType==set:
+                    parents=network_struct[node]["parents"]
+                    network_struct[node]["parents"]=[]
+                    for pnode in parents:
+                        dType = type(pnode)
+                        if dType==str or dType==unicode:
+                            network_struct[node]["parents"].append(str(pnode))
+                        else:
+                            raise TypeError("parent names should be list of strings. Found: '%s'" % dType)
+                else:
+                    raise TypeError("parent names should be list of strings")
+            else:
+                network_struct[node]["parents"]=None
+                nodes.append(node)
+            if not "states" in network_struct[node]:
+                network_struct[node]["states"]=["dim1"]
+            elif type(network_struct[node]["states"])==str or type(network_struct[node]["states"])==unicode:
+                network_struct[node]["states"]=[str(network_struct[node]["states"])]
+            else:
+                network_struct[node]["states"]=[str(state) for state in network_struct[node]["states"]]
+      
+        while nodesWithParent:
+            leftoutNodes=[]
+            for node in nodesWithParent:
+                if not set(network_struct[node]["parents"])-set(nodes):
+                    nodes.append(node)
+                else:
+                    leftoutNodes.append(node)
+            if len(leftoutNodes)==len(nodesWithParent):
+                raise TypeError("Network has cycles hence can't be topologically sorted")
+            nodesWithParent=leftoutNodes
+        for node in nodes:
+            self.createNode(node,tuple(network_struct[node]["states"]))
+            if network_struct[node]["parents"]:
+                self.createEdge(network_struct[node]["parents"],node)
+                if "means" in network_struct[node] and "variances" in network_struct[node] and "weights" in network_struct[node]:
+                    self.setGaussianParams(node,
+                                           network_struct[node]["means"],
+                                           network_struct[node]["variances"],
+                                           network_struct[node]["weights"],
+                                           network_struct[node]["tabParentValues"] if "tabParentValues" in network_struct[node] else None)
+            if "means" in network_struct[node] and "variances" in network_struct[node]:
+                self.setGaussianParams(node,
+                                       network_struct[node]["means"],
+                                       network_struct[node]["variances"],
+                                       None,
+                                       network_struct[node]["tabParentValues"] if "tabParentValues" in network_struct[node] else None)
+                        
+        if casefile.strip():
+            self.net.LoadEvidBuf(PyString_AsString(casefile.strip()))
+            self.net.LearnParameters()
+            
+         
+
+    def setEvidence(self,observation):
+        new_observation={}
+        for node in observation:
+            if not node in self.nodes:
+                raise ValueError("node name '%s' doesn't exist" % node)
+            dType=type(observation[node])
+            if (dType==int or dType==float) and len(self.nodes[node]["states"])==1:
+                observation[node]=((self.nodes[node]["states"],observation[node]),)
+            
+            if (dType==tuple or dType==list) and len(observation[node])==2 and type(observation[node][0])==str:
+                observation[node]=(observation[node],)
+                
+            for stateAndObsv in observation[node]:
+                if not stateAndObsv[0] in self.nodes[node]["states"]:
+                    raise ValueError("There is no state called '%s' for node '%s' " % (stateAndObsv[0],node))
+                try:         
+                    new_observation[(node,stateAndObsv[0])]=float(stateAndObsv[1])
+                except:
+                    raise TypeError("Invalid structure")                
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        self.__netAttribute["evidence"]=new_observation
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([j[0]+"^"+j[1]+"^"+str(self.__netAttribute["evidence"][j]) for j in self.__netAttribute["evidence"]])))
+
+
 ##    def getProbability(self,nodeName,observation=None):
 ##        cdef TokArr resp
 ##        cdef int i=0
@@ -352,29 +387,30 @@ cdef class PyBayesNet:
 ##            resp = {node:self.getProbability(node) for node in self.nodes}
 ##        return resp
 ##
-##    def getJPD(self,node,*parents):
-##        cdef TokArr resp
-##        cdef int i=0
-##        states = [[(node,state)] for state in self.nodes[node]["states"]]
-##        for pnode in parents:
-##            states = [[(pnode,pstate)]+state for pstate in self.nodes[pnode]["states"] for state in states]
-##        resp = self.net.GetJPD(PyString_AsString(" ".join((node,)+parents)))
-##        res={}
-##        for state in states:
-##            res[tuple(state)]=resp[i].FltValue()
-##            i+=1
-##        return res
-##
-##    def getMPE(self,node,*pnodes):
-##        cdef TokArr resp
-##        resp = self.net.GetMPE(PyString_AsString(" ".join((node,)+pnodes)))
-##        res = String(resp).c_str()
-##        result = {}
-##        for node_state in res.split(" "):
-##            nodeState=node_state.split("^")
-##            result[nodeState[0]]=nodeState[1]
-##        return result
-##
+    def getJPD(self,node,*parents):
+        cdef TokArr resp
+        resp = self.net.GetJPD(PyString_AsString(" ".join((node,)+parents)))
+        res=[[j for j in i.split("^")] for i in String(resp).c_str().split(" ")]
+        variance=[]
+        numMeans=len(res[0])
+        return {
+                "mean":[float(i) for i in res[0]],
+                "variance":[[float(res[1][j]) for j in range(i*numMeans,(i+1)*numMeans)] for i in range(numMeans)]
+                }
+
+    def getMPE(self,node,*pnodes):
+        cdef TokArr resp
+        nodes=(node,)+pnodes
+        resp = self.net.GetMPE(PyString_AsString(" ".join(nodes)))
+        res = String(resp).c_str()
+        res=[i.split("^") for i in res.split(" ")]
+        result = {}
+        for i in range(len(nodes)):
+            result[nodes[i]]={}
+            for j in range(len(self.nodes[nodes[i]]["states"])):
+                result[nodes[i]][self.nodes[nodes[i]]["states"][j]]=float(res[i][j])
+        return result
+
 ##    def learnStructure(self,str casefile,str target,tuple features=None):
 ##        cdef TokArr cppNode
 ##        if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",target):
@@ -419,13 +455,13 @@ cdef class PyBayesNet:
 ##        
 ##                
 ##        
-##    def setTargetNode(self,target):
-##        if hasattr(target, 'getNodeName'):
-##            target=target.getNodeName()
-##        if not target in self.nodes:
-##            raise ValueError("Target node name specifide is not created yet")
-##        self.__netAttribute["target"]=target
-##
+    def setTargetNode(self,target):
+        if hasattr(target, 'getNodeName'):
+            target=target.getNodeName()
+        if not target in self.nodes:
+            raise ValueError("Target node name specifide is not created yet")
+        self.__netAttribute["target"]=target
+
 ##    def evaluate(self,str casefile):
 ##        if not self.__netAttribute["target"] in self.nodes:
 ##            raise ValueError("Target node name should be set before evaluating")
@@ -551,7 +587,7 @@ cdef class PyBayesNet:
     def setGaussianParams(self,node,mean,variance,weight=None,tabParentValues=None):
         if hasattr(node, 'getNodeName'):
             node=node.getNodeName()
-            numStates=len(self.nodes[node]["states"])
+        numStates=len(self.nodes[node]["states"])
         if numStates==1:
             if type(mean)==int or type(mean)==float:
                 mean=[float(mean)]
@@ -559,15 +595,10 @@ cdef class PyBayesNet:
                 variance=[float(variance)]
         if not (type(mean)==list or type(mean)==tuple):
             raise TypeError("Mean should be lists of floating point numbers")
-        else:
-            for m in mean:
-                if not (type(m)==int or type(m)==float):
-                    raise TypeError("Mean should be lists of floating point numbers")
-            mean=list(mean)
         if not (type(variance)==list or type(variance)==tuple):
             raise TypeError("Variance should be lists of floating point numbers")
-        else:
-            variance=list(variance,"variance")
+        mean=combinLists(mean,"Mean")
+        variance=combinLists(variance,"variance")
         if not len(mean)==numStates:
             raise ValueError("No. of means should be equal to no. of states: got %s values " % len(variance))
         if not len(variance)==pow(numStates,2):
@@ -603,26 +634,26 @@ cdef class PyBayesNet:
         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
         nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
-##        nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
-##        nodeObj.getJPD=lambda:{key[0][1]:prob for key,prob in self.getJPD(nodeName).items()}
+        nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
+        nodeObj.getJPD=lambda:self.getJPD(nodeName)
         return nodeObj
 
-##    def getEdge(self,node,childNode):
-##        if hasattr(node, 'getNodeName'):
-##            node = str(node.getNodeName())
-##        if hasattr(node, 'getNodeName'):
-##            childNode = str(childNode.getNodeName())
-##        if not (type(node)==str and type(childNode)==str):
-##            raise TypeError("Invalid Type for node or child")
-##        if not childNode in  self.nodes:
-##            raise NameError("child node not found")
-##        if not node in self.node[childNode]["parents"]:
-##            if not node in self.nodes:
-##                raise NameError("node not found")
-##            raise NameError("link not found")
-##        edge=Node()
-##        edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
-##        return edge
+    def getEdge(self,node,childNode):
+        if hasattr(node, 'getNodeName'):
+            node = str(node.getNodeName())
+        if hasattr(node, 'getNodeName'):
+            childNode = str(childNode.getNodeName())
+        if not (type(node)==str and type(childNode)==str):
+            raise TypeError("Invalid Type for node or child")
+        if not childNode in  self.nodes:
+            raise NameError("child node not found")
+        if not node in self.node[childNode]["parents"]:
+            if not node in self.nodes:
+                raise NameError("node not found")
+            raise NameError("link not found")
+        edge=Node()
+        edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
+        return edge
 ##        
 ##            
 ##            
