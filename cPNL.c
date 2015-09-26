@@ -536,6 +536,10 @@ struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge {
 struct __pyx_vtabstruct_4cPNL_PyBayesNet {
   PyObject *(*emLearn)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *);
   PyObject *(*bayesLearn)(struct __pyx_obj_4cPNL_PyBayesNet *);
+  PyObject *(*gibsInferance)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *, PyObject *);
+  PyObject *(*pearlInferance)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *);
+  PyObject *(*jtreeInferance)(struct __pyx_obj_4cPNL_PyBayesNet *);
+  PyObject *(*naiveInferance)(struct __pyx_obj_4cPNL_PyBayesNet *);
 };
 static struct __pyx_vtabstruct_4cPNL_PyBayesNet *__pyx_vtabptr_4cPNL_PyBayesNet;
 
@@ -957,6 +961,10 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 static PyObject *__pyx_f_4cPNL_10PyBayesNet_emLearn(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations); /* proto*/
 static PyObject *__pyx_f_4cPNL_10PyBayesNet_bayesLearn(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self); /* proto*/
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_gibsInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_numStreams, PyObject *__pyx_v_thresholdIteration, PyObject *__pyx_v_numberOfIterations); /* proto*/
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_pearlInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations); /* proto*/
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_jtreeInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self); /* proto*/
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_naiveInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self); /* proto*/
 
 /* Module declarations from 'libcpp' */
 
@@ -997,13 +1005,13 @@ static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_NameError;
 static char __pyx_k_i[] = "i";
 static char __pyx_k_K2[] = "K2";
-static char __pyx_k__3[] = "";
-static char __pyx_k__7[] = " ";
-static char __pyx_k__8[] = "^";
+static char __pyx_k__9[] = "";
 static char __pyx_k_em[] = "em";
 static char __pyx_k_re[] = "re";
 static char __pyx_k_AIC[] = "AIC";
 static char __pyx_k_BIC[] = "BIC";
+static char __pyx_k__13[] = " ";
+static char __pyx_k__14[] = "^";
 static char __pyx_k_csv[] = "csv";
 static char __pyx_k_doc[] = "__doc__";
 static char __pyx_k_mul[] = "mul";
@@ -1025,9 +1033,13 @@ static char __pyx_k_MarLh[] = "MarLh";
 static char __pyx_k_MaxLh[] = "MaxLh";
 static char __pyx_k_PreAs[] = "PreAs";
 static char __pyx_k_bayes[] = "bayes";
+static char __pyx_k_gibbs[] = "gibbs";
 static char __pyx_k_itype[] = "itype";
+static char __pyx_k_jtree[] = "jtree";
 static char __pyx_k_means[] = "means";
+static char __pyx_k_naive[] = "naive";
 static char __pyx_k_nodes[] = "nodes";
+static char __pyx_k_pearl[] = "pearl";
 static char __pyx_k_range[] = "range";
 static char __pyx_k_split[] = "split";
 static char __pyx_k_strip[] = "strip";
@@ -1064,6 +1076,7 @@ static char __pyx_k_operator[] = "operator";
 static char __pyx_k_qualname[] = "__qualname__";
 static char __pyx_k_variance[] = "variance";
 static char __pyx_k_Dirichlet[] = "Dirichlet";
+static char __pyx_k_Inference[] = "Inference";
 static char __pyx_k_NameError[] = "NameError";
 static char __pyx_k_TypeError[] = "TypeError";
 static char __pyx_k_childNode[] = "childNode";
@@ -1078,6 +1091,7 @@ static char __pyx_k_continuous[] = "continuous";
 static char __pyx_k_createEdge[] = "createEdge";
 static char __pyx_k_createNode[] = "createNode";
 static char __pyx_k_getWeights[] = "getWeights";
+static char __pyx_k_numStreams[] = "numStreams";
 static char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static char __pyx_k_stateNames[] = "stateNames";
 static char __pyx_k_EMTolerance[] = "EMTolerance";
@@ -1090,28 +1104,39 @@ static char __pyx_k_continuous_2[] = "continuous^";
 static char __pyx_k_netAttribute[] = "__netAttribute";
 static char __pyx_k_originalList[] = "originalList";
 static char __pyx_k_getStateNames[] = "getStateNames";
+static char __pyx_k_gibsInferance[] = "gibsInferance";
+static char __pyx_k_PearlTolerance[] = "PearlTolerance";
 static char __pyx_k_WithoutPenalty[] = "WithoutPenalty";
 static char __pyx_k_getNodeParents[] = "getNodeParents";
 static char __pyx_k_getParentNames[] = "getParentNames";
+static char __pyx_k_jtreeInferance[] = "jtreeInferance";
 static char __pyx_k_link_not_found[] = "link not found";
+static char __pyx_k_naiveInferance[] = "naiveInferance";
 static char __pyx_k_network_struct[] = "network_struct";
 static char __pyx_k_node_not_found[] = "node not found";
+static char __pyx_k_pearlInferance[] = "pearlInferance";
 static char __pyx_k_tabParentValues[] = "tabParentValues";
 static char __pyx_k_a_zA_Z_a_zA_Z0_9[] = "^[a-zA-Z][a-zA-Z0-9]*";
 static char __pyx_k_node_s_not_found[] = "node '%s' not found";
 static char __pyx_k_Invalid_structure[] = "Invalid structure";
 static char __pyx_k_setGaussianParams[] = "setGaussianParams";
 static char __pyx_k_Invalid_type_for_s[] = "Invalid type for '%s'";
+static char __pyx_k_numberOfIterations[] = "numberOfIterations";
+static char __pyx_k_thresholdIteration[] = "thresholdIteration";
+static char __pyx_k_GibbsNumberOfStreams[] = "GibbsNumberOfStreams";
 static char __pyx_k_child_node_not_found[] = "child node not found";
 static char __pyx_k_init___locals_lambda[] = "__init__.<locals>.<lambda>";
 static char __pyx_k_getEdge_locals_lambda[] = "getEdge.<locals>.<lambda>";
 static char __pyx_k_getNode_locals_lambda[] = "getNode.<locals>.<lambda>";
 static char __pyx_k_maxNumberOfIterations[] = "maxNumberOfIterations";
 static char __pyx_k_EMMaxNumberOfIterations[] = "EMMaxNumberOfIterations";
+static char __pyx_k_GibbsNumberOfIterations[] = "GibbsNumberOfIterations";
+static char __pyx_k_GibbsThresholdIteration[] = "GibbsThresholdIteration";
 static char __pyx_k_No_child_node_mentioned[] = "No child node mentioned";
 static char __pyx_k_No_parent_node_mentioned[] = "No parent node mentioned";
 static char __pyx_k_invalid_type_found_in_s_s[] = "invalid type found in '%s': '%s'";
 static char __pyx_k_node_name_s_doesn_t_exist[] = "node name '%s' doesn't exist";
+static char __pyx_k_PearlMaxNumberOfIterations[] = "PearlMaxNumberOfIterations";
 static char __pyx_k_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9[] = "^[a-zA-Z]([a-zA-Z\\-0-9]*[a-zA-Z0-9]+)?$";
 static char __pyx_k_allowedstructureLearnmPrior[] = "allowedstructureLearnmPrior";
 static char __pyx_k_Invalid_type_for_child_nodes[] = "Invalid type for child nodes";
@@ -1119,16 +1144,22 @@ static char __pyx_k_allowedstructureLearnmMthods[] = "allowedstructureLearnmMtho
 static char __pyx_k_Invalid_type_for_parent_nodes[] = "Invalid type for parent nodes";
 static char __pyx_k_Invalid_Type_for_node_or_child[] = "Invalid Type for node or child";
 static char __pyx_k_Node_name_shold_only_consist_of[] = "Node name shold only consist of alphabets and numbers, it should start with alphabet";
+static char __pyx_k_Threshold_iteration_needs_to_be[] = "Threshold iteration needs to be positive integer grater than zero";
 static char __pyx_k_allowedstructureLearnmScoreFuns[] = "allowedstructureLearnmScoreFuns";
 static char __pyx_k_home_faizal_myApps_APIwrapper_c[] = "/home/faizal/myApps/APIwrapper/cPNL.pyx";
 static char __pyx_k_variance_should_be_square_times[] = "variance should be square times the number of states: got %s values ";
 static char __pyx_k_Expected_floating_point_value_fo[] = "Expected floating point value for Tolerance got '%s'";
 static char __pyx_k_Expected_int_value_for_MaxNumber[] = "Expected int value for MaxNumberOfIterations got '%s'";
+static char __pyx_k_Expected_int_value_for_NumberOfI[] = "Expected int value for `NumberOfIterations` got '%s'";
+static char __pyx_k_Expected_int_value_for_NumberOfS[] = "Expected int value for NumberOfStreams got '%s'";
+static char __pyx_k_Expected_int_value_for_Threshold[] = "Expected int value for ThresholdIteration got '%s'";
 static char __pyx_k_Mean_should_be_lists_of_floating[] = "Mean should be lists of floating point numbers";
 static char __pyx_k_Needs_positive_integer_grater_th[] = "Needs positive integer grater than zero";
 static char __pyx_k_Network_has_cycles_hence_can_t_b[] = "Network has cycles hence can't be topologically sorted";
 static char __pyx_k_No_of_means_should_be_equal_to_n[] = "No. of means should be equal to no. of states: got %s values ";
 static char __pyx_k_Node_name_specifide_s_is_not_cre[] = "Node name specifide ('%s') is not created yet";
+static char __pyx_k_Number_of_iterations_needs_to_be[] = "Number of iterations needs to be positive integer grater than zero";
+static char __pyx_k_Number_of_streams_needs_to_be_po[] = "Number of streams needs to be positive integer grater than zero";
 static char __pyx_k_Should_contain_atleast_1_dimenti[] = "Should contain atleast 1 dimention";
 static char __pyx_k_Target_node_name_specifide_is_no[] = "Target node name specifide is not created yet";
 static char __pyx_k_There_is_no_state_called_s_for_n[] = "There is no state called '%s' for node '%s' ";
@@ -1146,6 +1177,13 @@ static PyObject *__pyx_n_s_EMMaxNumberOfIterations;
 static PyObject *__pyx_n_s_EMTolerance;
 static PyObject *__pyx_kp_s_Expected_floating_point_value_fo;
 static PyObject *__pyx_kp_s_Expected_int_value_for_MaxNumber;
+static PyObject *__pyx_kp_s_Expected_int_value_for_NumberOfI;
+static PyObject *__pyx_kp_s_Expected_int_value_for_NumberOfS;
+static PyObject *__pyx_kp_s_Expected_int_value_for_Threshold;
+static PyObject *__pyx_n_s_GibbsNumberOfIterations;
+static PyObject *__pyx_n_s_GibbsNumberOfStreams;
+static PyObject *__pyx_n_s_GibbsThresholdIteration;
+static PyObject *__pyx_n_s_Inference;
 static PyObject *__pyx_kp_s_Invalid_Type_for_node_or_child;
 static PyObject *__pyx_kp_s_Invalid_structure;
 static PyObject *__pyx_kp_s_Invalid_type_for_child_nodes;
@@ -1167,17 +1205,22 @@ static PyObject *__pyx_n_s_Node;
 static PyObject *__pyx_kp_s_Node_name_shold_only_consist_of;
 static PyObject *__pyx_kp_s_Node_name_shold_only_consist_of_2;
 static PyObject *__pyx_kp_s_Node_name_specifide_s_is_not_cre;
+static PyObject *__pyx_kp_s_Number_of_iterations_needs_to_be;
+static PyObject *__pyx_kp_s_Number_of_streams_needs_to_be_po;
+static PyObject *__pyx_n_s_PearlMaxNumberOfIterations;
+static PyObject *__pyx_n_s_PearlTolerance;
 static PyObject *__pyx_n_s_PreAs;
 static PyObject *__pyx_kp_s_Should_contain_atleast_1_dimenti;
 static PyObject *__pyx_kp_s_Target_node_name_specifide_is_no;
 static PyObject *__pyx_kp_s_There_is_no_state_called_s_for_n;
+static PyObject *__pyx_kp_s_Threshold_iteration_needs_to_be;
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_kp_s_Variance_should_be_lists_of_floa;
 static PyObject *__pyx_n_s_WithoutPenalty;
-static PyObject *__pyx_kp_s__3;
-static PyObject *__pyx_kp_s__7;
-static PyObject *__pyx_kp_s__8;
+static PyObject *__pyx_kp_s__13;
+static PyObject *__pyx_kp_s__14;
+static PyObject *__pyx_kp_s__9;
 static PyObject *__pyx_kp_s_a_zA_Z_a_zA_Z0_9;
 static PyObject *__pyx_kp_s_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9;
 static PyObject *__pyx_n_s_allowedstructureLearnmMthods;
@@ -1222,6 +1265,8 @@ static PyObject *__pyx_n_s_getNode_locals_lambda;
 static PyObject *__pyx_n_s_getParentNames;
 static PyObject *__pyx_n_s_getStateNames;
 static PyObject *__pyx_n_s_getWeights;
+static PyObject *__pyx_n_s_gibbs;
+static PyObject *__pyx_n_s_gibsInferance;
 static PyObject *__pyx_kp_s_home_faizal_myApps_APIwrapper_c;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_import;
@@ -1229,6 +1274,8 @@ static PyObject *__pyx_n_s_init___locals_lambda;
 static PyObject *__pyx_kp_s_invalid_type_found_in_s_s;
 static PyObject *__pyx_n_s_itype;
 static PyObject *__pyx_n_s_join;
+static PyObject *__pyx_n_s_jtree;
+static PyObject *__pyx_n_s_jtreeInferance;
 static PyObject *__pyx_n_s_link;
 static PyObject *__pyx_kp_s_link_not_found;
 static PyObject *__pyx_n_s_main;
@@ -1238,6 +1285,8 @@ static PyObject *__pyx_n_s_means;
 static PyObject *__pyx_n_s_metaclass;
 static PyObject *__pyx_n_s_module;
 static PyObject *__pyx_n_s_mul;
+static PyObject *__pyx_n_s_naive;
+static PyObject *__pyx_n_s_naiveInferance;
 static PyObject *__pyx_n_s_netAttribute;
 static PyObject *__pyx_n_s_network_struct;
 static PyObject *__pyx_kp_s_no_waights_found_when_parent_nod;
@@ -1248,6 +1297,8 @@ static PyObject *__pyx_kp_s_node_name_s_doesn_t_exist;
 static PyObject *__pyx_kp_s_node_not_found;
 static PyObject *__pyx_kp_s_node_s_not_found;
 static PyObject *__pyx_n_s_nodes;
+static PyObject *__pyx_n_s_numStreams;
+static PyObject *__pyx_n_s_numberOfIterations;
 static PyObject *__pyx_n_s_operator;
 static PyObject *__pyx_n_s_originalList;
 static PyObject *__pyx_n_s_parent;
@@ -1255,6 +1306,8 @@ static PyObject *__pyx_n_s_parentNodes;
 static PyObject *__pyx_kp_s_parent_names_should_be_list_of_s;
 static PyObject *__pyx_kp_s_parent_names_should_be_list_of_s_2;
 static PyObject *__pyx_n_s_parents;
+static PyObject *__pyx_n_s_pearl;
+static PyObject *__pyx_n_s_pearlInferance;
 static PyObject *__pyx_n_s_prepare;
 static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_s_qualname;
@@ -1270,6 +1323,7 @@ static PyObject *__pyx_n_s_sub;
 static PyObject *__pyx_n_s_tabParentValues;
 static PyObject *__pyx_n_s_target;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_thresholdIteration;
 static PyObject *__pyx_n_s_tolerance;
 static PyObject *__pyx_n_s_top;
 static PyObject *__pyx_n_s_update;
@@ -1282,6 +1336,10 @@ static PyObject *__pyx_n_s_weights;
 static PyObject *__pyx_pf_4cPNL_combinLists(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_originalList, PyObject *__pyx_v_attrType); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_numStreams, PyObject *__pyx_v_thresholdIteration, PyObject *__pyx_v_numberOfIterations); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self); /* proto */
 static int __pyx_pf_4cPNL_10PyBayesNet___init__(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_nodeType); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_network_struct, PyObject *__pyx_v_casefile); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_4setEvidence(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_observation); /* proto */
@@ -1294,19 +1352,19 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_16setTargetNode(struct __pyx_obj_4c
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_nodeName, PyObject *__pyx_v_stateNames); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_parentNodes, PyObject *__pyx_v_childNodes); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_node, PyObject *__pyx_v_mean, PyObject *__pyx_v_variance, PyObject *__pyx_v_weight, PyObject *__pyx_v_tabParentValues); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_node, PyObject *__pyx_v_mean, PyObject *__pyx_v_variance, PyObject *__pyx_v_weight, PyObject *__pyx_v_tabParentValues); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_node, PyObject *__pyx_v_mean, PyObject *__pyx_v_variance, PyObject *__pyx_v_weight, PyObject *__pyx_v_tabParentValues); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self, PyObject *__pyx_v_parent); /* proto */
-static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_nodeName); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda13(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda14(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda15(PyObject *__pyx_self, PyObject *__pyx_v_parent); /* proto */
+static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_nodeName); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda16(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda17(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_node, PyObject *__pyx_v_childNode); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_28getCurEvidence(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_4cPNL_10PyBayesNet_30clearEvidence(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self); /* proto */
@@ -1321,15 +1379,15 @@ static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
+static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
-static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple__8;
 static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__13;
-static PyObject *__pyx_tuple__14;
 static PyObject *__pyx_tuple__15;
 static PyObject *__pyx_tuple__16;
 static PyObject *__pyx_tuple__17;
@@ -1352,7 +1410,13 @@ static PyObject *__pyx_tuple__33;
 static PyObject *__pyx_tuple__34;
 static PyObject *__pyx_tuple__35;
 static PyObject *__pyx_tuple__36;
-static PyObject *__pyx_codeobj__37;
+static PyObject *__pyx_tuple__37;
+static PyObject *__pyx_tuple__38;
+static PyObject *__pyx_tuple__39;
+static PyObject *__pyx_tuple__40;
+static PyObject *__pyx_tuple__41;
+static PyObject *__pyx_tuple__42;
+static PyObject *__pyx_codeobj__43;
 
 /* "cPNL.pyx":137
  *     pass
@@ -1796,7 +1860,7 @@ static int __pyx_pw_4cPNL_10PyBayesNet_1__init__(PyObject *__pyx_v_self, PyObjec
  *         self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
  *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
  *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
- * ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
  */
 
 /* Python wrapper */
@@ -1902,8 +1966,8 @@ static PyObject *__pyx_lambda_funcdef_lambda(PyObject *__pyx_self, PyObject *__p
  *         self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
  *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
  *         self.setProperty.bayesLearn = lambda:self.bayesLearn()             # <<<<<<<<<<<<<<
- * ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
- * ##        self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
  */
 
 /* Python wrapper */
@@ -1944,6 +2008,336 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self) {
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":165
+ *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___2lambda2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_8__init___2lambda2 = {"lambda2", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_8__init___2lambda2, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___2lambda2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_numStreams = 0;
+  PyObject *__pyx_v_thresholdIteration = 0;
+  PyObject *__pyx_v_numberOfIterations = 0;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("lambda2 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_numStreams,&__pyx_n_s_thresholdIteration,&__pyx_n_s_numberOfIterations,0};
+    PyObject* values[3] = {0,0,0};
+    values[0] = ((PyObject *)((PyObject *)Py_None));
+    values[1] = ((PyObject *)((PyObject *)Py_None));
+    values[2] = ((PyObject *)((PyObject *)Py_None));
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_numStreams);
+          if (value) { values[0] = value; kw_args--; }
+        }
+        case  1:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_thresholdIteration);
+          if (value) { values[1] = value; kw_args--; }
+        }
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_numberOfIterations);
+          if (value) { values[2] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lambda2") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_numStreams = values[0];
+    __pyx_v_thresholdIteration = values[1];
+    __pyx_v_numberOfIterations = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("lambda2", 0, 0, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_lambda_funcdef_lambda2(__pyx_self, __pyx_v_numStreams, __pyx_v_thresholdIteration, __pyx_v_numberOfIterations);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_numStreams, PyObject *__pyx_v_thresholdIteration, PyObject *__pyx_v_numberOfIterations) {
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_cur_scope;
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_outer_scope;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("lambda2", 0);
+  __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_cur_scope = __pyx_outer_scope;
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;} }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_4cPNL_PyBayesNet *)__pyx_cur_scope->__pyx_v_self->__pyx_vtab)->gibsInferance(__pyx_cur_scope->__pyx_v_self, __pyx_v_numStreams, __pyx_v_thresholdIteration, __pyx_v_numberOfIterations); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":166
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___3lambda3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_8__init___3lambda3 = {"lambda3", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_8__init___3lambda3, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___3lambda3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_tolerance = 0;
+  PyObject *__pyx_v_maxNumberOfIterations = 0;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("lambda3 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_tolerance,&__pyx_n_s_maxNumberOfIterations,0};
+    PyObject* values[2] = {0,0};
+    values[0] = ((PyObject *)((PyObject *)Py_None));
+    values[1] = ((PyObject *)((PyObject *)Py_None));
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_tolerance);
+          if (value) { values[0] = value; kw_args--; }
+        }
+        case  1:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_maxNumberOfIterations);
+          if (value) { values[1] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lambda3") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_tolerance = values[0];
+    __pyx_v_maxNumberOfIterations = values[1];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("lambda3", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_lambda_funcdef_lambda3(__pyx_self, __pyx_v_tolerance, __pyx_v_maxNumberOfIterations);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations) {
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_cur_scope;
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_outer_scope;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("lambda3", 0);
+  __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_cur_scope = __pyx_outer_scope;
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;} }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_4cPNL_PyBayesNet *)__pyx_cur_scope->__pyx_v_self->__pyx_vtab)->pearlInferance(__pyx_cur_scope->__pyx_v_self, __pyx_v_tolerance, __pyx_v_maxNumberOfIterations); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":167
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()             # <<<<<<<<<<<<<<
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()
+ * ##        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___4lambda4(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_8__init___4lambda4 = {"lambda4", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_8__init___4lambda4, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___4lambda4(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("lambda4 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda4(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self) {
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_cur_scope;
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_outer_scope;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("lambda4", 0);
+  __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_cur_scope = __pyx_outer_scope;
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;} }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_4cPNL_PyBayesNet *)__pyx_cur_scope->__pyx_v_self->__pyx_vtab)->jtreeInferance(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda4", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":168
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()             # <<<<<<<<<<<<<<
+ * ##        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+ * ##        self.setProperty.structureLearnMethod = lambda algo:self.structureLearnMethod(algo)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___5lambda5(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_8__init___5lambda5 = {"lambda5", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_8__init___5lambda5, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_8__init___5lambda5(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("lambda5 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda5(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self) {
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_cur_scope;
+  struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *__pyx_outer_scope;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("lambda5", 0);
+  __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct____init__ *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_cur_scope = __pyx_outer_scope;
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;} }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_4cPNL_PyBayesNet *)__pyx_cur_scope->__pyx_v_self->__pyx_vtab)->naiveInferance(__pyx_cur_scope->__pyx_v_self); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.__init__.lambda5", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2106,7 +2500,7 @@ static int __pyx_pf_4cPNL_10PyBayesNet___init__(struct __pyx_obj_4cPNL_PyBayesNe
  *         self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
  *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
  *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
- * ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
  */
   __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___lambda, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
@@ -2121,14 +2515,76 @@ static int __pyx_pf_4cPNL_10PyBayesNet___init__(struct __pyx_obj_4cPNL_PyBayesNe
  *         self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
  *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
  *         self.setProperty.bayesLearn = lambda:self.bayesLearn()             # <<<<<<<<<<<<<<
- * ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
- * ##        self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
  */
   __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___1lambda1, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_setProperty); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_bayesLearn, __pyx_t_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "cPNL.pyx":165
+ *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ */
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___2lambda2, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_setProperty); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_3, __pyx_n_s_gibsInferance, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "cPNL.pyx":166
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()
+ */
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___3lambda3, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_setProperty); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_pearlInferance, __pyx_t_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "cPNL.pyx":167
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()             # <<<<<<<<<<<<<<
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()
+ * ##        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+ */
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___4lambda4, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_setProperty); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_3, __pyx_n_s_jtreeInferance, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "cPNL.pyx":168
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()             # <<<<<<<<<<<<<<
+ * ##        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+ * ##        self.setProperty.structureLearnMethod = lambda algo:self.structureLearnMethod(algo)
+ */
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_8__init___5lambda5, 0, __pyx_n_s_init___locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_setProperty); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_naiveInferance, __pyx_t_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 168; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
@@ -2336,7 +2792,7 @@ static PyObject *__pyx_f_4cPNL_10PyBayesNet_emLearn(struct __pyx_obj_4cPNL_PyBay
  *             self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
  *         self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
  */
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 185; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 185; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_Raise(__pyx_t_4, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2436,7 +2892,7 @@ static PyObject *__pyx_f_4cPNL_10PyBayesNet_bayesLearn(struct __pyx_obj_4cPNL_Py
  *     cdef bayesLearn(self):
  *         self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))             # <<<<<<<<<<<<<<
  * 
- * ##    cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
  */
   __pyx_t_1 = PyString_AsString(__pyx_n_s_Learning); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 190; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_2 = PyString_AsString(__pyx_n_s_bayes); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 190; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -2455,6 +2911,775 @@ static PyObject *__pyx_f_4cPNL_10PyBayesNet_bayesLearn(struct __pyx_obj_4cPNL_Py
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_AddTraceback("cPNL.PyBayesNet.bayesLearn", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":192
+ *         self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
+ * 
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):             # <<<<<<<<<<<<<<
+ *         if not numStreams==None:
+ *             if not type(numStreams)==int:
+ */
+
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_gibsInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_numStreams, PyObject *__pyx_v_thresholdIteration, PyObject *__pyx_v_numberOfIterations) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  char *__pyx_t_5;
+  char *__pyx_t_6;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("gibsInferance", 0);
+
+  /* "cPNL.pyx":193
+ * 
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+ *         if not numStreams==None:             # <<<<<<<<<<<<<<
+ *             if not type(numStreams)==int:
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ */
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_numStreams, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 193; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 193; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = ((!__pyx_t_2) != 0);
+  if (__pyx_t_3) {
+
+    /* "cPNL.pyx":194
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+ *         if not numStreams==None:
+ *             if not type(numStreams)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:
+ */
+    __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_numStreams)), ((PyObject *)(&PyInt_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 194; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 194; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_2 = ((!__pyx_t_3) != 0);
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":195
+ *         if not numStreams==None:
+ *             if not type(numStreams)==int:
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))             # <<<<<<<<<<<<<<
+ *             if numStreams<=0:
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ */
+      __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Expected_int_value_for_NumberOfS, ((PyObject *)Py_TYPE(__pyx_v_numStreams))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 195; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 195; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_GIVEREF(__pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
+      __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 195; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 195; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":194
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+ *         if not numStreams==None:
+ *             if not type(numStreams)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:
+ */
+    }
+
+    /* "cPNL.pyx":196
+ *             if not type(numStreams)==int:
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ */
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_numStreams, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 196; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 196; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":197
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:
+ */
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":196
+ *             if not type(numStreams)==int:
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ */
+    }
+
+    /* "cPNL.pyx":198
+ *             if numStreams<=0:
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))             # <<<<<<<<<<<<<<
+ *         if not thresholdIteration==None:
+ *             if not type(thresholdIteration)==int:
+ */
+    __pyx_t_5 = PyString_AsString(__pyx_n_s_GibbsNumberOfStreams); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v_numStreams);
+    __Pyx_GIVEREF(__pyx_v_numStreams);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_numStreams);
+    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = PyString_AsString(__pyx_t_4); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_v_self->net.SetProperty(__pyx_t_5, __pyx_t_6);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "cPNL.pyx":193
+ * 
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+ *         if not numStreams==None:             # <<<<<<<<<<<<<<
+ *             if not type(numStreams)==int:
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ */
+  }
+
+  /* "cPNL.pyx":199
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:             # <<<<<<<<<<<<<<
+ *             if not type(thresholdIteration)==int:
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ */
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_thresholdIteration, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 199; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 199; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_3 = ((!__pyx_t_2) != 0);
+  if (__pyx_t_3) {
+
+    /* "cPNL.pyx":200
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:
+ *             if not type(thresholdIteration)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:
+ */
+    __pyx_t_4 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_thresholdIteration)), ((PyObject *)(&PyInt_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 200; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 200; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_2 = ((!__pyx_t_3) != 0);
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":201
+ *         if not thresholdIteration==None:
+ *             if not type(thresholdIteration)==int:
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))             # <<<<<<<<<<<<<<
+ *             if thresholdIteration<=0:
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ */
+      __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Expected_int_value_for_Threshold, ((PyObject *)Py_TYPE(__pyx_v_thresholdIteration))); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 201; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 201; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GIVEREF(__pyx_t_4);
+      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
+      __pyx_t_4 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 201; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 201; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":200
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:
+ *             if not type(thresholdIteration)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:
+ */
+    }
+
+    /* "cPNL.pyx":202
+ *             if not type(thresholdIteration)==int:
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ */
+    __pyx_t_4 = PyObject_RichCompare(__pyx_v_thresholdIteration, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":203
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:
+ */
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 203; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 203; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":202
+ *             if not type(thresholdIteration)==int:
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ */
+    }
+
+    /* "cPNL.pyx":204
+ *             if thresholdIteration<=0:
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))             # <<<<<<<<<<<<<<
+ *         if not numberOfIterations==None:
+ *             if not type(numberOfIterations)==int:
+ */
+    __pyx_t_6 = PyString_AsString(__pyx_n_s_GibbsThresholdIteration); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_INCREF(__pyx_v_thresholdIteration);
+    __Pyx_GIVEREF(__pyx_v_thresholdIteration);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_thresholdIteration);
+    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = PyString_AsString(__pyx_t_1); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_v_self->net.SetProperty(__pyx_t_6, __pyx_t_5);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "cPNL.pyx":199
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:             # <<<<<<<<<<<<<<
+ *             if not type(thresholdIteration)==int:
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ */
+  }
+
+  /* "cPNL.pyx":205
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:             # <<<<<<<<<<<<<<
+ *             if not type(numberOfIterations)==int:
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ */
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_numberOfIterations, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = ((!__pyx_t_2) != 0);
+  if (__pyx_t_3) {
+
+    /* "cPNL.pyx":206
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:
+ *             if not type(numberOfIterations)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:
+ */
+    __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_numberOfIterations)), ((PyObject *)(&PyInt_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_2 = ((!__pyx_t_3) != 0);
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":207
+ *         if not numberOfIterations==None:
+ *             if not type(numberOfIterations)==int:
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))             # <<<<<<<<<<<<<<
+ *             if numberOfIterations<=0:
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")
+ */
+      __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Expected_int_value_for_NumberOfI, ((PyObject *)Py_TYPE(__pyx_v_numberOfIterations))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_GIVEREF(__pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
+      __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":206
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:
+ *             if not type(numberOfIterations)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:
+ */
+    }
+
+    /* "cPNL.pyx":208
+ *             if not type(numberOfIterations)==int:
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+ */
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_numberOfIterations, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 208; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 208; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":209
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))
+ */
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":208
+ *             if not type(numberOfIterations)==int:
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+ */
+    }
+
+    /* "cPNL.pyx":210
+ *             if numberOfIterations<=0:
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))
+ * 
+ */
+    __pyx_t_5 = PyString_AsString(__pyx_n_s_GibbsNumberOfIterations); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v_numberOfIterations);
+    __Pyx_GIVEREF(__pyx_v_numberOfIterations);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_numberOfIterations);
+    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = PyString_AsString(__pyx_t_4); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_v_self->net.SetProperty(__pyx_t_5, __pyx_t_6);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "cPNL.pyx":205
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:             # <<<<<<<<<<<<<<
+ *             if not type(numberOfIterations)==int:
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ */
+  }
+
+  /* "cPNL.pyx":211
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_t_6 = PyString_AsString(__pyx_n_s_Inference); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 211; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = PyString_AsString(__pyx_n_s_gibbs); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 211; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v_self->net.SetProperty(__pyx_t_6, __pyx_t_5);
+
+  /* "cPNL.pyx":192
+ *         self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
+ * 
+ *     cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):             # <<<<<<<<<<<<<<
+ *         if not numStreams==None:
+ *             if not type(numStreams)==int:
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.gibsInferance", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":214
+ * 
+ * 
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):             # <<<<<<<<<<<<<<
+ *         if not tolerance==None:
+ *             if not type(tolerance)==float:
+ */
+
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_pearlInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self, PyObject *__pyx_v_tolerance, PyObject *__pyx_v_maxNumberOfIterations) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  char *__pyx_t_5;
+  char *__pyx_t_6;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("pearlInferance", 0);
+
+  /* "cPNL.pyx":215
+ * 
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+ *         if not tolerance==None:             # <<<<<<<<<<<<<<
+ *             if not type(tolerance)==float:
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ */
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_tolerance, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 215; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 215; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = ((!__pyx_t_2) != 0);
+  if (__pyx_t_3) {
+
+    /* "cPNL.pyx":216
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+ *         if not tolerance==None:
+ *             if not type(tolerance)==float:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ */
+    __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_tolerance)), ((PyObject *)(&PyFloat_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 216; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_2 = ((!__pyx_t_3) != 0);
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":217
+ *         if not tolerance==None:
+ *             if not type(tolerance)==float:
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ *         if not maxNumberOfIterations==None:
+ */
+      __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Expected_floating_point_value_fo, ((PyObject *)Py_TYPE(__pyx_v_tolerance))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_GIVEREF(__pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
+      __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":216
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+ *         if not tolerance==None:
+ *             if not type(tolerance)==float:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ */
+    }
+
+    /* "cPNL.pyx":218
+ *             if not type(tolerance)==float:
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))             # <<<<<<<<<<<<<<
+ *         if not maxNumberOfIterations==None:
+ *             if not type(maxNumberOfIterations)==int:
+ */
+    __pyx_t_5 = PyString_AsString(__pyx_n_s_PearlTolerance); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v_tolerance);
+    __Pyx_GIVEREF(__pyx_v_tolerance);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_tolerance);
+    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = PyString_AsString(__pyx_t_4); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_v_self->net.SetProperty(__pyx_t_5, __pyx_t_6);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "cPNL.pyx":215
+ * 
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+ *         if not tolerance==None:             # <<<<<<<<<<<<<<
+ *             if not type(tolerance)==float:
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ */
+  }
+
+  /* "cPNL.pyx":219
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ *         if not maxNumberOfIterations==None:             # <<<<<<<<<<<<<<
+ *             if not type(maxNumberOfIterations)==int:
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ */
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxNumberOfIterations, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 219; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 219; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_3 = ((!__pyx_t_2) != 0);
+  if (__pyx_t_3) {
+
+    /* "cPNL.pyx":220
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ *         if not maxNumberOfIterations==None:
+ *             if not type(maxNumberOfIterations)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:
+ */
+    __pyx_t_4 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_maxNumberOfIterations)), ((PyObject *)(&PyInt_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 220; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 220; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_2 = ((!__pyx_t_3) != 0);
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":221
+ *         if not maxNumberOfIterations==None:
+ *             if not type(maxNumberOfIterations)==int:
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))             # <<<<<<<<<<<<<<
+ *             if maxNumberOfIterations<=0:
+ *                 raise ValueError("Needs positive integer grater than zero")
+ */
+      __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Expected_int_value_for_MaxNumber, ((PyObject *)Py_TYPE(__pyx_v_maxNumberOfIterations))); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GIVEREF(__pyx_t_4);
+      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
+      __pyx_t_4 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":220
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ *         if not maxNumberOfIterations==None:
+ *             if not type(maxNumberOfIterations)==int:             # <<<<<<<<<<<<<<
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:
+ */
+    }
+
+    /* "cPNL.pyx":222
+ *             if not type(maxNumberOfIterations)==int:
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Needs positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+ */
+    __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxNumberOfIterations, __pyx_int_0, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (__pyx_t_2) {
+
+      /* "cPNL.pyx":223
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:
+ *                 raise ValueError("Needs positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+ */
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+      /* "cPNL.pyx":222
+ *             if not type(maxNumberOfIterations)==int:
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Needs positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+ */
+    }
+
+    /* "cPNL.pyx":224
+ *             if maxNumberOfIterations<=0:
+ *                 raise ValueError("Needs positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+ * 
+ */
+    __pyx_t_6 = PyString_AsString(__pyx_n_s_PearlMaxNumberOfIterations); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_INCREF(__pyx_v_maxNumberOfIterations);
+    __Pyx_GIVEREF(__pyx_v_maxNumberOfIterations);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_maxNumberOfIterations);
+    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_5 = PyString_AsString(__pyx_t_1); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_v_self->net.SetProperty(__pyx_t_6, __pyx_t_5);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "cPNL.pyx":219
+ *                 raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+ *             self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+ *         if not maxNumberOfIterations==None:             # <<<<<<<<<<<<<<
+ *             if not type(maxNumberOfIterations)==int:
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ */
+  }
+
+  /* "cPNL.pyx":225
+ *                 raise ValueError("Needs positive integer grater than zero")
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))             # <<<<<<<<<<<<<<
+ * 
+ *     cdef jtreeInferance(self):
+ */
+  __pyx_t_5 = PyString_AsString(__pyx_n_s_Inference); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 225; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = PyString_AsString(__pyx_n_s_pearl); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 225; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v_self->net.SetProperty(__pyx_t_5, __pyx_t_6);
+
+  /* "cPNL.pyx":214
+ * 
+ * 
+ *     cdef pearlInferance(self,tolerance,maxNumberOfIterations):             # <<<<<<<<<<<<<<
+ *         if not tolerance==None:
+ *             if not type(tolerance)==float:
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.pearlInferance", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":227
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+ * 
+ *     cdef jtreeInferance(self):             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+ * 
+ */
+
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_jtreeInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  char *__pyx_t_1;
+  char *__pyx_t_2;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("jtreeInferance", 0);
+
+  /* "cPNL.pyx":228
+ * 
+ *     cdef jtreeInferance(self):
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))             # <<<<<<<<<<<<<<
+ * 
+ *     cdef naiveInferance(self):
+ */
+  __pyx_t_1 = PyString_AsString(__pyx_n_s_Inference); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 228; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyString_AsString(__pyx_n_s_jtree); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 228; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v_self->net.SetProperty(__pyx_t_1, __pyx_t_2);
+
+  /* "cPNL.pyx":227
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+ * 
+ *     cdef jtreeInferance(self):             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("cPNL.PyBayesNet.jtreeInferance", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cPNL.pyx":230
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+ * 
+ *     cdef naiveInferance(self):             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("naive"))
+ * 
+ */
+
+static PyObject *__pyx_f_4cPNL_10PyBayesNet_naiveInferance(struct __pyx_obj_4cPNL_PyBayesNet *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  char *__pyx_t_1;
+  char *__pyx_t_2;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("naiveInferance", 0);
+
+  /* "cPNL.pyx":231
+ * 
+ *     cdef naiveInferance(self):
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("naive"))             # <<<<<<<<<<<<<<
+ * 
+ * ##    cdef structureLearn(self,method,scoreFun,prior,initialPrior):
+ */
+  __pyx_t_1 = PyString_AsString(__pyx_n_s_Inference); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyString_AsString(__pyx_n_s_naive); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v_self->net.SetProperty(__pyx_t_1, __pyx_t_2);
+
+  /* "cPNL.pyx":230
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+ * 
+ *     cdef naiveInferance(self):             # <<<<<<<<<<<<<<
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("naive"))
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("cPNL.PyBayesNet.naiveInferance", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2484,7 +3709,7 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_3create_network(PyObject *__pyx_v_s
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_network_struct,&__pyx_n_s_casefile,0};
     PyObject* values[2] = {0,0};
-    values[1] = ((PyObject*)__pyx_kp_s__3);
+    values[1] = ((PyObject*)__pyx_kp_s__9);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
@@ -2982,7 +4207,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
  *                 network_struct[node]["parents"]=None
  */
       /*else*/ {
-        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_Raise(__pyx_t_5, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -3388,7 +4613,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
  *             nodesWithParent=leftoutNodes
  *         for node in nodes:
  */
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_Raise(__pyx_t_1, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4545,7 +5770,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_4setEvidence(struct __pyx_obj_4cPNL
  *         if self.__netAttribute["evidence"]:
  *             self.net.ClearEvid()
  */
-          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L20_except_error;}
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L20_except_error;}
           __Pyx_GOTREF(__pyx_t_16);
           __Pyx_Raise(__pyx_t_16, 0, 0, 0);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -4708,7 +5933,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_4setEvidence(struct __pyx_obj_4cPNL
       __pyx_t_9 = 0;
       __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_j, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_11 = PyNumber_Add(__pyx_t_9, __pyx_kp_s__8); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = PyNumber_Add(__pyx_t_9, __pyx_kp_s__14); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_j, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
@@ -4717,7 +5942,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_4setEvidence(struct __pyx_obj_4cPNL
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = PyNumber_Add(__pyx_t_4, __pyx_kp_s__8); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PyNumber_Add(__pyx_t_4, __pyx_kp_s__14); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_netAttribute); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -4744,7 +5969,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_4setEvidence(struct __pyx_obj_4cPNL
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_17 = PyString_AsString(__pyx_t_7); if (unlikely(__pyx_t_17 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -4952,7 +6177,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_6getMean(struct __pyx_obj_4cPNL_PyB
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_split); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
@@ -5241,7 +6466,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_8getCover(struct __pyx_obj_4cPNL_Py
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_split); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
@@ -5741,7 +6966,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_10getWeights(struct __pyx_obj_4cPNL
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_split); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 385; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 385; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 385; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
@@ -6229,7 +7454,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_12getJPD(struct __pyx_obj_4cPNL_PyB
  *         res=[[j for j in i.split("^")] for i in String(resp).c_str().split(" ")]
  *         variance=[]
  */
-  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_v_nodeNames); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_v_nodeNames); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_9 = PyString_AsString(__pyx_t_2); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 401; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_resp = __pyx_v_self->net.GetJPD(__pyx_t_9);
@@ -6249,7 +7474,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_12getJPD(struct __pyx_obj_4cPNL_PyB
   __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
@@ -6298,7 +7523,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_12getJPD(struct __pyx_obj_4cPNL_PyB
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_i, __pyx_n_s_split); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (likely(PyList_CheckExact(__pyx_t_11)) || PyTuple_CheckExact(__pyx_t_11)) {
@@ -6906,7 +8131,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_14getMPE(struct __pyx_obj_4cPNL_PyB
  *         res = String(resp).c_str()
  *         res=[i.split("^") for i in res.split(" ")]
  */
-  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_v_nodeNames); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_v_nodeNames); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_9 = PyString_AsString(__pyx_t_2); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 420; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_resp = __pyx_v_self->net.GetMPE(__pyx_t_9);
@@ -6935,7 +8160,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_14getMPE(struct __pyx_obj_4cPNL_PyB
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_res, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
@@ -6982,7 +8207,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_14getMPE(struct __pyx_obj_4cPNL_PyB
     __pyx_t_6 = 0;
     __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_i, __pyx_n_s_split); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_7))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -7302,7 +8527,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_16setTargetNode(struct __pyx_obj_4c
  *         self.__netAttribute["target"]=target
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 478; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 478; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7460,7 +8685,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_compile); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_sub); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -7483,9 +8708,9 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
   if (__pyx_t_2) {
     __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
   }
-  __Pyx_INCREF(__pyx_kp_s__3);
-  __Pyx_GIVEREF(__pyx_kp_s__3);
-  PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_4, __pyx_kp_s__3);
+  __Pyx_INCREF(__pyx_kp_s__9);
+  __Pyx_GIVEREF(__pyx_kp_s__9);
+  PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_4, __pyx_kp_s__9);
   __Pyx_INCREF(__pyx_v_nodeName);
   __Pyx_GIVEREF(__pyx_v_nodeName);
   PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_nodeName);
@@ -7504,7 +8729,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
  *         if not stateNames:
  *             raise ValueError("Should contain atleast 1 dimention")
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7537,7 +8762,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
  *         for state in stateNames:
  *             if re.compile(r'^[a-zA-Z][a-zA-Z0-9]*').sub("",state):
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 548; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 548; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7587,7 +8812,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_compile); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sub); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -7610,9 +8835,9 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_5); __pyx_t_5 = NULL;
     }
-    __Pyx_INCREF(__pyx_kp_s__3);
-    __Pyx_GIVEREF(__pyx_kp_s__3);
-    PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_8, __pyx_kp_s__3);
+    __Pyx_INCREF(__pyx_kp_s__9);
+    __Pyx_GIVEREF(__pyx_kp_s__9);
+    PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_8, __pyx_kp_s__9);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
     PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_v_state);
@@ -7631,7 +8856,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
  *         self.nodes[nodeName]={"states":stateNames,"parents":[]}
  *         self.net.AddNode(PyString_AsString("continuous^"+nodeName), PyString_AsString(" ".join(stateNames)))
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 551; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 551; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7686,7 +8911,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_18createNode(struct __pyx_obj_4cPNL
   __pyx_t_1 = PyNumber_Add(__pyx_kp_s_continuous_2, __pyx_v_nodeName); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 553; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_10 = PyString_AsString(__pyx_t_1); if (unlikely(__pyx_t_10 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 553; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_v_stateNames); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 553; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_v_stateNames); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 553; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_11 = PyString_AsString(__pyx_t_3); if (unlikely(__pyx_t_11 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 553; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_self->net.AddNode(__pyx_t_10, __pyx_t_11);
@@ -7973,7 +9198,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  *         for i in range(len(parentNodes)):
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8284,7 +9509,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  *         for i in range(len(childNodes)):
  */
   /*else*/ {
-    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 580; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 580; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_Raise(__pyx_t_8, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -8497,7 +9722,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  *         if not len(childNodes):
  *             raise ValueError("No child node mentioned")
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8530,7 +9755,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  * 
  *         pNodes=" ".join(parentNodes)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -8552,7 +9777,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  *         cNodes=" ".join(childNodes)
  *         parentNodeList=parentNodes
  */
-  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_v_parentNodes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 595; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_v_parentNodes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 595; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_pNodes = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
@@ -8564,7 +9789,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_20createEdge(struct __pyx_obj_4cPNL
  *         parentNodeList=parentNodes
  *         for nodeName in childNodes:
  */
-  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_v_childNodes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 596; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_v_childNodes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 596; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_cNodes = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
@@ -9107,7 +10332,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
  *         if not (type(variance)==list or type(variance)==tuple):
  *             raise TypeError("Variance should be lists of floating point numbers")
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 613; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 613; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -9152,7 +10377,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
  *         mean=combinLists(mean,"Mean")
  *         variance=combinLists(variance,"variance")
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -9508,7 +10733,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 626; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 626; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_11 = PyString_AsString(__pyx_t_3); if (unlikely(__pyx_t_11 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 626; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9575,7 +10800,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 627; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 627; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_13 = PyString_AsString(__pyx_t_8); if (unlikely(__pyx_t_13 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 627; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9642,7 +10867,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       }
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 628; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_12 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 628; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_15 = PyString_AsString(__pyx_t_12); if (unlikely(__pyx_t_15 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 628; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9709,7 +10934,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       }
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 629; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_14 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 629; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_17 = PyString_AsString(__pyx_t_14); if (unlikely(__pyx_t_17 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 629; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9801,7 +11026,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_14); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 631; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_12 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_14); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 631; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __pyx_t_15 = PyString_AsString(__pyx_t_12); if (unlikely(__pyx_t_15 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 631; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9868,7 +11093,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_14); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 632; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_14); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 632; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __pyx_t_13 = PyString_AsString(__pyx_t_3); if (unlikely(__pyx_t_13 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 632; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9935,7 +11160,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_14); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 633; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_14); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 633; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __pyx_t_11 = PyString_AsString(__pyx_t_5); if (unlikely(__pyx_t_11 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 633; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -9990,7 +11215,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
  *         else:
  *             self.net.SetPGaussian(PyString_AsString(node),PyString_AsString(" ".join([str(i) for i in mean])),
  */
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 635; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 635; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_Raise(__pyx_t_5, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -10069,7 +11294,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 637; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 637; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_13 = PyString_AsString(__pyx_t_3); if (unlikely(__pyx_t_13 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 637; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -10136,7 +11361,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_22setGaussianParams(struct __pyx_ob
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
     }
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __pyx_t_14 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_5); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 638; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_14 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_5); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 638; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_14);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_15 = PyString_AsString(__pyx_t_14); if (unlikely(__pyx_t_15 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 638; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -10225,9 +11450,9 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_25getNode(PyObject *__pyx_v_self, P
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_lambda2 = {"lambda2", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda6(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_lambda6 = {"lambda6", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda6, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda6(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED PyObject *__pyx_v_node = 0;
   PyObject *__pyx_v_mean = 0;
   PyObject *__pyx_v_variance = 0;
@@ -10238,7 +11463,7 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_se
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda2 (wrapper)", 0);
+  __Pyx_RefNannySetupContext("lambda6 (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_node,&__pyx_n_s_mean,&__pyx_n_s_variance,&__pyx_n_s_weight,&__pyx_n_s_tabParentValues,0};
     PyObject* values[5] = {0,0,0,0,0};
@@ -10264,12 +11489,12 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_se
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mean)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lambda2", 0, 3, 5, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("lambda6", 0, 3, 5, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_variance)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lambda2", 0, 3, 5, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("lambda6", 0, 3, 5, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
         case  3:
         if (kw_args > 0) {
@@ -10283,7 +11508,7 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_se
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lambda2") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lambda6") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -10304,20 +11529,20 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_lambda2(PyObject *__pyx_se
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda2", 0, 3, 5, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("lambda6", 0, 3, 5, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda6", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_lambda_funcdef_lambda2(__pyx_self, __pyx_v_node, __pyx_v_mean, __pyx_v_variance, __pyx_v_weight, __pyx_v_tabParentValues);
+  __pyx_r = __pyx_lambda_funcdef_lambda6(__pyx_self, __pyx_v_node, __pyx_v_mean, __pyx_v_variance, __pyx_v_weight, __pyx_v_tabParentValues);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_node, PyObject *__pyx_v_mean, PyObject *__pyx_v_variance, PyObject *__pyx_v_weight, PyObject *__pyx_v_tabParentValues) {
+static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_node, PyObject *__pyx_v_mean, PyObject *__pyx_v_variance, PyObject *__pyx_v_weight, PyObject *__pyx_v_tabParentValues) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10330,7 +11555,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, CYTHON_UNUSE
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda2", 0);
+  __Pyx_RefNannySetupContext("lambda6", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10384,7 +11609,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, CYTHON_UNUSE
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda6", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10401,20 +11626,20 @@ static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, CYTHON_UNUSE
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda3(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_1lambda3 = {"lambda3", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda3, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda3(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda7(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_1lambda7 = {"lambda7", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda7, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_1lambda7(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda3 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda3(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda7 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda7(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10422,7 +11647,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda3", 0);
+  __Pyx_RefNannySetupContext("lambda7", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10433,7 +11658,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self) {
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda7", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10450,20 +11675,20 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda4(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_2lambda4 = {"lambda4", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda4, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda4(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda8(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_2lambda8 = {"lambda8", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda8, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_2lambda8(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda4 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda4(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda8 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda8(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_v_parent = NULL;
@@ -10480,7 +11705,7 @@ static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda4", 0);
+  __Pyx_RefNannySetupContext("lambda8", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10582,7 +11807,7 @@ static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda4", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda8", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_parent);
@@ -10600,20 +11825,20 @@ static PyObject *__pyx_lambda_funcdef_lambda4(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda5(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_3lambda5 = {"lambda5", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda5, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda5(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda9(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_3lambda9 = {"lambda9", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda9, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_3lambda9(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda5 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda5(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda9 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda9(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10623,7 +11848,7 @@ static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda5", 0);
+  __Pyx_RefNannySetupContext("lambda9", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10645,7 +11870,7 @@ static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self) {
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda5", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda9", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10662,20 +11887,20 @@ static PyObject *__pyx_lambda_funcdef_lambda5(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda6(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_4lambda6 = {"lambda6", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda6, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda6(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda10(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_4lambda10 = {"lambda10", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda10, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_4lambda10(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda6 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda6(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda10 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda10(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10685,7 +11910,7 @@ static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda6", 0);
+  __Pyx_RefNannySetupContext("lambda10", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10707,7 +11932,7 @@ static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self) {
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda6", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda10", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10724,20 +11949,20 @@ static PyObject *__pyx_lambda_funcdef_lambda6(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda7(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_5lambda7 = {"lambda7", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda7, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda7(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda11(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_5lambda11 = {"lambda11", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda11, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_5lambda11(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda7 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda7(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda11 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda11(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10750,7 +11975,7 @@ static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda7", 0);
+  __Pyx_RefNannySetupContext("lambda11", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10818,7 +12043,7 @@ static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda7", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda11", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10835,20 +12060,20 @@ static PyObject *__pyx_lambda_funcdef_lambda7(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda8(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_6lambda8 = {"lambda8", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda8, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda8(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda12(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_6lambda12 = {"lambda12", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda12, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_6lambda12(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda8 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda8(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda12 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda12(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10860,7 +12085,7 @@ static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda8", 0);
+  __Pyx_RefNannySetupContext("lambda12", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10903,7 +12128,7 @@ static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda8", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda12", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10920,20 +12145,20 @@ static PyObject *__pyx_lambda_funcdef_lambda8(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda9(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_7lambda9 = {"lambda9", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda9, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda9(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda13(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_7lambda13 = {"lambda13", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda13, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_7lambda13(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda9 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda9(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda13 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda13(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda13(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -10945,7 +12170,7 @@ static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda9", 0);
+  __Pyx_RefNannySetupContext("lambda13", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -10988,7 +12213,7 @@ static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda9", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda13", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11005,20 +12230,20 @@ static PyObject *__pyx_lambda_funcdef_lambda9(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda10(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_8lambda10 = {"lambda10", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda10, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda10(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda14(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_8lambda14 = {"lambda14", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda14, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_8lambda14(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda10 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda10(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda14 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda14(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda14(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -11030,7 +12255,7 @@ static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda10", 0);
+  __Pyx_RefNannySetupContext("lambda14", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -11073,7 +12298,7 @@ static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda10", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda14", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11090,20 +12315,20 @@ static PyObject *__pyx_lambda_funcdef_lambda10(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda11(PyObject *__pyx_self, PyObject *__pyx_v_parent); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_9lambda11 = {"lambda11", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda11, METH_O, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda11(PyObject *__pyx_self, PyObject *__pyx_v_parent) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda15(PyObject *__pyx_self, PyObject *__pyx_v_parent); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getNode_9lambda15 = {"lambda15", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda15, METH_O, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getNode_9lambda15(PyObject *__pyx_self, PyObject *__pyx_v_parent) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda11 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda11(__pyx_self, ((PyObject *)__pyx_v_parent));
+  __Pyx_RefNannySetupContext("lambda15 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda15(__pyx_self, ((PyObject *)__pyx_v_parent));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self, PyObject *__pyx_v_parent) {
+static PyObject *__pyx_lambda_funcdef_lambda15(PyObject *__pyx_self, PyObject *__pyx_v_parent) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -11116,7 +12341,7 @@ static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self, PyObject *_
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda11", 0);
+  __Pyx_RefNannySetupContext("lambda15", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_1_getNode *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -11161,7 +12386,7 @@ static PyObject *__pyx_lambda_funcdef_lambda11(PyObject *__pyx_self, PyObject *_
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda11", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getNode.lambda15", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11225,7 +12450,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj=Node()
  *         nodeObj.setGaussianParams=lambda node,mean,variance,weight=None,tabParentValues=None:self.setGaussianParams(nodeName,mean,variance,weight,tabParentValues)
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 644; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 644; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11277,9 +12502,9 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getNodeName=lambda:nodeName
  *         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_lambda2, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_lambda6, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_tuple__30);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_tuple__36);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_setGaussianParams, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -11290,7 +12515,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
  *         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_1lambda3, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 647; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_1lambda7, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 647; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getNodeName, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 647; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11302,7 +12527,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
  *         nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_2lambda4, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 648; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_2lambda8, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 648; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getNodeParents, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 648; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11314,7 +12539,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getStateNames=lambda:self.nodes[nodeName]["states"]
  *         nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_3lambda5, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 649; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_3lambda9, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 649; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getParentNames, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 649; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11326,7 +12551,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getMPE=lambda:self.getMPE(nodeName).values()[0]
  *         nodeObj.getJPD=lambda:self.getJPD(nodeName)
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_4lambda6, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 650; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_4lambda10, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 650; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getStateNames, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 650; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11338,7 +12563,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getJPD=lambda:self.getJPD(nodeName)
  *         nodeObj.getMean=lambda:self.getMean(nodeName)
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_5lambda7, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 651; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_5lambda11, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 651; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getMPE, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 651; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11350,7 +12575,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getMean=lambda:self.getMean(nodeName)
  *         nodeObj.getCover=lambda:self.getCover(nodeName)
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_6lambda8, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 652; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_6lambda12, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 652; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getJPD, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 652; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11362,7 +12587,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getCover=lambda:self.getCover(nodeName)
  *         nodeObj.getWeights=lambda parent:self.getWeights(nodeName,parent)
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_7lambda9, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 653; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_7lambda13, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 653; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getMean, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 653; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11374,7 +12599,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         nodeObj.getWeights=lambda parent:self.getWeights(nodeName,parent)
  *         return nodeObj
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_8lambda10, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 654; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_8lambda14, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 654; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getCover, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 654; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11386,7 +12611,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_24getNode(struct __pyx_obj_4cPNL_Py
  *         return nodeObj
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_9lambda11, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 655; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getNode_9lambda15, 0, __pyx_n_s_getNode_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 655; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_nodeObj, __pyx_n_s_getWeights, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 655; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11504,20 +12729,20 @@ static PyObject *__pyx_pw_4cPNL_10PyBayesNet_27getEdge(PyObject *__pyx_v_self, P
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda12(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getEdge_lambda12 = {"lambda12", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda12, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda12(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda16(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getEdge_lambda16 = {"lambda16", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda16, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_lambda16(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda12 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda12(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda16 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda16(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda16(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -11530,7 +12755,7 @@ static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda12", 0);
+  __Pyx_RefNannySetupContext("lambda16", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -11609,7 +12834,7 @@ static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getEdge.lambda12", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getEdge.lambda16", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11626,20 +12851,20 @@ static PyObject *__pyx_lambda_funcdef_lambda12(PyObject *__pyx_self) {
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda13(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getEdge_1lambda13 = {"lambda13", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda13, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda13(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda17(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_4cPNL_10PyBayesNet_7getEdge_1lambda17 = {"lambda17", (PyCFunction)__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda17, METH_NOARGS, 0};
+static PyObject *__pyx_pw_4cPNL_10PyBayesNet_7getEdge_1lambda17(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda13 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda13(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda17 (wrapper)", 0);
+  __pyx_r = __pyx_lambda_funcdef_lambda17(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda13(PyObject *__pyx_self) {
+static PyObject *__pyx_lambda_funcdef_lambda17(PyObject *__pyx_self) {
   struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *__pyx_cur_scope;
   struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
@@ -11652,7 +12877,7 @@ static PyObject *__pyx_lambda_funcdef_lambda13(PyObject *__pyx_self) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda13", 0);
+  __Pyx_RefNannySetupContext("lambda17", 0);
   __pyx_outer_scope = (struct __pyx_obj_4cPNL___pyx_scope_struct_2_getEdge *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
@@ -11698,7 +12923,7 @@ static PyObject *__pyx_lambda_funcdef_lambda13(PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cPNL.PyBayesNet.getEdge.lambda13", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cPNL.PyBayesNet.getEdge.lambda17", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11900,7 +13125,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *         if not childNode in  self.nodes:
  *             raise NameError("child node not found")
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 664; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 664; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11936,7 +13161,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *         if not node in self.node[childNode]["parents"]:
  *             if not node in self.nodes:
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11992,7 +13217,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *             raise NameError("link not found")
  *         edge=Node()
  */
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 669; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 669; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_Raise(__pyx_t_1, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12014,7 +13239,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *         edge=Node()
  *         edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 670; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NameError, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 670; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12066,7 +13291,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *         edge.getWeights=lambda:self.getWeights(childNode,node)
  *         return edge
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getEdge_lambda12, 0, __pyx_n_s_getEdge_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 672; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getEdge_lambda16, 0, __pyx_n_s_getEdge_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 672; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_edge, __pyx_n_s_link, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 672; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12078,7 +13303,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_26getEdge(struct __pyx_obj_4cPNL_Py
  *         return edge
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getEdge_1lambda13, 0, __pyx_n_s_getEdge_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 673; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_4cPNL_10PyBayesNet_7getEdge_1lambda17, 0, __pyx_n_s_getEdge_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cPNL, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 673; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_edge, __pyx_n_s_getWeights, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 673; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12965,7 +14190,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_32editEvidence(struct __pyx_obj_4cP
  *         if self.__netAttribute["evidence"]:
  *             self.net.ClearEvid()
  */
-          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 707; __pyx_clineno = __LINE__; goto __pyx_L20_except_error;}
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 707; __pyx_clineno = __LINE__; goto __pyx_L20_except_error;}
           __Pyx_GOTREF(__pyx_t_16);
           __Pyx_Raise(__pyx_t_16, 0, 0, 0);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -13155,7 +14380,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_32editEvidence(struct __pyx_obj_4cP
       __pyx_t_16 = 0;
       __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_j, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_16 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_16);
-      __pyx_t_9 = PyNumber_Add(__pyx_t_16, __pyx_kp_s__8); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PyNumber_Add(__pyx_t_16, __pyx_kp_s__14); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_j, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_16 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
@@ -13164,7 +14389,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_32editEvidence(struct __pyx_obj_4cP
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-      __pyx_t_16 = PyNumber_Add(__pyx_t_4, __pyx_kp_s__8); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_16 = PyNumber_Add(__pyx_t_4, __pyx_kp_s__14); if (unlikely(!__pyx_t_16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_new_observation, __pyx_v_j); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
@@ -13185,7 +14410,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_32editEvidence(struct __pyx_obj_4cP
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyString_Join(__pyx_kp_s__7, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyString_Join(__pyx_kp_s__13, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_19 = PyString_AsString(__pyx_t_7); if (unlikely(__pyx_t_19 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 712; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -13523,7 +14748,6 @@ static PyObject *__pyx_tp_new_4cPNL_PyBayesNet(PyTypeObject *t, CYTHON_UNUSED Py
   new((void*)&(p->net)) BayesNet();
   return o;
 }
-
 template<typename T>
 void __Pyx_call_destructor(T& x) {
     x.~T();
@@ -13985,6 +15209,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_EMTolerance, __pyx_k_EMTolerance, sizeof(__pyx_k_EMTolerance), 0, 0, 1, 1},
   {&__pyx_kp_s_Expected_floating_point_value_fo, __pyx_k_Expected_floating_point_value_fo, sizeof(__pyx_k_Expected_floating_point_value_fo), 0, 0, 1, 0},
   {&__pyx_kp_s_Expected_int_value_for_MaxNumber, __pyx_k_Expected_int_value_for_MaxNumber, sizeof(__pyx_k_Expected_int_value_for_MaxNumber), 0, 0, 1, 0},
+  {&__pyx_kp_s_Expected_int_value_for_NumberOfI, __pyx_k_Expected_int_value_for_NumberOfI, sizeof(__pyx_k_Expected_int_value_for_NumberOfI), 0, 0, 1, 0},
+  {&__pyx_kp_s_Expected_int_value_for_NumberOfS, __pyx_k_Expected_int_value_for_NumberOfS, sizeof(__pyx_k_Expected_int_value_for_NumberOfS), 0, 0, 1, 0},
+  {&__pyx_kp_s_Expected_int_value_for_Threshold, __pyx_k_Expected_int_value_for_Threshold, sizeof(__pyx_k_Expected_int_value_for_Threshold), 0, 0, 1, 0},
+  {&__pyx_n_s_GibbsNumberOfIterations, __pyx_k_GibbsNumberOfIterations, sizeof(__pyx_k_GibbsNumberOfIterations), 0, 0, 1, 1},
+  {&__pyx_n_s_GibbsNumberOfStreams, __pyx_k_GibbsNumberOfStreams, sizeof(__pyx_k_GibbsNumberOfStreams), 0, 0, 1, 1},
+  {&__pyx_n_s_GibbsThresholdIteration, __pyx_k_GibbsThresholdIteration, sizeof(__pyx_k_GibbsThresholdIteration), 0, 0, 1, 1},
+  {&__pyx_n_s_Inference, __pyx_k_Inference, sizeof(__pyx_k_Inference), 0, 0, 1, 1},
   {&__pyx_kp_s_Invalid_Type_for_node_or_child, __pyx_k_Invalid_Type_for_node_or_child, sizeof(__pyx_k_Invalid_Type_for_node_or_child), 0, 0, 1, 0},
   {&__pyx_kp_s_Invalid_structure, __pyx_k_Invalid_structure, sizeof(__pyx_k_Invalid_structure), 0, 0, 1, 0},
   {&__pyx_kp_s_Invalid_type_for_child_nodes, __pyx_k_Invalid_type_for_child_nodes, sizeof(__pyx_k_Invalid_type_for_child_nodes), 0, 0, 1, 0},
@@ -14006,17 +15237,22 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Node_name_shold_only_consist_of, __pyx_k_Node_name_shold_only_consist_of, sizeof(__pyx_k_Node_name_shold_only_consist_of), 0, 0, 1, 0},
   {&__pyx_kp_s_Node_name_shold_only_consist_of_2, __pyx_k_Node_name_shold_only_consist_of_2, sizeof(__pyx_k_Node_name_shold_only_consist_of_2), 0, 0, 1, 0},
   {&__pyx_kp_s_Node_name_specifide_s_is_not_cre, __pyx_k_Node_name_specifide_s_is_not_cre, sizeof(__pyx_k_Node_name_specifide_s_is_not_cre), 0, 0, 1, 0},
+  {&__pyx_kp_s_Number_of_iterations_needs_to_be, __pyx_k_Number_of_iterations_needs_to_be, sizeof(__pyx_k_Number_of_iterations_needs_to_be), 0, 0, 1, 0},
+  {&__pyx_kp_s_Number_of_streams_needs_to_be_po, __pyx_k_Number_of_streams_needs_to_be_po, sizeof(__pyx_k_Number_of_streams_needs_to_be_po), 0, 0, 1, 0},
+  {&__pyx_n_s_PearlMaxNumberOfIterations, __pyx_k_PearlMaxNumberOfIterations, sizeof(__pyx_k_PearlMaxNumberOfIterations), 0, 0, 1, 1},
+  {&__pyx_n_s_PearlTolerance, __pyx_k_PearlTolerance, sizeof(__pyx_k_PearlTolerance), 0, 0, 1, 1},
   {&__pyx_n_s_PreAs, __pyx_k_PreAs, sizeof(__pyx_k_PreAs), 0, 0, 1, 1},
   {&__pyx_kp_s_Should_contain_atleast_1_dimenti, __pyx_k_Should_contain_atleast_1_dimenti, sizeof(__pyx_k_Should_contain_atleast_1_dimenti), 0, 0, 1, 0},
   {&__pyx_kp_s_Target_node_name_specifide_is_no, __pyx_k_Target_node_name_specifide_is_no, sizeof(__pyx_k_Target_node_name_specifide_is_no), 0, 0, 1, 0},
   {&__pyx_kp_s_There_is_no_state_called_s_for_n, __pyx_k_There_is_no_state_called_s_for_n, sizeof(__pyx_k_There_is_no_state_called_s_for_n), 0, 0, 1, 0},
+  {&__pyx_kp_s_Threshold_iteration_needs_to_be, __pyx_k_Threshold_iteration_needs_to_be, sizeof(__pyx_k_Threshold_iteration_needs_to_be), 0, 0, 1, 0},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_kp_s_Variance_should_be_lists_of_floa, __pyx_k_Variance_should_be_lists_of_floa, sizeof(__pyx_k_Variance_should_be_lists_of_floa), 0, 0, 1, 0},
   {&__pyx_n_s_WithoutPenalty, __pyx_k_WithoutPenalty, sizeof(__pyx_k_WithoutPenalty), 0, 0, 1, 1},
-  {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
-  {&__pyx_kp_s__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 0, 1, 0},
-  {&__pyx_kp_s__8, __pyx_k__8, sizeof(__pyx_k__8), 0, 0, 1, 0},
+  {&__pyx_kp_s__13, __pyx_k__13, sizeof(__pyx_k__13), 0, 0, 1, 0},
+  {&__pyx_kp_s__14, __pyx_k__14, sizeof(__pyx_k__14), 0, 0, 1, 0},
+  {&__pyx_kp_s__9, __pyx_k__9, sizeof(__pyx_k__9), 0, 0, 1, 0},
   {&__pyx_kp_s_a_zA_Z_a_zA_Z0_9, __pyx_k_a_zA_Z_a_zA_Z0_9, sizeof(__pyx_k_a_zA_Z_a_zA_Z0_9), 0, 0, 1, 0},
   {&__pyx_kp_s_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9, __pyx_k_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9, sizeof(__pyx_k_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9), 0, 0, 1, 0},
   {&__pyx_n_s_allowedstructureLearnmMthods, __pyx_k_allowedstructureLearnmMthods, sizeof(__pyx_k_allowedstructureLearnmMthods), 0, 0, 1, 1},
@@ -14061,6 +15297,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_getParentNames, __pyx_k_getParentNames, sizeof(__pyx_k_getParentNames), 0, 0, 1, 1},
   {&__pyx_n_s_getStateNames, __pyx_k_getStateNames, sizeof(__pyx_k_getStateNames), 0, 0, 1, 1},
   {&__pyx_n_s_getWeights, __pyx_k_getWeights, sizeof(__pyx_k_getWeights), 0, 0, 1, 1},
+  {&__pyx_n_s_gibbs, __pyx_k_gibbs, sizeof(__pyx_k_gibbs), 0, 0, 1, 1},
+  {&__pyx_n_s_gibsInferance, __pyx_k_gibsInferance, sizeof(__pyx_k_gibsInferance), 0, 0, 1, 1},
   {&__pyx_kp_s_home_faizal_myApps_APIwrapper_c, __pyx_k_home_faizal_myApps_APIwrapper_c, sizeof(__pyx_k_home_faizal_myApps_APIwrapper_c), 0, 0, 1, 0},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
@@ -14068,6 +15306,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_invalid_type_found_in_s_s, __pyx_k_invalid_type_found_in_s_s, sizeof(__pyx_k_invalid_type_found_in_s_s), 0, 0, 1, 0},
   {&__pyx_n_s_itype, __pyx_k_itype, sizeof(__pyx_k_itype), 0, 0, 1, 1},
   {&__pyx_n_s_join, __pyx_k_join, sizeof(__pyx_k_join), 0, 0, 1, 1},
+  {&__pyx_n_s_jtree, __pyx_k_jtree, sizeof(__pyx_k_jtree), 0, 0, 1, 1},
+  {&__pyx_n_s_jtreeInferance, __pyx_k_jtreeInferance, sizeof(__pyx_k_jtreeInferance), 0, 0, 1, 1},
   {&__pyx_n_s_link, __pyx_k_link, sizeof(__pyx_k_link), 0, 0, 1, 1},
   {&__pyx_kp_s_link_not_found, __pyx_k_link_not_found, sizeof(__pyx_k_link_not_found), 0, 0, 1, 0},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -14077,6 +15317,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
   {&__pyx_n_s_module, __pyx_k_module, sizeof(__pyx_k_module), 0, 0, 1, 1},
   {&__pyx_n_s_mul, __pyx_k_mul, sizeof(__pyx_k_mul), 0, 0, 1, 1},
+  {&__pyx_n_s_naive, __pyx_k_naive, sizeof(__pyx_k_naive), 0, 0, 1, 1},
+  {&__pyx_n_s_naiveInferance, __pyx_k_naiveInferance, sizeof(__pyx_k_naiveInferance), 0, 0, 1, 1},
   {&__pyx_n_s_netAttribute, __pyx_k_netAttribute, sizeof(__pyx_k_netAttribute), 0, 0, 1, 1},
   {&__pyx_n_s_network_struct, __pyx_k_network_struct, sizeof(__pyx_k_network_struct), 0, 0, 1, 1},
   {&__pyx_kp_s_no_waights_found_when_parent_nod, __pyx_k_no_waights_found_when_parent_nod, sizeof(__pyx_k_no_waights_found_when_parent_nod), 0, 0, 1, 0},
@@ -14087,6 +15329,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_node_not_found, __pyx_k_node_not_found, sizeof(__pyx_k_node_not_found), 0, 0, 1, 0},
   {&__pyx_kp_s_node_s_not_found, __pyx_k_node_s_not_found, sizeof(__pyx_k_node_s_not_found), 0, 0, 1, 0},
   {&__pyx_n_s_nodes, __pyx_k_nodes, sizeof(__pyx_k_nodes), 0, 0, 1, 1},
+  {&__pyx_n_s_numStreams, __pyx_k_numStreams, sizeof(__pyx_k_numStreams), 0, 0, 1, 1},
+  {&__pyx_n_s_numberOfIterations, __pyx_k_numberOfIterations, sizeof(__pyx_k_numberOfIterations), 0, 0, 1, 1},
   {&__pyx_n_s_operator, __pyx_k_operator, sizeof(__pyx_k_operator), 0, 0, 1, 1},
   {&__pyx_n_s_originalList, __pyx_k_originalList, sizeof(__pyx_k_originalList), 0, 0, 1, 1},
   {&__pyx_n_s_parent, __pyx_k_parent, sizeof(__pyx_k_parent), 0, 0, 1, 1},
@@ -14094,6 +15338,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_parent_names_should_be_list_of_s, __pyx_k_parent_names_should_be_list_of_s, sizeof(__pyx_k_parent_names_should_be_list_of_s), 0, 0, 1, 0},
   {&__pyx_kp_s_parent_names_should_be_list_of_s_2, __pyx_k_parent_names_should_be_list_of_s_2, sizeof(__pyx_k_parent_names_should_be_list_of_s_2), 0, 0, 1, 0},
   {&__pyx_n_s_parents, __pyx_k_parents, sizeof(__pyx_k_parents), 0, 0, 1, 1},
+  {&__pyx_n_s_pearl, __pyx_k_pearl, sizeof(__pyx_k_pearl), 0, 0, 1, 1},
+  {&__pyx_n_s_pearlInferance, __pyx_k_pearlInferance, sizeof(__pyx_k_pearlInferance), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
@@ -14109,6 +15355,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_tabParentValues, __pyx_k_tabParentValues, sizeof(__pyx_k_tabParentValues), 0, 0, 1, 1},
   {&__pyx_n_s_target, __pyx_k_target, sizeof(__pyx_k_target), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_thresholdIteration, __pyx_k_thresholdIteration, sizeof(__pyx_k_thresholdIteration), 0, 0, 1, 1},
   {&__pyx_n_s_tolerance, __pyx_k_tolerance, sizeof(__pyx_k_tolerance), 0, 0, 1, 1},
   {&__pyx_n_s_top, __pyx_k_top, sizeof(__pyx_k_top), 0, 0, 1, 1},
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
@@ -14139,11 +15386,33 @@ static int __Pyx_InitCachedConstants(void) {
  *         self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
  *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
  *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
- * ##        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
  */
   __pyx_tuple_ = PyTuple_Pack(2, ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "cPNL.pyx":165
+ *         self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ */
+  __pyx_tuple__2 = PyTuple_Pack(3, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+
+  /* "cPNL.pyx":166
+ *         self.setProperty.bayesLearn = lambda:self.bayesLearn()
+ *         self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+ *         self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)             # <<<<<<<<<<<<<<
+ *         self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+ *         self.setProperty.naiveInferance = lambda :self.naiveInferance()
+ */
+  __pyx_tuple__3 = PyTuple_Pack(2, ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
 
   /* "cPNL.pyx":185
  *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
@@ -14152,9 +15421,53 @@ static int __Pyx_InitCachedConstants(void) {
  *             self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
  *         self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_Needs_positive_integer_grater_th); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 185; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Needs_positive_integer_grater_th); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 185; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
+  /* "cPNL.pyx":197
+ *                 raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+ *             if numStreams<=0:
+ *                 raise ValueError("Number of streams needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+ *         if not thresholdIteration==None:
+ */
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Number_of_streams_needs_to_be_po); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+
+  /* "cPNL.pyx":203
+ *                 raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+ *             if thresholdIteration<=0:
+ *                 raise ValueError("Threshold iteration needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+ *         if not numberOfIterations==None:
+ */
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Threshold_iteration_needs_to_be); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 203; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+
+  /* "cPNL.pyx":209
+ *                 raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+ *             if numberOfIterations<=0:
+ *                 raise ValueError("Number of iterations needs to be positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))
+ */
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_Number_of_iterations_needs_to_be); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+
+  /* "cPNL.pyx":223
+ *                 raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+ *             if maxNumberOfIterations<=0:
+ *                 raise ValueError("Needs positive integer grater than zero")             # <<<<<<<<<<<<<<
+ *             self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+ *         self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+ */
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Needs_positive_integer_grater_th); if (unlikely(!__pyx_tuple__8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
   /* "cPNL.pyx":283
  *                             raise TypeError("parent names should be list of strings. Found: '%s'" % dType)
@@ -14163,9 +15476,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             else:
  *                 network_struct[node]["parents"]=None
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_parent_names_should_be_list_of_s_2); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_parent_names_should_be_list_of_s_2); if (unlikely(!__pyx_tuple__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "cPNL.pyx":302
  *                     leftoutNodes.append(node)
@@ -14174,9 +15487,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             nodesWithParent=leftoutNodes
  *         for node in nodes:
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Network_has_cycles_hence_can_t_b); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Network_has_cycles_hence_can_t_b); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "cPNL.pyx":345
  *                     new_observation[(node,stateAndObsv[0])]=float(stateAndObsv[1])
@@ -14185,9 +15498,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if self.__netAttribute["evidence"]:
  *             self.net.ClearEvid()
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Invalid_structure); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Invalid_structure); if (unlikely(!__pyx_tuple__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "cPNL.pyx":359
  *             raise ValueError("Node name specifide ('%s') is not created yet" % node)
@@ -14196,9 +15509,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         return {self.nodes[node]["states"][i]:res[i] for i in range(len(self.nodes[node]["states"]))}
  * 
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s__8); if (unlikely(!__pyx_tuple__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s__14); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "cPNL.pyx":369
  *             raise ValueError("Node name specifide ('%s') is not created yet" % node)
@@ -14207,9 +15520,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         numStates=len(self.nodes[node]["states"])
  *         return tuple([tuple(res[i*numStates:(i+1)*numStates]) for i in range(numStates)])
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s__8); if (unlikely(!__pyx_tuple__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s__14); if (unlikely(!__pyx_tuple__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "cPNL.pyx":385
  *             raise ValueError("Node name specifide ('%s') is not created yet" % parent)
@@ -14218,9 +15531,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         numStates=len(self.nodes[node]["states"])
  *         numPStates=len(self.nodes[parent]["states"])
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s__8); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 385; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s__14); if (unlikely(!__pyx_tuple__17)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 385; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "cPNL.pyx":402
  *             nodeNames.append(node)
@@ -14229,12 +15542,12 @@ static int __Pyx_InitCachedConstants(void) {
  *         variance=[]
  *         numMeans=len(res[0])
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s__7); if (unlikely(!__pyx_tuple__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s__8); if (unlikely(!__pyx_tuple__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s__13); if (unlikely(!__pyx_tuple__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s__14); if (unlikely(!__pyx_tuple__19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 402; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "cPNL.pyx":422
  *         resp = self.net.GetMPE(PyString_AsString(" ".join(nodeNames)))
@@ -14243,12 +15556,12 @@ static int __Pyx_InitCachedConstants(void) {
  *         result = {}
  *         for i in range(len(nodeNames)):
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s__7); if (unlikely(!__pyx_tuple__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s__8); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s__13); if (unlikely(!__pyx_tuple__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s__14); if (unlikely(!__pyx_tuple__21)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 422; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "cPNL.pyx":478
  *             target=target.getNodeName()
@@ -14257,9 +15570,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         self.__netAttribute["target"]=target
  * 
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_Target_node_name_specifide_is_no); if (unlikely(!__pyx_tuple__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 478; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Target_node_name_specifide_is_no); if (unlikely(!__pyx_tuple__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 478; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "cPNL.pyx":545
  * 
@@ -14268,9 +15581,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise ValueError("Node name shold only consist of alphabets and numbers, it should start with alphabet")
  *         if not stateNames:
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9); if (unlikely(!__pyx_tuple__17)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_a_zA_Z_a_zA_Z_0_9_a_zA_Z0_9); if (unlikely(!__pyx_tuple__23)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 545; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
   /* "cPNL.pyx":546
  *     def createNode(self,str nodeName,list stateNames):
@@ -14279,9 +15592,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not stateNames:
  *             raise ValueError("Should contain atleast 1 dimention")
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_Node_name_shold_only_consist_of); if (unlikely(!__pyx_tuple__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_Node_name_shold_only_consist_of); if (unlikely(!__pyx_tuple__24)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 546; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
 
   /* "cPNL.pyx":548
  *             raise ValueError("Node name shold only consist of alphabets and numbers, it should start with alphabet")
@@ -14290,9 +15603,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         for state in stateNames:
  *             if re.compile(r'^[a-zA-Z][a-zA-Z0-9]*').sub("",state):
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Should_contain_atleast_1_dimenti); if (unlikely(!__pyx_tuple__19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 548; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_Should_contain_atleast_1_dimenti); if (unlikely(!__pyx_tuple__25)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 548; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "cPNL.pyx":550
  *             raise ValueError("Should contain atleast 1 dimention")
@@ -14301,9 +15614,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 raise ValueError("Node name shold only consist of alphabets and numbers,  it should start with alphabet")
  *         self.nodes[nodeName]={"states":stateNames,"parents":[]}
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_a_zA_Z_a_zA_Z0_9); if (unlikely(!__pyx_tuple__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_a_zA_Z_a_zA_Z0_9); if (unlikely(!__pyx_tuple__26)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 550; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "cPNL.pyx":551
  *         for state in stateNames:
@@ -14312,9 +15625,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         self.nodes[nodeName]={"states":stateNames,"parents":[]}
  *         self.net.AddNode(PyString_AsString("continuous^"+nodeName), PyString_AsString(" ".join(stateNames)))
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Node_name_shold_only_consist_of_2); if (unlikely(!__pyx_tuple__21)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 551; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Node_name_shold_only_consist_of_2); if (unlikely(!__pyx_tuple__27)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 551; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "cPNL.pyx":563
  *             parentNodes=[parentNodes]
@@ -14323,9 +15636,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         for i in range(len(parentNodes)):
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Invalid_type_for_parent_nodes); if (unlikely(!__pyx_tuple__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_Invalid_type_for_parent_nodes); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 563; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "cPNL.pyx":580
  *             childNodes=[childNodes]
@@ -14334,9 +15647,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         for i in range(len(childNodes)):
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_Invalid_type_for_child_nodes); if (unlikely(!__pyx_tuple__23)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 580; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_Invalid_type_for_child_nodes); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 580; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "cPNL.pyx":591
  *                 raise NameError("node '%s' not found" % childNodes[i])
@@ -14345,9 +15658,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not len(childNodes):
  *             raise ValueError("No child node mentioned")
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_No_parent_node_mentioned); if (unlikely(!__pyx_tuple__24)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_No_parent_node_mentioned); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 591; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "cPNL.pyx":593
  *             raise ValueError("No parent node mentioned")
@@ -14356,9 +15669,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         pNodes=" ".join(parentNodes)
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_No_child_node_mentioned); if (unlikely(!__pyx_tuple__25)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_No_child_node_mentioned); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "cPNL.pyx":613
  *                 variance=[float(variance)]
@@ -14367,9 +15680,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not (type(variance)==list or type(variance)==tuple):
  *             raise TypeError("Variance should be lists of floating point numbers")
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_Mean_should_be_lists_of_floating); if (unlikely(!__pyx_tuple__26)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 613; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_Mean_should_be_lists_of_floating); if (unlikely(!__pyx_tuple__32)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 613; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "cPNL.pyx":615
  *             raise TypeError("Mean should be lists of floating point numbers")
@@ -14378,9 +15691,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         mean=combinLists(mean,"Mean")
  *         variance=combinLists(variance,"variance")
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Variance_should_be_lists_of_floa); if (unlikely(!__pyx_tuple__27)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Variance_should_be_lists_of_floa); if (unlikely(!__pyx_tuple__33)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 615; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "cPNL.pyx":635
  *                                       PyString_AsString(" ".join([str(i) for i in weight])))
@@ -14389,9 +15702,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         else:
  *             self.net.SetPGaussian(PyString_AsString(node),PyString_AsString(" ".join([str(i) for i in mean])),
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_no_waights_found_when_parent_nod); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 635; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_no_waights_found_when_parent_nod); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 635; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
 
   /* "cPNL.pyx":644
  *     def getNode(self,str nodeName):
@@ -14400,9 +15713,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         nodeObj=Node()
  *         nodeObj.setGaussianParams=lambda node,mean,variance,weight=None,tabParentValues=None:self.setGaussianParams(nodeName,mean,variance,weight,tabParentValues)
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_node_not_found); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 644; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_node_not_found); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 644; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__35);
+  __Pyx_GIVEREF(__pyx_tuple__35);
 
   /* "cPNL.pyx":646
  *             raise NameError("node not found")
@@ -14411,9 +15724,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         nodeObj.getNodeName=lambda:nodeName
  *         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
  */
-  __pyx_tuple__30 = PyTuple_Pack(2, ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__36 = PyTuple_Pack(2, ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 646; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
 
   /* "cPNL.pyx":664
  *             childNode = str(childNode.getNodeName())
@@ -14422,9 +15735,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not childNode in  self.nodes:
  *             raise NameError("child node not found")
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_Invalid_Type_for_node_or_child); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 664; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_Invalid_Type_for_node_or_child); if (unlikely(!__pyx_tuple__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 664; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__37);
+  __Pyx_GIVEREF(__pyx_tuple__37);
 
   /* "cPNL.pyx":666
  *             raise TypeError("Invalid Type for node or child")
@@ -14433,9 +15746,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not node in self.node[childNode]["parents"]:
  *             if not node in self.nodes:
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_child_node_not_found); if (unlikely(!__pyx_tuple__32)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_child_node_not_found); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 666; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__38);
+  __Pyx_GIVEREF(__pyx_tuple__38);
 
   /* "cPNL.pyx":669
  *         if not node in self.node[childNode]["parents"]:
@@ -14444,9 +15757,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise NameError("link not found")
  *         edge=Node()
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_node_not_found); if (unlikely(!__pyx_tuple__33)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 669; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_node_not_found); if (unlikely(!__pyx_tuple__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 669; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__39);
+  __Pyx_GIVEREF(__pyx_tuple__39);
 
   /* "cPNL.pyx":670
  *             if not node in self.nodes:
@@ -14455,9 +15768,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         edge=Node()
  *         edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
  */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_link_not_found); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 670; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__34);
-  __Pyx_GIVEREF(__pyx_tuple__34);
+  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s_link_not_found); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 670; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__40);
+  __Pyx_GIVEREF(__pyx_tuple__40);
 
   /* "cPNL.pyx":707
  *                     new_observation[(node,stateAndObsv[0])]=float(stateAndObsv[1])
@@ -14466,9 +15779,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if self.__netAttribute["evidence"]:
  *             self.net.ClearEvid()
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_Invalid_structure); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 707; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
+  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_Invalid_structure); if (unlikely(!__pyx_tuple__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 707; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__41);
+  __Pyx_GIVEREF(__pyx_tuple__41);
 
   /* "cPNL.pyx":137
  *     pass
@@ -14477,10 +15790,10 @@ static int __Pyx_InitCachedConstants(void) {
  *     floatList=[]
  *     for i in originalList:
  */
-  __pyx_tuple__36 = PyTuple_Pack(5, __pyx_n_s_originalList, __pyx_n_s_attrType, __pyx_n_s_floatList, __pyx_n_s_i, __pyx_n_s_itype); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__36);
-  __Pyx_GIVEREF(__pyx_tuple__36);
-  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_faizal_myApps_APIwrapper_c, __pyx_n_s_combinLists, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__42 = PyTuple_Pack(5, __pyx_n_s_originalList, __pyx_n_s_attrType, __pyx_n_s_floatList, __pyx_n_s_i, __pyx_n_s_itype); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
+  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_faizal_myApps_APIwrapper_c, __pyx_n_s_combinLists, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -14589,6 +15902,10 @@ PyMODINIT_FUNC PyInit_cPNL(void)
   __pyx_vtabptr_4cPNL_PyBayesNet = &__pyx_vtable_4cPNL_PyBayesNet;
   __pyx_vtable_4cPNL_PyBayesNet.emLearn = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *))__pyx_f_4cPNL_10PyBayesNet_emLearn;
   __pyx_vtable_4cPNL_PyBayesNet.bayesLearn = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *))__pyx_f_4cPNL_10PyBayesNet_bayesLearn;
+  __pyx_vtable_4cPNL_PyBayesNet.gibsInferance = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *, PyObject *))__pyx_f_4cPNL_10PyBayesNet_gibsInferance;
+  __pyx_vtable_4cPNL_PyBayesNet.pearlInferance = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *, PyObject *, PyObject *))__pyx_f_4cPNL_10PyBayesNet_pearlInferance;
+  __pyx_vtable_4cPNL_PyBayesNet.jtreeInferance = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *))__pyx_f_4cPNL_10PyBayesNet_jtreeInferance;
+  __pyx_vtable_4cPNL_PyBayesNet.naiveInferance = (PyObject *(*)(struct __pyx_obj_4cPNL_PyBayesNet *))__pyx_f_4cPNL_10PyBayesNet_naiveInferance;
   if (PyType_Ready(&__pyx_type_4cPNL_PyBayesNet) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_type_4cPNL_PyBayesNet.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_4cPNL_PyBayesNet.tp_dict, __pyx_vtabptr_4cPNL_PyBayesNet) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
