@@ -110,13 +110,14 @@ Notes:
 
 --------------------------------------------------------
 Building the library, examples and tests for
-C/C++ version from Linux with gcc
+C/C++ version from Linux with gcc 
 --------------------------------------------------------
    1. Go to the root directory (it contain this file and changes.txt)
    2. Run './configure.gcc'
-   3. Run 'make' to compile sources
-   4. Run 'make check' to compile and launch test suite (optionally)
-   5. Run 'make install' to install library
+   3. Run './set_64.sh' (run this only if you are using 64bit machine)
+   4. Run 'make' to compile sources
+   5. Run 'make check' to compile and launch test suite (optionally)
+   6. Run 'make install' to install library
 
 Notes:
    - Step 2 (Run './configure.gcc') should be run on initial or on compiler 
@@ -136,9 +137,10 @@ C/C++ version from Linux with icc (Intel compiler)
 --------------------------------------------------------
    1. Go to the root directory (it contain this file and changes.txt)
    2. Run './configure.icc'
-   3. Run 'make' to compile sources
-   4. Run 'make check' to compile and launch test suite (optionally)
-   5. Run 'make install' to install library
+   3. Run './set_64.sh' (run this only if you are using 64bit machine)
+   4. Run 'make' to compile sources
+   5. Run 'make check' to compile and launch test suite (optionally)
+   6. Run 'make install' to install library
 
 Notes:
    - Step 2 (Run './configure.icc') should be run on initial or on compiler 
