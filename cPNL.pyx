@@ -311,12 +311,13 @@ cdef class PyBayesNet:
                                            network_struct[node]["variances"],
                                            network_struct[node]["weights"],
                                            network_struct[node]["tabParentValues"] if "tabParentValues" in network_struct[node] else None)
-            if "means" in network_struct[node] and "variances" in network_struct[node]:
-                self.setGaussianParams(node,
-                                       network_struct[node]["means"],
-                                       network_struct[node]["variances"],
-                                       None,
-                                       network_struct[node]["tabParentValues"] if "tabParentValues" in network_struct[node] else None)
+            else:
+                if "means" in network_struct[node] and "variances" in network_struct[node]:
+                    self.setGaussianParams(node,
+                                           network_struct[node]["means"],
+                                           network_struct[node]["variances"],
+                                           None,
+                                           network_struct[node]["tabParentValues"] if "tabParentValues" in network_struct[node] else None)
                         
         if casefile.strip():
             self.net.LoadEvidBuf(PyString_AsString(casefile.strip()))
