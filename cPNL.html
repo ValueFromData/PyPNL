@@ -2749,7 +2749,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
 /* … */
   }
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-</pre><pre class="cython line score-45" onclick='toggleDiv(this)'>+<span class="">305</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="nb">tuple</span><span class="p">(</span><span class="n">network_struct</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s">&quot;states&quot;</span><span class="p">]))</span></pre>
+</pre><pre class="cython line score-45" onclick='toggleDiv(this)'>+<span class="">305</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="n">network_struct</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s">&quot;states&quot;</span><span class="p">]))</span></pre>
 <pre class='cython code score-45 '>    __pyx_t_14 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_createNode);<span class='error_goto'> if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_14);
     if (unlikely(__pyx_v_network_struct == Py_None)) {
@@ -2761,7 +2761,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
     __pyx_t_13 = <span class='py_c_api'>PyObject_GetItem</span>(__pyx_t_5, __pyx_n_s_states);<span class='error_goto'> if (unlikely(__pyx_t_13 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}</span>;
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_13);
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = <span class='py_c_api'>PySequence_Tuple</span>(__pyx_t_13);<span class='error_goto'> if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}</span>
+    __pyx_t_5 = <span class='py_c_api'>PySequence_List</span>(__pyx_t_13);<span class='error_goto'> if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_13); __pyx_t_13 = 0;
     __pyx_t_13 = NULL;

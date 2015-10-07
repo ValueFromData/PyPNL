@@ -302,7 +302,7 @@ cdef class PyBayesNet:
                 raise TypeError("Network has cycles hence can't be topologically sorted")
             nodesWithParent=leftoutNodes
         for node in nodes:
-            self.createNode(node,tuple(network_struct[node]["states"]))
+            self.createNode(node,list(network_struct[node]["states"]))
             if network_struct[node]["parents"]:
                 self.createEdge(network_struct[node]["parents"],node)
                 if "means" in network_struct[node] and "variances" in network_struct[node] and "weights" in network_struct[node]:

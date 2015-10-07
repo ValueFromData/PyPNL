@@ -4633,7 +4633,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
  *                 raise TypeError("Network has cycles hence can't be topologically sorted")
  *             nodesWithParent=leftoutNodes             # <<<<<<<<<<<<<<
  *         for node in nodes:
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  */
     __Pyx_INCREF(__pyx_v_leftoutNodes);
     __Pyx_DECREF_SET(__pyx_v_nodesWithParent, __pyx_v_leftoutNodes);
@@ -4643,7 +4643,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
  *                 raise TypeError("Network has cycles hence can't be topologically sorted")
  *             nodesWithParent=leftoutNodes
  *         for node in nodes:             # <<<<<<<<<<<<<<
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  *             if network_struct[node]["parents"]:
  */
   __pyx_t_1 = __pyx_v_nodes; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
@@ -4661,7 +4661,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
     /* "cPNL.pyx":305
  *             nodesWithParent=leftoutNodes
  *         for node in nodes:
- *             self.createNode(node,tuple(network_struct[node]["states"]))             # <<<<<<<<<<<<<<
+ *             self.createNode(node,list(network_struct[node]["states"]))             # <<<<<<<<<<<<<<
  *             if network_struct[node]["parents"]:
  *                 self.createEdge(network_struct[node]["parents"],node)
  */
@@ -4676,7 +4676,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
     __pyx_t_13 = PyObject_GetItem(__pyx_t_5, __pyx_n_s_states); if (unlikely(__pyx_t_13 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PySequence_Tuple(__pyx_t_13); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = PySequence_List(__pyx_t_13); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     __pyx_t_13 = NULL;
@@ -4710,7 +4710,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
 
     /* "cPNL.pyx":306
  *         for node in nodes:
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  *             if network_struct[node]["parents"]:             # <<<<<<<<<<<<<<
  *                 self.createEdge(network_struct[node]["parents"],node)
  *                 if "means" in network_struct[node] and "variances" in network_struct[node] and "weights" in network_struct[node]:
@@ -4729,7 +4729,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
     if (__pyx_t_8) {
 
       /* "cPNL.pyx":307
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  *             if network_struct[node]["parents"]:
  *                 self.createEdge(network_struct[node]["parents"],node)             # <<<<<<<<<<<<<<
  *                 if "means" in network_struct[node] and "variances" in network_struct[node] and "weights" in network_struct[node]:
@@ -4964,7 +4964,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
 
       /* "cPNL.pyx":306
  *         for node in nodes:
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  *             if network_struct[node]["parents"]:             # <<<<<<<<<<<<<<
  *                 self.createEdge(network_struct[node]["parents"],node)
  *                 if "means" in network_struct[node] and "variances" in network_struct[node] and "weights" in network_struct[node]:
@@ -5131,7 +5131,7 @@ static PyObject *__pyx_pf_4cPNL_10PyBayesNet_2create_network(struct __pyx_obj_4c
  *                 raise TypeError("Network has cycles hence can't be topologically sorted")
  *             nodesWithParent=leftoutNodes
  *         for node in nodes:             # <<<<<<<<<<<<<<
- *             self.createNode(node,tuple(network_struct[node]["states"]))
+ *             self.createNode(node,list(network_struct[node]["states"]))
  *             if network_struct[node]["parents"]:
  */
   }
@@ -14748,6 +14748,7 @@ static PyObject *__pyx_tp_new_4cPNL_PyBayesNet(PyTypeObject *t, CYTHON_UNUSED Py
   new((void*)&(p->net)) BayesNet();
   return o;
 }
+
 template<typename T>
 void __Pyx_call_destructor(T& x) {
     x.~T();
