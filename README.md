@@ -21,7 +21,7 @@ The PyPNL library has a rich set of features for **representation**, **inference
 
 #### Inference
 
-- Exact enumaration 
+- Exact enumeration 
 - Junction Tree
 - Pearl
 - Gibbs sampling
