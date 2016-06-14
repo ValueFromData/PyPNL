@@ -4,6 +4,9 @@ from operator import mul
 from libcpp.string cimport string
 from cpython.string cimport PyString_AsString
 import copy
+import csv
+from collections import Counter
+import re
 ##import cython
 ##cdef char ** to_cstring_array(list_str):
 ##    cdef char **ret = <char **>malloc(len(list_str) * sizeof(char *))
@@ -120,30 +123,13 @@ cdef extern from "<iostream>" namespace "std":
     pass
 
 cdef extern from "<string>":
-    string String(TokArr)
+    cppString String(TokArr)
+    cdef cppclass cppString:
+        string c_str()
 
 cdef extern from "<time.h>":
     pass
 
-##class setProperty:
-##
-##    def __init__(self,net):
-##        self.net=net.net
-##    
-##    def learn(self,algorithm=None,tolerance=None,maxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def gibsInferance(self,numStreams=None,thresholdIteration=None,numberOfIterations=None):
-##        raise NotImplemented
-##
-##    def pearlInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def jtreeInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
-##
-##    def naiveInferance(self,tolerance=None,MaxNumberOfIterations=None):
-##        raise NotImplemented
 
 class Node:
     pass
@@ -152,16 +138,116 @@ cdef class PyBayesNet:
     cdef BayesNet net 
     nodes = {}
     cdef char* nodeType
-    evidence = {}
-    target = None
-    features = None
+    setProperty = Node()
     __netAttribute={}
     def __init__(self,nodeType="discrete"):
         self.nodeType = PyString_AsString(nodeType)
         self.__netAttribute["evidence"]= {}
         self.__netAttribute["target"]= None
         self.__netAttribute["features"] = None
-#        self.setProperty = setProperty(self.net)
+        self.__netAttribute["allowedstructureLearnmMthods"]=["MaxLh","PreAs", "MarLh"]
+        self.__netAttribute["allowedstructureLearnmScoreFuns"]=["BIC","AIC","WithoutPenalty"]
+        self.__netAttribute["allowedstructureLearnmPrior"]=["Dirichlet","K2","BDeu"]
+        self.setProperty.emLearn = lambda tolerance=None,maxNumberOfIterations=None:self.emLearn(tolerance,maxNumberOfIterations)
+        self.setProperty.bayesLearn = lambda:self.bayesLearn()
+        self.setProperty.gibsInferance = lambda numStreams=None,thresholdIteration=None,numberOfIterations=None:self.gibsInferance(numStreams,thresholdIteration,numberOfIterations)
+        self.setProperty.pearlInferance = lambda tolerance=None,maxNumberOfIterations=None:self.pearlInferance(tolerance,maxNumberOfIterations)
+        self.setProperty.jtreeInferance = lambda :self.jtreeInferance()
+        self.setProperty.naiveInferance = lambda :self.naiveInferance()
+        self.setProperty.structureLearn = lambda method=None,scoreFun=None,prior=None,initialPrior=None:self.structureLearn(method,scoreFun,prior,initialPrior)
+        self.setProperty.structureLearnMethod = lambda algo:self.structureLearnMethod(algo)
+        self.setProperty.structureLearnScoreFun = lambda algo:self.structureLearnScoreFun(algo)
+        self.setProperty.structureLearnPrior = lambda algo,prior:self.structureLearnPrior(algo,prior)
+
+        
+    
+    cdef emLearn(self,tolerance,maxNumberOfIterations):
+        if not tolerance==None:
+            if not type(tolerance)==float:
+                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+            self.net.SetProperty(PyString_AsString("EMTolerance"),PyString_AsString(str(tolerance)))
+        if not maxNumberOfIterations==None:
+            if not type(maxNumberOfIterations)==int:
+                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+            if maxNumberOfIterations<=0:
+                raise ValueError("Needs positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("EMMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("em"))
+    
+    cdef bayesLearn(self):
+        self.net.SetProperty(PyString_AsString("Learning"),PyString_AsString("bayes"))
+
+    cdef gibsInferance(self,numStreams,thresholdIteration,numberOfIterations):
+        if not numStreams==None:
+            if not type(numStreams)==int:
+                raise TypeError("Expected int value for NumberOfStreams got '%s'" % type(numStreams))
+            if numStreams<=0:
+                raise ValueError("Number of streams needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsNumberOfStreams"),PyString_AsString(str(numStreams)))
+        if not thresholdIteration==None:
+            if not type(thresholdIteration)==int:
+                raise TypeError("Expected int value for ThresholdIteration got '%s'" % type(thresholdIteration))
+            if thresholdIteration<=0:
+                raise ValueError("Threshold iteration needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsThresholdIteration"),PyString_AsString(str(thresholdIteration)))
+        if not numberOfIterations==None:
+            if not type(numberOfIterations)==int:
+                raise TypeError("Expected int value for `NumberOfIterations` got '%s'" % type(numberOfIterations))
+            if numberOfIterations<=0:
+                raise ValueError("Number of iterations needs to be positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("GibbsNumberOfIterations"),PyString_AsString(str(numberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("gibbs"))
+
+
+    cdef pearlInferance(self,tolerance,maxNumberOfIterations):
+        if not tolerance==None:
+            if not type(tolerance)==float:
+                raise TypeError("Expected floating point value for Tolerance got '%s'" % type(tolerance))
+            self.net.SetProperty(PyString_AsString("PearlTolerance"),PyString_AsString(str(tolerance)))
+        if not maxNumberOfIterations==None:
+            if not type(maxNumberOfIterations)==int:
+                raise TypeError("Expected int value for MaxNumberOfIterations got '%s'" % type(maxNumberOfIterations))
+            if maxNumberOfIterations<=0:
+                raise ValueError("Needs positive integer grater than zero")
+            self.net.SetProperty(PyString_AsString("PearlMaxNumberOfIterations"),PyString_AsString(str(maxNumberOfIterations)))
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("pearl"))
+
+    cdef jtreeInferance(self):
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("jtree"))
+
+    cdef naiveInferance(self):
+        self.net.SetProperty(PyString_AsString("Inference"),PyString_AsString("naive"))
+
+    cdef structureLearn(self,method,scoreFun,prior,initialPrior):
+        if method:
+            self.structureLearnMethod(method)
+        if scoreFun:
+            self.structureLearnScoreFun(scoreFun)
+        if prior:
+            if initialPrior:
+                self.structureLearnPrior(prior,initialPrior)
+            else:
+                self.structureLearnPrior(prior)
+           
+    cdef structureLearnMethod(self,str algo):
+        if not algo in self.__netAttribute["allowedstructureLearnmMthods"]:
+            raise ValueError("Allowed algorithms for method are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmMthods"]))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+    
+    cdef structureLearnScoreFun(self,str algo):
+        if not algo in self.__netAttribute["allowedstructureLearnmScoreFuns"]:
+            raise ValueError("Allowed score function algorithms are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmScoreFuns"]))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+    
+    cdef structureLearnPrior(self,str algo,int val=0):
+        if not algo in self.__netAttribute["allowedstructureLearnmPrior"]:
+            raise ValueError("Allowed algorithms for Prior calculation are '%s'" % "','".join(self.__netAttribute["allowedstructureLearnmPrior"]))
+        if algo=="K2" and val<0:
+            raise ValueError("initial prior value should be a positive intiger and zero allowed")
+        self.net.SetProperty(PyString_AsString("LearningStructureK2PriorVal"),PyString_AsString(str(val)))
+        self.net.SetProperty(PyString_AsString("LearningStructureMethod"),PyString_AsString(algo))
+
+        
 
     def create_network(self,dict network_struct,str casefile=""):
         nodes=[]
@@ -217,7 +303,7 @@ cdef class PyBayesNet:
         if self.__netAttribute["evidence"]:
             self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
 
-    def getProblity(self,nodeName,observation=None):
+    def getProbability(self,nodeName,observation=None):
         cdef TokArr resp
         cdef int i=0
         if type(observation)==dict:
@@ -238,20 +324,20 @@ cdef class PyBayesNet:
             i+=1
         return res
         
-    def getAllProblity(self,observation=None):
+    def getAllProbability(self,observation=None):
         resp=None
         if type(observation)==dict:
             if self.__netAttribute["evidence"]:
                 self.net.ClearEvid()
             if observation:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in observation])))
-            resp = {node:self.getProblity(node) for node in self.nodes}
+            resp = {node:self.getProbability(node) for node in self.nodes}
             if observation:
                 self.net.ClearEvid()
             if self.__netAttribute["evidence"]:
                 self.net.EditEvidence(PyString_AsString(" ".join([j+"^"+observation[j] for j in self.__netAttribute["evidence"]])))
         else:
-            resp = {node:self.getProblity(node) for node in self.nodes}
+            resp = {node:self.getProbability(node) for node in self.nodes}
         return resp
 
     def getJPD(self,node,*parents):
@@ -260,7 +346,7 @@ cdef class PyBayesNet:
         states = [[(node,state)] for state in self.nodes[node]["states"]]
         for pnode in parents:
             states = [[(pnode,pstate)]+state for pstate in self.nodes[pnode]["states"] for state in states]
-        resp = self.net.GetJPD(PyString_AsString(" ".join([node]+parents)))
+        resp = self.net.GetJPD(PyString_AsString(" ".join((node,)+parents)))
         res={}
         for state in states:
             res[tuple(state)]=resp[i].FltValue()
@@ -269,57 +355,198 @@ cdef class PyBayesNet:
 
     def getMPE(self,node,*pnodes):
         cdef TokArr resp
-        resp = self.net.GetMPE(PyString_AsString(" ".join([node]+pnodes)))
-        res = String(resp)
+        resp = self.net.GetMPE(PyString_AsString(" ".join((node,)+pnodes)))
+        res = String(resp).c_str()
         result = {}
         for node_state in res.split(" "):
             nodeState=node_state.split("^")
             result[nodeState[0]]=nodeState[1]
         return result
 
-    def learnStructure(self,casefile,str target,tuple features=None):
+    def learnStructure(self,str casefile,str target,tuple features=None):
+        cdef TokArr cppNode
+        if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",target):
+            raise ValueError("Node name shold only consist of alphabets and numbers, it should start with alphabet")
+        for node in features:
+            if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",node):
+                raise ValueError("Node name shold only consist of alphabets and numbers, it should start with alphabet")
+        nodes={}
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            observations=[]
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            if not self.__netAttribute["target"] in header:
+                raise ValueError("Target node name should present in case file to learn structue")
+            for node in features:
+                if not node in header:
+                    raise ValueError("All feature node names should present in case file to learn structue")
+            nodes={i:[] for i in (features+(target))}
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] and not row[i] in nodes[header[i]]:
+                            nodes[header[i]]=row[i]
+                            if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",row[i]):
+                                raise ValueError("state name shold only consist of alphabets and numbers, it shouldn't stat with numbers: found '%s'",row[i])
         self.__netAttribute["target"]=target
         self.__netAttribute["features"]=features
-        raise NotImplemented
+        if not all(state for state in nodes):
+            raise ValueError("All nodes should have one or more states")
+        for nodeName in nodes:
+            self.createNode(nodeName,tuple(nodes[nodeName]))
+        self.net.LearnStructure()
+        for nodeName in nodes:
+            cppNode = self.net.GetParents(PyString_AsString(nodeName))
+            res=String(cppNode).c_str().strip()
+            if res:
+                for pn in res.split(" "):
+                    self.nodes[nodeName]["parents"].append(pn)
+        
+                
         
     def setTargetNode(self,target):
+        if hasattr(target, 'getNodeName'):
+            target=target.getNodeName()
+        if not target in self.nodes:
+            raise ValueError("Target node name specifide is not created yet")
         self.__netAttribute["target"]=target
 
-    def evaluate(self,casefile):
-        raise NotImplemented
+    def evaluate(self,str casefile):
+        if not self.__netAttribute["target"] in self.nodes:
+            raise ValueError("Target node name should be set before evaluating")
+        observations=[]
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            if not self.__netAttribute["target"] in header:
+                raise ValueError("Target node name should present in case file to evaluate")
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    row_observation={}
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] in self.nodes[header[i]]["states"]:
+                            row_observation[header[i]]=row[i]
+                    observations.append(row_observation)
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        prediction=Counter()
+        for evidence in observations:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+evidence[node] for node in evidence if not node==self.__netAttribute["target"]])))
+            actualState=evidence[self.__netAttribute["target"]] if self.__netAttribute["target"] in evidence else ''
+            prediction[(actualState,self.getMPE(self.__netAttribute["target"]).values()[0])]+=1
+            self.net.ClearEvid()
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+self.__netAttribute["evidence"][node] for node in self.__netAttribute["evidence"]])))
+        correctpred=0
+        for act,pred in prediction:
+            if act==pred:
+                correctpred+=prediction[(act,pred)]
+        accuracy=float(correctpred)/len(observations)
+        return accuracy,dict(prediction)
 
-    def classify(self,casefile):
-        raise NotImplemented
-
-    def createNode(self,nodeName,stateNames):
+    def classify(self,str casefile):
+        if not self.__netAttribute["target"] in self.nodes:
+            raise ValueError("Target node name should be set before evaluating")
+        observations=[]
+        with open(casefile) as csvFile:
+            reader=csv.reader(csvFile, dialect=csv.excel)
+            for row in reader:
+                header = [cell for cell in row]
+                break
+            for row in reader:
+                row_len=len(row)
+                if row_len:
+                    row_observation={}
+                    for i in range(row_len):
+                        if header[i] in self.nodes and row[i] in self.nodes[header[i]]["states"]:
+                            row_observation[header[i]]=row[i]
+                    observations.append(row_observation)
+        if self.__netAttribute["evidence"]:
+            self.net.ClearEvid()
+        for evidence in observations:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+evidence[node] for node in evidence if not node==self.__netAttribute["target"]])))
+            evidence[self.__netAttribute["target"]]=self.getMPE(self.__netAttribute["target"]).values()[0]
+            self.net.ClearEvid()
+        if self.__netAttribute["evidence"]:
+            self.net.EditEvidence(PyString_AsString(" ".join([node+"^"+self.__netAttribute["evidence"][node] for node in self.__netAttribute["evidence"]])))
+        return observations
+        
+    def createNode(self,str nodeName,list stateNames):
+        if re.compile(r'^[a-zA-Z]([a-zA-Z\-0-9]*[a-zA-Z0-9]+)?$').sub("",nodeName):
+            raise ValueError("Node name shold only consist of alphabets and numbers, it should start with alphabet")
+        if not stateNames:
+            raise ValueError("Should contain atleast 1 state")
+        for state in stateNames:
+            if re.compile(r'^[a-zA-Z][a-zA-Z0-9]*?$').sub("",state):
+                raise ValueError("State name shold only consist of alphabets and numbers, it should start with alphabet")
+        
         self.nodes[nodeName]={"states":stateNames,"parents":[]}
         self.net.AddNode(PyString_AsString(nodeName), PyString_AsString(" ".join(stateNames)))
+        return self.getNode(nodeName)
 
     def createEdge(self,parentNodes,childNodes):
-        pNodes=cNodes=""
-        parentNodeList=None        
-        if type(parentNodes)==list or  type(parentNodes)==tuple:
-            pNodes=" ".join(parentNodes)
-            parentNodeList=list(parentNodes)
-        elif type(parentNodes)== str:
-            pNodes=parentNodes
-            parentNodeList=[parentNodes]
+        pNdtype=type(parentNodes)
+        if pNdtype==list or pNdtype==tuple or pNdtype==set:
+            parentNodes=list(parentNodes)
+        elif pNdtype==str or  hasattr(parentNodes, 'getNodeName'):
+            parentNodes=[parentNodes]
         else:
-            raise
-        if type(childNodes)==list or  type(childNodes)==tuple:
-            cNodes=" ".join(childNodes)
-            for nodeName in childNodes:
-                for pn in parentNodeList:
-                    self.nodes[nodeName]["parents"].append(pn)
-        elif type(childNodes)== str:
-            cNodes=childNodes
+            raise TypeError("Invalid type for parent nodes")
+        
+        for i in range(len(parentNodes)):
+            if not type(parentNodes[i])== str:
+                if hasattr(parentNodes[i], 'getNodeName'):
+                    parentNodes[i] = str(parentNodes[i].getNodeName())
+                else:
+                    raise TypeError("Invalid type for '%s'" % str(parentNodes[i]))
+            if not parentNodes[i] in  self.nodes:
+                raise NameError("node '%s' not found" % parentNodes[i])
+            
+        cNdtype=type(childNodes)
+        if cNdtype==list or cNdtype==tuple or cNdtype==set:
+            childNodes=list(childNodes)
+        elif cNdtype==str or  hasattr(childNodes, 'getNodeName'):
+            childNodes=[childNodes]
+        else:
+            raise TypeError("Invalid type for child nodes")
+            
+        for i in range(len(childNodes)):
+            if not type(childNodes[i])== str:
+                if hasattr(childNodes[i], 'getNodeName'):
+                    childNodes[i] = str(childNodes[i].getNodeName())
+                else:
+                    raise TypeError("Invalid type for '%s'" % str(childNodes[i]))
+            if not childNodes[i] in  self.nodes:
+                raise NameError("node '%s' not found" % childNodes[i])
+        if not len(parentNodes):
+            raise ValueError("No parent node mentioned")
+        if not len(childNodes):
+            raise ValueError("No child node mentioned")
+            
+        pNodes=" ".join(parentNodes)
+        cNodes=" ".join(childNodes)
+        parentNodeList=parentNodes       
+        for nodeName in childNodes:
             for pn in parentNodeList:
-                self.nodes[childNodes]["parents"].append(pn)
-        else:
-            raise
+                self.nodes[nodeName]["parents"].append(pn) 
         self.net.AddArc(PyString_AsString(pNodes), PyString_AsString(cNodes))
 
-    def setProbability(self,node,states,probability):
+        
+
+    def setProbability(self,node,states,float probability):
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
+        stype=type(states)
+        if stype==list or stype==tuple or stype==set:
+            states=list(states)
+        elif stype==str:
+            states=[states]
         nodeAndState=""
         pNodeAndStates=""
         if self.nodes[node]["parents"]:
@@ -327,13 +554,17 @@ cdef class PyBayesNet:
             pNodeAndStates=" ".join([self.nodes[node]["parents"][i]+"^"+states[i+1] for i in range(len(self.nodes[node]["parents"]))])
             self.net.SetPTabular(PyString_AsString(nodeAndState),PyString_AsString(str(probability)),PyString_AsString(pNodeAndStates))
         else:
-            nodeAndState=node+"^"+states
+            nodeAndState=node+"^"+states[0]
             self.net.SetPTabular(PyString_AsString(nodeAndState),PyString_AsString(str(probability)))
             
 
-    def getNode(self,nodeName):
+    def getNode(self,str nodeName):
+        if not nodeName in self.nodes:
+            raise NameError("node not found")
         nodeObj=Node()
-        nodeObj.getProblity=lambda observation=None:self.getProblity(nodeName,observation)
+        nodeObj.getProbability=lambda observation=None:self.getProbability(nodeName,observation)
+        nodeObj.setProbability=lambda states,probability:self.setProbability(nodeName,states,probability)
+        nodeObj.getTabularProb=lambda:self.getTabularProb(nodeName)
         nodeObj.getNodeName=lambda:nodeName
         nodeObj.getNodeParents=lambda:[self.getNode(parent) for parent in self.nodes[nodeName]["parents"]]
         nodeObj.getParentNames=lambda:self.nodes[nodeName]["parents"]
@@ -342,6 +573,25 @@ cdef class PyBayesNet:
         nodeObj.getJPD=lambda:{key[0][1]:prob for key,prob in self.getJPD(nodeName).items()}
         return nodeObj
 
+    def getEdge(self,node,childNode):
+        if hasattr(node, 'getNodeName'):
+            node = str(node.getNodeName())
+        if hasattr(node, 'getNodeName'):
+            childNode = str(childNode.getNodeName())
+        if not (type(node)==str and type(childNode)==str):
+            raise TypeError("Invalid Type for node or child")
+        if not childNode in  self.nodes:
+            raise NameError("child node not found")
+        if not node in self.node[childNode]["parents"]:
+            if not node in self.nodes:
+                raise NameError("node not found")
+            raise NameError("link not found")
+        edge=Node()
+        edge.link=lambda:{"top":self.getNode(node),"bottom":self.getNode(childNode)}
+        return edge
+        
+            
+            
     def getCurEvidence(self):
         return self.__netAttribute["evidence"]
 
@@ -355,6 +605,8 @@ cdef class PyBayesNet:
         
 
     def getTabularProb(self,node):
+        if hasattr(node, 'getNodeName'):
+            node=node.getNodeName()
         cdef TokArr resp
         cdef int i=0
         resp = self.net.GetPTabular(PyString_AsString(str(node)))
