@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+g++-4.6: error: PNL.c: No such file or directory
+>>>>>>> PyPNL/fixed64bit
 Using built-in specs.
 COLLECT_GCC=g++-4.6
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper
@@ -5,6 +9,7 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.4-6ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-gnu-unique-object --disable-libmudflap --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 4.6.4 (Ubuntu/Linaro 4.6.4-6ubuntu2) 
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-D' 'BIT_64' '-shared' '-pthread' '-fPIC' '-fwrapv' '-O2' '-Wall' '-fno-strict-aliasing' '-I' '/usr/include/python2.7' '-I' '/usr/local/include' '-I' '/usr/local/high/include' '-I' '/usr/local/include/opencx' '-I' '/usr/local/high/examples' '-o' 'PNL.so' '-L/usr/local/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/4.6/cc1plus -quiet -v -I /usr/include/python2.7 -I /usr/local/include -I /usr/local/high/include -I /usr/local/include/opencx -I /usr/local/high/examples -imultilib . -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT -D BIT_64 PNL.c -quiet -dumpbase PNL.c -mtune=generic -march=x86-64 -auxbase PNL -O2 -Wall -version -fPIC -fwrapv -fno-strict-aliasing -fstack-protector -o /tmp/ccDe7WQf.s
 GNU C++ (Ubuntu/Linaro 4.6.4-6ubuntu2) version 4.6.4 (x86_64-linux-gnu)
@@ -51,3 +56,5 @@ COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/
 COLLECT_GCC_OPTIONS='-v' '-D' 'BIT_64' '-shared' '-pthread' '-fPIC' '-fwrapv' '-O2' '-Wall' '-fno-strict-aliasing' '-I' '/usr/include/python2.7' '-I' '/usr/local/include' '-I' '/usr/local/high/include' '-I' '/usr/local/include/opencx' '-I' '/usr/local/high/examples' '-o' 'PNL.so' '-L/usr/local/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -shared -z relro -o PNL.so /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbeginS.o -L/usr/local/lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. /tmp/ccu6TEGD.o -lpnl -lhigh -lcxcore -lstdc++ -lstdc++ -lm -lgcc_s -lpthread -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/4.6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o
+=======
+>>>>>>> PyPNL/fixed64bit
