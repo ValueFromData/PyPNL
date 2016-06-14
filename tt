@@ -1,0 +1,213 @@
+Making all in cxcore
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+Making all in cxcore
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+Making all in src
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxalloc.o cxalloc.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxarithm.o cxarithm.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxarray.o cxarray.cpp
+cxarray.cpp: In function ‘void icxGetColorModel(int, char**, char**)’:
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3220:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxarray.cpp:3223:33: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxcmp.o cxcmp.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxconvert.o cxconvert.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxcopy.o cxcopy.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxdatastructs.o cxdatastructs.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxdrawing.o cxdrawing.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxdxt.o cxdxt.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxerror.o cxerror.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxjacobieigens.o cxjacobieigens.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxlogic.o cxlogic.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxmathfuncs.o cxmathfuncs.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxmatmul.o cxmatmul.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxmatrix.o cxmatrix.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxmean.o cxmean.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxmeansdv.o cxmeansdv.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxminmaxloc.o cxminmaxloc.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxnorm.o cxnorm.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxouttext.o cxouttext.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxpersistence.o cxpersistence.cpp
+cxpersistence.cpp: In function ‘void icxWriteArray(CxFileStorage*, const char*, const void*, CxAttrList, int)’:
+cxpersistence.cpp:1854:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1860:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1877:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1881:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:1886:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp: In function ‘void cxStartWriteStruct(CxFileStorage*, const char*, const char*, const void*, CxAttrList)’:
+cxpersistence.cpp:3467:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:3478:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp: In function ‘void cxWriteElem(CxFileStorage*, const char*, const char*, const void*)’:
+cxpersistence.cpp:3523:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+cxpersistence.cpp:3532:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxprecomp.o cxprecomp.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxrand.o cxrand.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxsumpixels.o cxsumpixels.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxsvd.o cxsvd.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxswitcher.o cxswitcher.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxtables.o cxtables.cpp
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I. -I./../include    -g -O2 -c -o cxutils.o cxutils.cpp
+rm -f libcxcore.a
+ar cru libcxcore.a cxalloc.o cxarithm.o cxarray.o cxcmp.o cxconvert.o cxcopy.o cxdatastructs.o cxdrawing.o cxdxt.o cxerror.o cxjacobieigens.o cxlogic.o cxmathfuncs.o cxmatmul.o cxmatrix.o cxmean.o cxmeansdv.o cxminmaxloc.o cxnorm.o cxouttext.o cxpersistence.o cxprecomp.o cxrand.o cxsumpixels.o cxsvd.o cxswitcher.o cxtables.o cxutils.o 
+ranlib libcxcore.a
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+Making all in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+Making all in trs
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
+Making all in src
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I./../include    -g -O2  -c trsapi.c
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I./../include    -g -O2  -c trserror.c
+trsapi.c: In function ‘_trsGuardcAlloc’:
+trsapi.c:236:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsapi.c:236:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+trsapi.c: In function ‘_trsGuardCheck’:
+trsapi.c:272:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsapi.c:272:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+trsapi.c: In function ‘trsInt’:
+trsapi.c:2242:3: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘int’ [-Wformat]
+trsapi.c: In function ‘More’:
+trsapi.c:2294:5: warning: ‘gets’ is deprecated (declared at /usr/include/x86_64-linux-gnu/bits/stdio2.h:233) [-Wdeprecated-declarations]
+trsapi.c: In function ‘_gets’:
+trsapi.c:2407:6: warning: ‘gets’ is deprecated (declared at /usr/include/x86_64-linux-gnu/bits/stdio2.h:233) [-Wdeprecated-declarations]
+trsapi.c: In function ‘More’:
+trsapi.c:2294:9: warning: ignoring return value of ‘gets’, declared with attribute warn_unused_result [-Wunused-result]
+gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I./../include    -g -O2  -c trsread.c
+trsread.c: In function ‘FillDst’:
+trsread.c:369:48: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+trsread.c: In function ‘_trstRead’:
+trsread.c:872:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+In file included from /usr/include/stdio.h:937:0,
+                 from ./../include/trsapi.h:46,
+                 from trsapi.c:58:
+In function ‘gets’,
+    inlined from ‘_gets’ at trsapi.c:2407:9:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:237:3: warning: call to ‘__gets_warn’ declared with attribute warning: please use fgets or getline instead, gets can't specify buffer size [enabled by default]
+In file included from /usr/include/string.h:640:0,
+                 from trsapi.c:48:
+In function ‘strncat’,
+    inlined from ‘ParseFileAppKey’ at trsapi.c:2742:13:
+/usr/include/x86_64-linux-gnu/bits/string3.h:150:3: warning: call to __builtin___strncat_chk might overflow destination buffer [enabled by default]
+rm -f libtrs.a
+ar cru libtrs.a trsapi.o trserror.o trsread.o 
+ranlib libtrs.a
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+Making all in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+Making all in c_pgmtk
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+Making all in src
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+Making all in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+/bin/bash ../../libtool --mode=compile gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++    -g -O2 -c -o cvcart.lo cvcart.cpp
+/bin/bash ../../libtool --mode=compile gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" -DPACKAGE_STRING=\"pnl\ 0.2.23\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1  -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++    -g -O2 -c -o cvsvd.lo cvsvd.c
+ gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" "-DPACKAGE_STRING=\"pnl 0.2.23\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++ -g -O2 -c cvcart.cpp  -fPIC -DPIC -o .libs/cvcart.o
+ gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" "-DPACKAGE_STRING=\"pnl 0.2.23\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++ -g -O2 -c cvsvd.c  -fPIC -DPIC -o .libs/cvsvd.o
+In file included from ../../c_pgmtk/src/include/cart/cvcart.h:4:0,
+                 from cvcart.cpp:178:
+../../c_pgmtk/src/include/cart/inlines.h: In function 'void icxAssertAligned(void*, int)':
+../../c_pgmtk/src/include/cart/inlines.h:188:2: error: cast from 'void*' to 'int' loses precision [-fpermissive]
+In file included from ../../c_pgmtk/src/include/cart/cvcart.h:4:0,
+                 from cvcart.cpp:178:
+../../c_pgmtk/src/include/cart/inlines.h: In function 'BOOL icxIsChunkLoaded(CxClassifierSampleChunk*)':
+../../c_pgmtk/src/include/cart/inlines.h:300:20: error: cast from 'CxClassifierSampleChunk*' to 'int' loses precision [-fpermissive]
+In file included from ../../c_pgmtk/src/include/cart/cvcart.h:4:0,
+                 from cvcart.cpp:178:
+../../c_pgmtk/src/include/cart/inlines.h: In function 'float Rand(float, float)':
+../../c_pgmtk/src/include/cart/inlines.h:1710:41: warning: integer overflow in expression [-Woverflow]
+cvcart.cpp: In function 'float cxScanNodeCategoricBestSplitClassification(CxRootedCARTBase*, int*, char*, int)':
+cvcart.cpp:6698:47: error: cast from 'float*' to 'BOOL {aka int}' loses precision [-fpermissive]
+cvcart.cpp: In function 'float cxFindNodeCategoricClusteringBestSplit(CxRootedCARTBase*, CxVarCategoryCluster*, int, int, int, CxCARTSplit*)':
+cvcart.cpp:7030:50: error: cast from 'float*' to 'BOOL {aka int}' loses precision [-fpermissive]
+cvcart.cpp: In function 'void DumpClusters(FILE*, CxVarCategoryCluster*, int)':
+cvcart.cpp:7739:51: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat]
+cvcart.cpp: In function 'BOOL cxReadSplit(FILE*, CxCARTBase*, CxCARTSplit*&, ESplitType&, char*)':
+cvcart.cpp:8565:2: warning: format '%d' expects argument of type 'int*', but argument 3 has type 'ESplitType*' [-Wformat]
+cvcart.cpp: In function 'BOOL icxReadCARTTrainParam(FILE*, CxCARTTrainParams*, int, char*)':
+cvcart.cpp:8725:9: warning: format '%d' expects argument of type 'int*', but argument 3 has type 'CxCARTSplitCriterion*' [-Wformat]
+cvcart.cpp: In function 'BOOL cxCreatePruningStorage(CxCART*)':
+cvcart.cpp:9534:38: error: cast from 'CxPruningData*' to 'BOOL {aka int}' loses precision [-fpermissive]
+cvcart.cpp: In function 'void cxAssertNodeValid(CxCART*, CxCARTNode*)':
+cvcart.cpp:9609:5: error: cast from 'CxCARTNode*' to 'unsigned int' loses precision [-fpermissive]
+cvcart.cpp:9609:5: error: cast from 'void*' to 'unsigned int' loses precision [-fpermissive]
+cvcart.cpp: In function 'BOOL cxReadPruningData(FILE*, CxPruningData*&, char*)':
+cvcart.cpp:8961:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8962:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8963:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8964:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8965:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8966:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL cxReadAllNodes(FILE*, CxCART*, char*)':
+cvcart.cpp:8838:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL cxReadFeatureTypes(FILE*, int*&, int&, int&, char*)':
+cvcart.cpp:8811:41: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8820:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8821:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL cxReadCARTTrainParams(FILE*, CxCARTTrainParams*&, int, char*)':
+cvcart.cpp:8756:52: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL icxReadCARTTrainParam(FILE*, CxCARTTrainParams*, int, char*)':
+cvcart.cpp:8721:5: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8724:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8725:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8726:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8727:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8728:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8729:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8730:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8731:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8732:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8733:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8734:9: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL cxReadSplit(FILE*, CxCARTBase*, CxCARTSplit*&, ESplitType&, char*)':
+cvcart.cpp:8565:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8566:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8567:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8568:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8576:39: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp: In function 'BOOL cxReadNode(FILE*, CxCART*, CxCARTNode*&, char*)':
+cvcart.cpp:8423:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8424:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8425:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8456:2: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8457:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8458:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8459:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8460:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+cvcart.cpp:8461:6: warning: ignoring return value of 'int fscanf(FILE*, const char*, ...)', declared with attribute warn_unused_result [-Wunused-result]
+make[3]: *** [cvcart.lo] Error 1
+make[3]: *** Waiting for unfinished jobs....
+ gcc-4.6 -DPACKAGE_NAME=\"pnl\" -DPACKAGE_TARNAME=\"pnl\" -DPACKAGE_VERSION=\"0.2.23\" "-DPACKAGE_STRING=\"pnl 0.2.23\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"pnl\" -DVERSION=\"0.2.23\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -I. -I. -I../../cxcore/cxcore/include -I../../c_pgmtk/include -I../../c_pgmtk/src/include/cart -I../../c_pgmtk/src/include -x c++ -g -O2 -c cvsvd.c -o cvsvd.o >/dev/null 2>&1
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make: *** [all-recursive] Error 1

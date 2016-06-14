@@ -1,0 +1,720 @@
+Making install in cxcore
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+Making install in cxcore
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+Making install in src
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+make[4]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/lib
+ /usr/bin/install -c -m 644 libcxcore.a /usr/local/lib/libcxcore.a
+ ranlib /usr/local/lib/libcxcore.a
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/src'
+Making install in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[4]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/include/opencx
+ /usr/bin/install -c -m 644 cxcore.h /usr/local/include/opencx/cxcore.h
+ /usr/bin/install -c -m 644 cxerror.h /usr/local/include/opencx/cxerror.h
+ /usr/bin/install -c -m 644 cxtypes.h /usr/local/include/opencx/cxtypes.h
+ /usr/bin/install -c -m 644 cxmisc.h /usr/local/include/opencx/cxmisc.h
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore/cxcore'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/cxcore'
+Making install in trs
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
+Making install in src
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+make[3]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/include
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/src'
+Making install in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs/include'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/trs'
+Making install in c_pgmtk
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+Making install in src
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+Making install in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[4]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/include
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 cart/cvcart.h /usr/local/include/cart/cvcart.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 cart/datadefs.h /usr/local/include/cart/datadefs.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 cart/inlines.h /usr/local/include/cart/inlines.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 cvsvd.h /usr/local/include/cvsvd.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlCondGaussianDistribFun.hpp /usr/local/include/pnlCondGaussianDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlCondSoftMaxDistribFun.hpp /usr/local/include/pnlCondSoftMaxDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlCoverage.hpp /usr/local/include/pnlCoverage.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlDistribFun.hpp /usr/local/include/pnlDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlGaussianDistribFun.hpp /usr/local/include/pnlGaussianDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlImpDefs.hpp /usr/local/include/pnlImpDefs.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlRng.hpp /usr/local/include/pnlRng.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlScalarDistribFun.hpp /usr/local/include/pnlScalarDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlSoftMaxDistribFun.hpp /usr/local/include/pnlSoftMaxDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlTabularDistribFun.hpp /usr/local/include/pnlTabularDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlTreeDistribFun.hpp /usr/local/include/pnlTreeDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnli2DNumericDenseMatrix.hpp /usr/local/include/pnli2DNumericDenseMatrix.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnliNumericDenseMatrix.hpp /usr/local/include/pnliNumericDenseMatrix.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnliNumericSparseMatrix.hpp /usr/local/include/pnliNumericSparseMatrix.hpp
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[4]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/lib
+ /bin/bash ../../libtool --mode=install /usr/bin/install -c  libpnl.la /usr/local/lib/libpnl.la
+/usr/bin/install -c .libs/libpnl-0.2.so.23.0.0 /usr/local/lib/libpnl-0.2.so.23.0.0
+(cd /usr/local/lib && rm -f libpnl-0.2.so.23 && ln -s libpnl-0.2.so.23.0.0 libpnl-0.2.so.23)
+(cd /usr/local/lib && rm -f libpnl.so && ln -s libpnl-0.2.so.23.0.0 libpnl.so)
+/usr/bin/install -c .libs/libpnl.lai /usr/local/lib/libpnl.la
+/usr/bin/install -c .libs/libpnl.a /usr/local/lib/libpnl.a
+ranlib /usr/local/lib/libpnl.a
+chmod 644 /usr/local/lib/libpnl.a
+PATH="$PATH:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/src'
+Making install in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+make[3]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/include
+ /usr/bin/install -c -m 644 ParPNLCRTDBG.H /usr/local/include/ParPNLCRTDBG.H
+ /usr/bin/install -c -m 644 dbginfo.h /usr/local/include/dbginfo.h
+ /usr/bin/install -c -m 644 memtrack.h /usr/local/include/memtrack.h
+ /usr/bin/install -c -m 644 pnl1_5SliceInferenceEngine.hpp /usr/local/include/pnl1_5SliceInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnl1_5SliceJtreeInferenceEngine.hpp /usr/local/include/pnl1_5SliceJtreeInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnl2DBitwiseMatrix.hpp /usr/local/include/pnl2DBitwiseMatrix.hpp
+ /usr/bin/install -c -m 644 pnl2DNumericDenseMatrix.hpp /usr/local/include/pnl2DNumericDenseMatrix.hpp
+ /usr/bin/install -c -m 644 pnl2TBNInferenceEngine.hpp /usr/local/include/pnl2TBNInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnl2TPFInferenceEngine.hpp /usr/local/include/pnl2TPFInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlAllocator.hpp /usr/local/include/pnlAllocator.hpp
+ /usr/bin/install -c -m 644 pnlBKInferenceEngine.hpp /usr/local/include/pnlBKInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlBNet.hpp /usr/local/include/pnlBNet.hpp
+ /usr/bin/install -c -m 644 pnlBayesLearningEngine.hpp /usr/local/include/pnlBayesLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlBicLearningEngine.hpp /usr/local/include/pnlBicLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlCPD.hpp /usr/local/include/pnlCPD.hpp
+ /usr/bin/install -c -m 644 pnlConfig.h /usr/local/include/pnlConfig.h
+ /usr/bin/install -c -m 644 pnlConfig.hpp /usr/local/include/pnlConfig.hpp
+ /usr/bin/install -c -m 644 pnlContext.hpp /usr/local/include/pnlContext.hpp
+ /usr/bin/install -c -m 644 pnlContextLoad.hpp /usr/local/include/pnlContextLoad.hpp
+ /usr/bin/install -c -m 644 pnlContextPersistence.hpp /usr/local/include/pnlContextPersistence.hpp
+ /usr/bin/install -c -m 644 pnlContextSave.hpp /usr/local/include/pnlContextSave.hpp
+ /usr/bin/install -c -m 644 pnlDAG.hpp /usr/local/include/pnlDAG.hpp
+ /usr/bin/install -c -m 644 pnlDBN.hpp /usr/local/include/pnlDBN.hpp
+ /usr/bin/install -c -m 644 pnlDenseMatrix.hpp /usr/local/include/pnlDenseMatrix.hpp
+ /usr/bin/install -c -m 644 pnlDiagnostics.hpp /usr/local/include/pnlDiagnostics.hpp
+ /usr/bin/install -c -m 644 pnlDynamicGraphicalModel.hpp /usr/local/include/pnlDynamicGraphicalModel.hpp
+ /usr/bin/install -c -m 644 pnlDynamicInferenceEngine.hpp /usr/local/include/pnlDynamicInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlDynamicLearningEngine.hpp /usr/local/include/pnlDynamicLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlEmLearningEngine.hpp /usr/local/include/pnlEmLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlEmLearningEngineDBN.hpp /usr/local/include/pnlEmLearningEngineDBN.hpp
+ /usr/bin/install -c -m 644 pnlError.h /usr/local/include/pnlError.h
+ /usr/bin/install -c -m 644 pnlEvidence.hpp /usr/local/include/pnlEvidence.hpp
+ /usr/bin/install -c -m 644 pnlExInferenceEngine.hpp /usr/local/include/pnlExInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlExampleModels.hpp /usr/local/include/pnlExampleModels.hpp
+ /usr/bin/install -c -m 644 pnlException.hpp /usr/local/include/pnlException.hpp
+ /usr/bin/install -c -m 644 pnlFGSumMaxInferenceEngine.hpp /usr/local/include/pnlFGSumMaxInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlFactor.hpp /usr/local/include/pnlFactor.hpp
+ /usr/bin/install -c -m 644 pnlFactorGraph.hpp /usr/local/include/pnlFactorGraph.hpp
+ /usr/bin/install -c -m 644 pnlFactors.hpp /usr/local/include/pnlFactors.hpp
+ /usr/bin/install -c -m 644 pnlFakePtr.hpp /usr/local/include/pnlFakePtr.hpp
+ /usr/bin/install -c -m 644 pnlGaussianCPD.hpp /usr/local/include/pnlGaussianCPD.hpp
+ /usr/bin/install -c -m 644 pnlGaussianPotential.hpp /usr/local/include/pnlGaussianPotential.hpp
+ /usr/bin/install -c -m 644 pnlGibbsSamplingInferenceEngine.hpp /usr/local/include/pnlGibbsSamplingInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlGibbsWithAnnealingInferenceEngine.hpp /usr/local/include/pnlGibbsWithAnnealingInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlGraph.hpp /usr/local/include/pnlGraph.hpp
+ /usr/bin/install -c -m 644 pnlGraphicalModel.hpp /usr/local/include/pnlGraphicalModel.hpp
+ /usr/bin/install -c -m 644 pnlGroup.hpp /usr/local/include/pnlGroup.hpp
+ /usr/bin/install -c -m 644 pnlIDNet.hpp /usr/local/include/pnlIDNet.hpp
+ /usr/bin/install -c -m 644 pnlIDPotential.hpp /usr/local/include/pnlIDPotential.hpp
+ /usr/bin/install -c -m 644 pnlIDTabularPotential.hpp /usr/local/include/pnlIDTabularPotential.hpp
+ /usr/bin/install -c -m 644 pnlInferenceEngine.hpp /usr/local/include/pnlInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlJtreeInferenceEngine.hpp /usr/local/include/pnlJtreeInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlJunctionTree.hpp /usr/local/include/pnlJunctionTree.hpp
+ /usr/bin/install -c -m 644 pnlLIMIDInfEngine.hpp /usr/local/include/pnlLIMIDInfEngine.hpp
+ /usr/bin/install -c -m 644 pnlLWSamplingInferenceEngine.hpp /usr/local/include/pnlLWSamplingInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlLearningEngine.hpp /usr/local/include/pnlLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlLog.hpp /usr/local/include/pnlLog.hpp
+ /usr/bin/install -c -m 644 pnlLogDriver.hpp /usr/local/include/pnlLogDriver.hpp
+ /usr/bin/install -c -m 644 pnlLogMultiplexor.hpp /usr/local/include/pnlLogMultiplexor.hpp
+ /usr/bin/install -c -m 644 pnlLogUsing.hpp /usr/local/include/pnlLogUsing.hpp
+ /usr/bin/install -c -m 644 pnlMNet.hpp /usr/local/include/pnlMNet.hpp
+ /usr/bin/install -c -m 644 pnlMRF2.hpp /usr/local/include/pnlMRF2.hpp
+ /usr/bin/install -c -m 644 pnlMatrix.hpp /usr/local/include/pnlMatrix.hpp
+ /usr/bin/install -c -m 644 pnlMatrixIterator.hpp /usr/local/include/pnlMatrixIterator.hpp
+ /usr/bin/install -c -m 644 pnlMixtureGaussianCPD.hpp /usr/local/include/pnlMixtureGaussianCPD.hpp
+ /usr/bin/install -c -m 644 pnlMlDynamicStructLearn.hpp /usr/local/include/pnlMlDynamicStructLearn.hpp
+ /usr/bin/install -c -m 644 pnlMlLearningEngine.hpp /usr/local/include/pnlMlLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlMlStaticStructLearn.hpp /usr/local/include/pnlMlStaticStructLearn.hpp
+ /usr/bin/install -c -m 644 pnlMlStaticStructLearnHC.hpp /usr/local/include/pnlMlStaticStructLearnHC.hpp
+ /usr/bin/install -c -m 644 pnlModelDomain.hpp /usr/local/include/pnlModelDomain.hpp
+ /usr/bin/install -c -m 644 pnlModelTypes.hpp /usr/local/include/pnlModelTypes.hpp
+ /usr/bin/install -c -m 644 pnlMultiDMatrix.hpp /usr/local/include/pnlMultiDMatrix.hpp
+ /usr/bin/install -c -m 644 pnlNaiveInferenceEngine.hpp /usr/local/include/pnlNaiveInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlNodeType.hpp /usr/local/include/pnlNodeType.hpp
+ /usr/bin/install -c -m 644 pnlNodeValues.hpp /usr/local/include/pnlNodeValues.hpp
+ /usr/bin/install -c -m 644 pnlNumericDenseMatrix.hpp /usr/local/include/pnlNumericDenseMatrix.hpp
+ /usr/bin/install -c -m 644 pnlNumericMatrix.hpp /usr/local/include/pnlNumericMatrix.hpp
+ /usr/bin/install -c -m 644 pnlNumericSparseMatrix.hpp /usr/local/include/pnlNumericSparseMatrix.hpp
+ /usr/bin/install -c -m 644 pnlObjHandler.hpp /usr/local/include/pnlObjHandler.hpp
+ /usr/bin/install -c -m 644 pnlObject.hpp /usr/local/include/pnlObject.hpp
+ /usr/bin/install -c -m 644 pnlParConfig.hpp /usr/local/include/pnlParConfig.hpp
+ /usr/bin/install -c -m 644 pnlParEmLearningEngine.hpp /usr/local/include/pnlParEmLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlParGibbsSamplingInferenceEngine.hpp /usr/local/include/pnlParGibbsSamplingInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlParJtreeInferenceEngine.hpp /usr/local/include/pnlParJtreeInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlParNewDelete.hpp /usr/local/include/pnlParNewDelete.hpp
+ /usr/bin/install -c -m 644 pnlParPearlInferenceEngine.hpp /usr/local/include/pnlParPearlInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlPearlInferenceEngine.hpp /usr/local/include/pnlPearlInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlPersistArray.hpp /usr/local/include/pnlPersistArray.hpp
+ /usr/bin/install -c -m 644 pnlPersistCPD.hpp /usr/local/include/pnlPersistCPD.hpp
+ /usr/bin/install -c -m 644 pnlPersistCover.hpp /usr/local/include/pnlPersistCover.hpp
+ /usr/bin/install -c -m 644 pnlPersistDistribFun.hpp /usr/local/include/pnlPersistDistribFun.hpp
+ /usr/bin/install -c -m 644 pnlPersistGraph.hpp /usr/local/include/pnlPersistGraph.hpp
+ /usr/bin/install -c -m 644 pnlPersistModel.hpp /usr/local/include/pnlPersistModel.hpp
+ /usr/bin/install -c -m 644 pnlPersistModelDomain.hpp /usr/local/include/pnlPersistModelDomain.hpp
+ /usr/bin/install -c -m 644 pnlPersistTypes.hpp /usr/local/include/pnlPersistTypes.hpp
+ /usr/bin/install -c -m 644 pnlPersistence.hpp /usr/local/include/pnlPersistence.hpp
+ /usr/bin/install -c -m 644 pnlPotential.hpp /usr/local/include/pnlPotential.hpp
+ /usr/bin/install -c -m 644 pnlReferenceCounter.hpp /usr/local/include/pnlReferenceCounter.hpp
+ /usr/bin/install -c -m 644 pnlRing.hpp /usr/local/include/pnlRing.hpp
+ /usr/bin/install -c -m 644 pnlSamplingInferenceEngine.hpp /usr/local/include/pnlSamplingInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlScalarPotential.hpp /usr/local/include/pnlScalarPotential.hpp
+ /usr/bin/install -c -m 644 pnlSoftMaxCPD.hpp /usr/local/include/pnlSoftMaxCPD.hpp
+ /usr/bin/install -c -m 644 pnlSparseMatrix.hpp /usr/local/include/pnlSparseMatrix.hpp
+ /usr/bin/install -c -m 644 pnlSpecPearlInferenceEngine.hpp /usr/local/include/pnlSpecPearlInferenceEngine.hpp
+ /usr/bin/install -c -m 644 pnlStackMemProv.hpp /usr/local/include/pnlStackMemProv.hpp
+ /usr/bin/install -c -m 644 pnlStaticGraphicalModel.hpp /usr/local/include/pnlStaticGraphicalModel.hpp
+ /usr/bin/install -c -m 644 pnlStaticLearningEngine.hpp /usr/local/include/pnlStaticLearningEngine.hpp
+ /usr/bin/install -c -m 644 pnlStaticStructLearnSEM.hpp /usr/local/include/pnlStaticStructLearnSEM.hpp
+ /usr/bin/install -c -m 644 pnlString.hpp /usr/local/include/pnlString.hpp
+ /usr/bin/install -c -m 644 pnlTabularCPD.hpp /usr/local/include/pnlTabularCPD.hpp
+ /usr/bin/install -c -m 644 pnlTabularPotential.hpp /usr/local/include/pnlTabularPotential.hpp
+ /usr/bin/install -c -m 644 pnlTimer.hpp /usr/local/include/pnlTimer.hpp
+ /usr/bin/install -c -m 644 pnlTreeCPD.hpp /usr/local/include/pnlTreeCPD.hpp
+ /usr/bin/install -c -m 644 pnlTypeDefs.hpp /usr/local/include/pnlTypeDefs.hpp
+ /usr/bin/install -c -m 644 pnlVector.hpp /usr/local/include/pnlVector.hpp
+ /usr/bin/install -c -m 644 pnlXMLContainer.hpp /usr/local/include/pnlXMLContainer.hpp
+ /usr/bin/install -c -m 644 pnlXMLRead.hpp /usr/local/include/pnlXMLRead.hpp
+ /usr/bin/install -c -m 644 pnlXMLWrite.hpp /usr/local/include/pnlXMLWrite.hpp
+ /usr/bin/install -c -m 644 pnl_dll.hpp /usr/local/include/pnl_dll.hpp
+ /usr/bin/install -c -m 644 pnlpnlType.hpp /usr/local/include/pnlpnlType.hpp
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/include'
+Making install in examples
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+Making install in Data
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/Data'
+Making install in ex_inf_learn_dbn
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c inf_learn_dbn /usr/local/bin/inf_learn_dbn
+/usr/bin/install -c .libs/inf_learn_dbn /usr/local/bin/inf_learn_dbn
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_inf_learn_dbn'
+Making install in ex_param
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+Making install in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c ex_param /usr/local/bin/ex_param
+/usr/bin/install -c .libs/ex_param /usr/local/bin/ex_param
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/ex_param'
+Making install in gibbs
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+Making install in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c gibbs /usr/local/bin/gibbs
+/usr/bin/install -c .libs/gibbs /usr/local/bin/gibbs
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/gibbs'
+Making install in inf_learn_bnet
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+Making install in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c inf_learn_bnet /usr/local/bin/inf_learn_bnet
+/usr/bin/install -c .libs/inf_learn_bnet /usr/local/bin/inf_learn_bnet
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/inf_learn_bnet'
+Making install in learn_param
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c learn_param /usr/local/bin/learn_param
+/usr/bin/install -c .libs/learn_param /usr/local/bin/learn_param
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/learn_param'
+Making install in linux_test
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+make[4]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../libtool --mode=install /usr/bin/install -c test_run /usr/local/bin/test_run
+/usr/bin/install -c .libs/test_run /usr/local/bin/test_run
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/linux_test'
+Making install in mixture_gaussian_bnet
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+Making install in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c mixture_gaussian_bnet /usr/local/bin/mixture_gaussian_bnet
+/usr/bin/install -c .libs/mixture_gaussian_bnet /usr/local/bin/mixture_gaussian_bnet
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/mixture_gaussian_bnet'
+Making install in parPNLTest
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c parPNLTest /usr/local/bin/parPNLTest
+/usr/bin/install -c .libs/parPNLTest /usr/local/bin/parPNLTest
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/src'
+Making install in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/parPNLTest'
+Making install in testLIMID
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c TestLIMID /usr/local/bin/TestLIMID
+/usr/bin/install -c .libs/TestLIMID /usr/local/bin/TestLIMID
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/src'
+Making install in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testLIMID'
+Making install in testSL
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+make[4]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../libtool --mode=install /usr/bin/install -c testSL /usr/local/bin/testSL
+/usr/bin/install -c .libs/testSL /usr/local/bin/testSL
+  /bin/bash ../../../libtool --mode=install /usr/bin/install -c testSL_DBN /usr/local/bin/testSL_DBN
+/usr/bin/install -c .libs/testSL_DBN /usr/local/bin/testSL_DBN
+  /bin/bash ../../../libtool --mode=install /usr/bin/install -c testSEM /usr/local/bin/testSEM
+/usr/bin/install -c .libs/testSEM /usr/local/bin/testSEM
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSL'
+Making install in testSoftMax
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c TestSoftMax /usr/local/bin/TestSoftMax
+/usr/bin/install -c .libs/TestSoftMax /usr/local/bin/TestSoftMax
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/src'
+Making install in include
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/testSoftMax'
+Making install in trial
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+Making install in Src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c trial /usr/local/bin/trial
+/usr/bin/install -c .libs/trial /usr/local/bin/trial
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial/Src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/trial'
+Making install in use_matrix
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+Making install in src
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+make[5]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/bin
+  /bin/bash ../../../../libtool --mode=install /usr/bin/install -c use_matrix /usr/local/bin/use_matrix
+/usr/bin/install -c .libs/use_matrix /usr/local/bin/use_matrix
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[5]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples/use_matrix'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[4]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/examples
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/alarm.dat /usr/local/examples/Data/alarm.dat
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/cases /usr/local/examples/Data/cases
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/casesArHMM /usr/local/examples/Data/casesArHMM
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/casesForWS /usr/local/examples/Data/casesForWS
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/cases_gaussian /usr/local/examples/Data/cases_gaussian
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/casesTab /usr/local/examples/Data/casesTab
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/kjaerulff.dat /usr/local/examples/Data/kjaerulff.dat
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Data/samplesFoWS /usr/local/examples/Data/samplesFoWS
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 ex_inf_learn_dbn/src/inf_learn_dbn.cpp /usr/local/examples/ex_inf_learn_dbn/src/inf_learn_dbn.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 ex_param/Src/pEvidence.cpp /usr/local/examples/ex_param/Src/pEvidence.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 ex_param/Src/pParameterForMNet.cpp /usr/local/examples/ex_param/Src/pParameterForMNet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 gibbs/Src/gibbs.cpp /usr/local/examples/gibbs/Src/gibbs.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 inf_learn_bnet/Src/inf_learn_bnet.cpp /usr/local/examples/inf_learn_bnet/Src/inf_learn_bnet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 learn_param/src/learn_param.cpp /usr/local/examples/learn_param/src/learn_param.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 linux_test/test_run.cpp /usr/local/examples/linux_test/test_run.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 mixture_gaussian_bnet/Src/mixture_gaussian_bnet.cpp /usr/local/examples/mixture_gaussian_bnet/Src/mixture_gaussian_bnet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 parPNLTest/include/CreateBNets.h /usr/local/examples/parPNLTest/include/CreateBNets.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 parPNLTest/include/LoadBNet.h /usr/local/examples/parPNLTest/include/LoadBNet.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 parPNLTest/src/CreateBNets.cpp /usr/local/examples/parPNLTest/src/CreateBNets.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 parPNLTest/src/LoadBNet.cpp /usr/local/examples/parPNLTest/src/LoadBNet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 parPNLTest/src/parPNLTest.cpp /usr/local/examples/parPNLTest/src/parPNLTest.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testLIMID/include/LoadIDNet.h /usr/local/examples/testLIMID/include/LoadIDNet.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testLIMID/include/SamplesOfIDNet.h /usr/local/examples/testLIMID/include/SamplesOfIDNet.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testLIMID/src/LoadIDNet.cpp /usr/local/examples/testLIMID/src/LoadIDNet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testLIMID/src/SamplesOfIDNet.cpp /usr/local/examples/testLIMID/src/SamplesOfIDNet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testLIMID/src/TestLIMID.cpp /usr/local/examples/testLIMID/src/TestLIMID.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSL/testSEM.cpp /usr/local/examples/testSL/testSEM.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSL/testSL.cpp /usr/local/examples/testSL/testSL.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSL/testSL_DBN.cpp /usr/local/examples/testSL/testSL_DBN.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSoftMax/include/SamplesOfSMNet.h /usr/local/examples/testSoftMax/include/SamplesOfSMNet.h
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSoftMax/src/SamplesOfSMNet.cpp /usr/local/examples/testSoftMax/src/SamplesOfSMNet.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSoftMax/src/TestSoftMax.cpp /usr/local/examples/testSoftMax/src/TestSoftMax.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 trial/Src/classes_view.cpp /usr/local/examples/trial/Src/classes_view.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 use_matrix/src/umatrix2.cpp /usr/local/examples/use_matrix/src/umatrix2.cpp
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/examples'
+Making install in tests
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+Making install in src
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/src'
+Making install in include
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/include'
+Making install in testdata
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests/testdata'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[4]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk/tests'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/c_pgmtk'
+Making install in doc
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/doc'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+docdist=/usr/local/doc; \
+	mkdir -p -- . $docdist; \
+	cp -pR ./* $docdist; \
+	rm -f $docdist/Makefile*
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/doc'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/doc'
+Making install in high
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high'
+Making install in doc
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+make[3]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/high/doc
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 style.css /usr/local/high/doc/style.css
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 PNLWrappers.htm /usr/local/high/doc/PNLWrappers.htm
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WSModel.gif /usr/local/high/doc/WSModel.gif
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WrappersUserGuide.htm /usr/local/high/doc/WrappersUserGuide.htm
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/doc'
+Making install in include
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+make[3]: Nothing to be done for `install-exec-am'.
+mkdir -p -- . /usr/local/high/include
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 BNet.hpp /usr/local/high/include/BNet.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 BNetCB.hpp /usr/local/high/include/BNetCB.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 DBN.hpp /usr/local/high/include/DBN.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 DBNCB.hpp /usr/local/high/include/DBNCB.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 LIMID.hpp /usr/local/high/include/LIMID.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 LIMIDCB.hpp /usr/local/high/include/LIMIDCB.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 MRF.hpp /usr/local/high/include/MRF.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 MRFCB.hpp /usr/local/high/include/MRFCB.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 ModelEngine.hpp /usr/local/high/include/ModelEngine.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 NetCallBack.hpp /usr/local/high/include/NetCallBack.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 PersistProbNet.hpp /usr/local/high/include/PersistProbNet.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 PersistWNodeInfo.hpp /usr/local/high/include/PersistWNodeInfo.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 PersistWTypes.hpp /usr/local/high/include/PersistWTypes.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 TokenCover.hpp /usr/local/high/include/TokenCover.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Tokens.hpp /usr/local/high/include/Tokens.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WCliques.hpp /usr/local/high/include/WCliques.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WCover.hpp /usr/local/high/include/WCover.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WDistribFun.hpp /usr/local/high/include/WDistribFun.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 WInner.hpp /usr/local/high/include/WInner.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Wcsv.hpp /usr/local/high/include/Wcsv.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlHigh.hpp /usr/local/high/include/pnlHigh.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlHighConf.hpp /usr/local/high/include/pnlHighConf.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlTok.hpp /usr/local/high/include/pnlTok.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlWDistributions.hpp /usr/local/high/include/pnlWDistributions.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlWEvidence.hpp /usr/local/high/include/pnlWEvidence.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlWGraph.hpp /usr/local/high/include/pnlWGraph.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 pnlWProbabilisticNet.hpp /usr/local/high/include/pnlWProbabilisticNet.hpp
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/include'
+Making install in source
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+make[3]: Nothing to be done for `install-data-am'.
+mkdir -p -- . /usr/local/lib
+ /bin/bash ../../libtool --mode=install /usr/bin/install -c  libhigh.la /usr/local/lib/libhigh.la
+/usr/bin/install -c .libs/libhigh-0.2.so.23.0.0 /usr/local/lib/libhigh-0.2.so.23.0.0
+(cd /usr/local/lib && rm -f libhigh-0.2.so.23 && ln -s libhigh-0.2.so.23.0.0 libhigh-0.2.so.23)
+(cd /usr/local/lib && rm -f libhigh.so && ln -s libhigh-0.2.so.23.0.0 libhigh.so)
+/usr/bin/install -c .libs/libhigh.lai /usr/local/lib/libhigh.la
+/usr/bin/install -c .libs/libhigh.a /usr/local/lib/libhigh.a
+ranlib /usr/local/lib/libhigh.a
+chmod 644 /usr/local/lib/libhigh.a
+PATH="$PATH:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/source'
+Making install in examples
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+mkdir -p -- . /usr/local/bin
+mkdir -p -- . /usr/local/high/examples
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 console.cpp /usr/local/high/examples/console.cpp
+  /bin/bash ../../libtool --mode=install /usr/bin/install -c example /usr/local/bin/example
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 example_common_funs.cpp /usr/local/high/examples/example_common_funs.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 rps.cpp /usr/local/high/examples/rps.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 script_lex.cpp /usr/local/high/examples/script_lex.cpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 console.hpp /usr/local/high/examples/console.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 example_common_funs.hpp /usr/local/high/examples/example_common_funs.hpp
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 script_lex.hpp /usr/local/high/examples/script_lex.hpp
+/usr/bin/install -c .libs/example /usr/local/bin/example
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 AddDeleteNodes.pnl /usr/local/high/examples/AddDeleteNodes.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 checkSL.pnl /usr/local/high/examples/checkSL.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 ContinuosEvidence.pnl /usr/local/high/examples/ContinuosEvidence.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 gaussian.pnl /usr/local/high/examples/gaussian.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 MultiGaussian.pnl /usr/local/high/examples/MultiGaussian.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 Numeration.pnl /usr/local/high/examples/Numeration.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 rpsCreate.pnl /usr/local/high/examples/rpsCreate.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 scripting.pnl /usr/local/high/examples/scripting.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 testSetP.pnl /usr/local/high/examples/testSetP.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 TopolSort2.pnl /usr/local/high/examples/TopolSort2.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 TopolSort.pnl /usr/local/high/examples/TopolSort.pnl
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 rpsLearn.csv /usr/local/high/examples/rpsLearn.csv
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 SLDataRPS.csv /usr/local/high/examples/SLDataRPS.csv
+ /home/faizal/myApps/pnl-fixed-src/install-sh -c -m 644 bnet0.xml /usr/local/high/examples/bnet0.xml
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/examples'
+Making install in tests
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high/tests'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[3]: Entering directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src/high'
+make[1]: Entering directory `/home/faizal/myApps/pnl-fixed-src'
+make[2]: Entering directory `/home/faizal/myApps/pnl-fixed-src'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/faizal/myApps/pnl-fixed-src'
+make[1]: Leaving directory `/home/faizal/myApps/pnl-fixed-src'

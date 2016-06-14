@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+=======
+g++-4.6: error: PNL.c: No such file or directory
+>>>>>>> PyPNL/fixed64bit
+Using built-in specs.
+COLLECT_GCC=g++-4.6
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.6/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.6.4-6ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-4.6/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.6 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.6 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-gnu-unique-object --disable-libmudflap --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.6.4 (Ubuntu/Linaro 4.6.4-6ubuntu2) 
+<<<<<<< HEAD
+COLLECT_GCC_OPTIONS='-v' '-D' 'BIT_64' '-shared' '-pthread' '-fPIC' '-fwrapv' '-O2' '-Wall' '-fno-strict-aliasing' '-I' '/usr/include/python2.7' '-I' '/usr/local/include' '-I' '/usr/local/high/include' '-I' '/usr/local/include/opencx' '-I' '/usr/local/high/examples' '-o' 'PNL.so' '-L/usr/local/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/cc1plus -quiet -v -I /usr/include/python2.7 -I /usr/local/include -I /usr/local/high/include -I /usr/local/include/opencx -I /usr/local/high/examples -imultilib . -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D_REENTRANT -D BIT_64 PNL.c -quiet -dumpbase PNL.c -mtune=generic -march=x86-64 -auxbase PNL -O2 -Wall -version -fPIC -fwrapv -fno-strict-aliasing -fstack-protector -o /tmp/ccDe7WQf.s
+GNU C++ (Ubuntu/Linaro 4.6.4-6ubuntu2) version 4.6.4 (x86_64-linux-gnu)
+	compiled by GNU C version 4.6.4, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../x86_64-linux-gnu/include"
+ignoring duplicate directory "/usr/local/include"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/python2.7
+ /usr/local/high/include
+ /usr/local/include/opencx
+ /usr/local/high/examples
+ /usr/include/c++/4.6
+ /usr/include/c++/4.6/x86_64-linux-gnu/.
+ /usr/include/c++/4.6/backward
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C++ (Ubuntu/Linaro 4.6.4-6ubuntu2) version 4.6.4 (x86_64-linux-gnu)
+	compiled by GNU C version 4.6.4, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 7bb1bc0b852f97dd8807aaa81b852751
+In file included from /usr/local/high/include/BNet.hpp:9:0,
+                 from /usr/local/high/include/pnlHigh.hpp:3,
+                 from PNL.c:246:
+/usr/local/high/include/Tokens.hpp: In member function ‘bool pnlw::TokFlt<true>::IsUndef() const’:
+/usr/local/high/include/Tokens.hpp:191:117: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+/usr/local/high/include/Tokens.hpp: In function ‘void pnlw::vistok(const pnlw::Tok&)’:
+/usr/local/high/include/Tokens.hpp:335:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+In file included from /usr/local/high/include/BNet.hpp:11:0,
+                 from /usr/local/high/include/pnlHigh.hpp:3,
+                 from PNL.c:246:
+/usr/local/high/include/ModelEngine.hpp: At global scope:
+/usr/local/high/include/ModelEngine.hpp:24:5: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+COLLECT_GCC_OPTIONS='-v' '-D' 'BIT_64' '-shared' '-pthread' '-fPIC' '-fwrapv' '-O2' '-Wall' '-fno-strict-aliasing' '-I' '/usr/include/python2.7' '-I' '/usr/local/include' '-I' '/usr/local/high/include' '-I' '/usr/local/include/opencx' '-I' '/usr/local/high/examples' '-o' 'PNL.so' '-L/usr/local/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as --64 -o /tmp/ccu6TEGD.o /tmp/ccDe7WQf.s
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.6/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-D' 'BIT_64' '-shared' '-pthread' '-fPIC' '-fwrapv' '-O2' '-Wall' '-fno-strict-aliasing' '-I' '/usr/include/python2.7' '-I' '/usr/local/include' '-I' '/usr/local/high/include' '-I' '/usr/local/include/opencx' '-I' '/usr/local/high/examples' '-o' 'PNL.so' '-L/usr/local/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.6/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -shared -z relro -o PNL.so /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.6/crtbeginS.o -L/usr/local/lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. /tmp/ccu6TEGD.o -lpnl -lhigh -lcxcore -lstdc++ -lstdc++ -lm -lgcc_s -lpthread -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/4.6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crtn.o
+=======
+>>>>>>> PyPNL/fixed64bit
