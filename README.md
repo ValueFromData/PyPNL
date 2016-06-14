@@ -1,4 +1,4 @@
-# PyPNL
+## PyPNL : Python probabilistic network library
 
 [PyPNL](https://github.com/ValueFromData/PyPNL) is a probabilistic network
 library in Python. The library consists of a Python API which interfaces to
@@ -48,11 +48,4 @@ Stay tuned!
 ## Test suites
 
 Stay tuned!
-
-
-
-
-
-
-
 
